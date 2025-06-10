@@ -121,7 +121,7 @@ export default function Home() {
                   className="group"
                 >
                   <h3 className="text-foreground font-medium group-hover:text-primary transition-colors">Chakavak Travel</h3>
-                  <p className="text-sm">A comprehensive travel agency website offering tours and hotel bookings worldwide. Built with modern web technologies.</p>
+                  <p className="text-sm">A comprehensive travel agency website offering tours and hotel bookings. Built with modern web technologies.</p>
                 </a>
               </div>
             </div>

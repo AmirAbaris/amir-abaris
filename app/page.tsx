@@ -1,103 +1,151 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { GithubIcon, LinkedinIcon, TwitterIcon, DownloadIcon } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <main className="min-h-screen bg-background flex items-center justify-center py-12 md:py-0 p-8">
+      <div className="container max-w-6xl flex justify-center flex-col md:flex-row gap-12 items-center md:items-start">
+        {/* Left Side - Profile and Contact */}
+        <div className="md:w-1/2 flex flex-col items-center space-y-6 md:sticky md:top-8">
+          <div className="relative w-48 h-48 rounded-full overflow-hidden ring-2 ring-primary/20">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/images/aba.jpeg"
+              alt="Profile Picture"
+              fill
+              className="object-cover"
+              priority
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+          <div className="text-center space-y-2">
+            <h1 className="text-2xl font-bold">Amir Mahdi Zarei nejad</h1>
+            <p className="text-muted-foreground">Frontend Developer</p>
+          </div>
+          <div className="space-y-2 text-center">
+            <p className="text-sm text-muted-foreground">
+              <span className="font-medium text-foreground">Email: </span>
+              <a
+                href="mailto:thisisamirabaris@gmail.com"
+                className="hover:text-primary transition-colors"
+              >
+                thisisamirabaris@gmail.com
+              </a>
+            </p>
+            <div className="flex gap-2 justify-center pt-4">
+              <Link
+                href="https://github.com/AmirAbaris"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" size="icon">
+                  <GithubIcon className="h-4 w-4" />
+                </Button>
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/amir-mahdi-zarei-nejad-40005526a"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" size="icon">
+                  <LinkedinIcon className="h-4 w-4" />
+                </Button>
+              </Link>
+              <Link
+                href="https://x.com/abaris_aa"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" size="icon">
+                  <TwitterIcon className="h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+            <Link
+              href="https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLDWMNqHSSnPKatCdflj2gQrXVmGoOFIw3b140"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-1.5 bg-primary hover:bg-primary/90 px-3 py-1.5 rounded-md text-xs font-medium transition-colors text-white"
+            >
+              <DownloadIcon className="h-3.5 w-3.5" />
+              Download Resume
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* Right Side - Timeline */}
+        <div className="relative md:w-1/2">
+          <div className="absolute left-4 md:left-0 h-[calc(100%-2rem)] w-px bg-border top-3" />
+
+          {/* Experience Section */}
+          <div className="relative pl-8 md:pl-8 pb-16">
+            <div className="absolute left-4 md:left-0 w-3 h-3 -translate-x-1/2 rounded-full bg-primary top-2" />
+            <h2 className="text-xl font-semibold mb-4">Experience</h2>
+            <div className="space-y-6 text-muted-foreground">
+              <div>
+                <h3 className="text-foreground font-medium">Frontend Developer</h3>
+                <p className="text-sm">Codinoob • 4 months</p>
+              </div>
+              <div>
+                <h3 className="text-foreground font-medium">Frontend Developer</h3>
+                <p className="text-sm">Nilasoft • 3 months</p>
+              </div>
+              <div>
+                <h3 className="text-foreground font-medium">Frontend Development Intern</h3>
+                <p className="text-sm">Nilasoft • 6 months</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Projects Section */}
+          <div className="relative pl-8 md:pl-8 pb-16">
+            <div className="absolute left-4 md:left-0 w-3 h-3 -translate-x-1/2 rounded-full bg-primary top-2" />
+            <h2 className="text-xl font-semibold mb-4">Projects</h2>
+            <div className="space-y-6 text-muted-foreground">
+              <div>
+                <a
+                  href="https://roommatehub.vercel.app/fa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <h3 className="text-foreground font-medium group-hover:text-primary transition-colors">RoommateHub</h3>
+                  <p className="text-sm">A platform for finding compatible roommates in your desired city. Built with Next.js, TypeScript, and Tailwind CSS.</p>
+                </a>
+              </div>
+              <div>
+                <a
+                  href="https://chakavaktravel.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <h3 className="text-foreground font-medium group-hover:text-primary transition-colors">Chakavak Travel</h3>
+                  <p className="text-sm">A comprehensive travel agency website offering tours and hotel bookings worldwide. Built with modern web technologies.</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Skills Section */}
+          <div className="relative pl-8 md:pl-8">
+            <div className="absolute left-4 md:left-0 w-3 h-3 -translate-x-1/2 rounded-full bg-primary top-2" />
+            <h2 className="text-xl font-semibold mb-4">Skills</h2>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">HTML5</span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">CSS</span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">SCSS</span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Tailwind</span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">JavaScript</span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">TypeScript</span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">React</span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Redux</span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">React Query</span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Next.js</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }

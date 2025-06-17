@@ -1,7 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { GithubIcon, LinkedinIcon, TwitterIcon, DownloadIcon } from "lucide-react";
+import {
+  GithubIcon,
+  LinkedinIcon,
+  TwitterIcon,
+  DownloadIcon,
+} from "lucide-react";
 
 export default function Home() {
   return (
@@ -83,15 +88,21 @@ export default function Home() {
             <h2 className="text-xl font-semibold mb-4">Experience</h2>
             <div className="space-y-6 text-muted-foreground">
               <div>
-                <h3 className="text-foreground font-medium">Frontend Developer</h3>
+                <h3 className="text-foreground font-medium">
+                  Frontend Developer
+                </h3>
                 <p className="text-sm">Codinoob • 4 months</p>
               </div>
               <div>
-                <h3 className="text-foreground font-medium">Frontend Developer</h3>
+                <h3 className="text-foreground font-medium">
+                  Frontend Developer
+                </h3>
                 <p className="text-sm">Nilasoft • 3 months</p>
               </div>
               <div>
-                <h3 className="text-foreground font-medium">Frontend Development Intern</h3>
+                <h3 className="text-foreground font-medium">
+                  Frontend Development Intern
+                </h3>
                 <p className="text-sm">Nilasoft • 6 months</p>
               </div>
             </div>
@@ -103,26 +114,53 @@ export default function Home() {
             <h2 className="text-xl font-semibold mb-4">Projects</h2>
             <div className="space-y-6 text-muted-foreground">
               <div>
-                <a
+                <Link
+                  href="https://didamet.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <h3 className="text-foreground font-medium group-hover:text-primary transition-colors">
+                    Didamet
+                  </h3>
+                  <p className="text-sm">
+                    No more guessing games. Know instantly when your friends are
+                    at the café. Simple, private, and battery-friendly.
+                  </p>
+                </Link>
+              </div>
+              <div></div>
+              <div>
+                <Link
                   href="https://roommatehub.vercel.app/fa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
                 >
-                  <h3 className="text-foreground font-medium group-hover:text-primary transition-colors">RoommateHub</h3>
-                  <p className="text-sm">A platform for finding compatible roommates in your desired city. Built with Next.js, TypeScript, and Tailwind CSS.</p>
-                </a>
+                  <h3 className="text-foreground font-medium group-hover:text-primary transition-colors">
+                    RoommateHub
+                  </h3>
+                  <p className="text-sm">
+                    A platform for finding compatible roommates in your desired
+                    city. Built with Next.js, TypeScript, and Tailwind CSS.
+                  </p>
+                </Link>
               </div>
               <div>
-                <a
+                <Link
                   href="https://chakavaktravel.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
                 >
-                  <h3 className="text-foreground font-medium group-hover:text-primary transition-colors">Chakavak Travel</h3>
-                  <p className="text-sm">A comprehensive travel agency website offering tours and hotel bookings. Built with modern web technologies.</p>
-                </a>
+                  <h3 className="text-foreground font-medium group-hover:text-primary transition-colors">
+                    Chakavak Travel
+                  </h3>
+                  <p className="text-sm">
+                    A comprehensive travel agency website offering tours and
+                    hotel bookings. Built with modern web technologies.
+                  </p>
+                </Link>
               </div>
             </div>
           </div>
@@ -132,16 +170,36 @@ export default function Home() {
             <div className="absolute left-4 md:left-0 w-3 h-3 -translate-x-1/2 rounded-full bg-primary top-2" />
             <h2 className="text-xl font-semibold mb-4">Skills</h2>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">HTML5</span>
-              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">CSS</span>
-              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">SCSS</span>
-              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Tailwind</span>
-              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">JavaScript</span>
-              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">TypeScript</span>
-              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">React</span>
-              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Redux</span>
-              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">React Query</span>
-              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Next.js</span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                HTML5
+              </span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                CSS
+              </span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                SCSS
+              </span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                Tailwind
+              </span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                JavaScript
+              </span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                TypeScript
+              </span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                React
+              </span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                Redux
+              </span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                React Query
+              </span>
+              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                Next.js
+              </span>
             </div>
           </div>
         </div>

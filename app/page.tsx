@@ -30,12 +30,12 @@ export default function Home() {
           <div className="space-y-2 text-center">
             <p className="text-sm text-muted-foreground">
               <span className="font-medium text-foreground">Email: </span>
-              <a
+              <Link
                 href="mailto:thisisamirabaris@gmail.com"
                 className="hover:text-primary transition-colors"
               >
                 thisisamirabaris@gmail.com
-              </a>
+              </Link>
             </p>
             <div className="flex gap-2 justify-center pt-4">
               <Link

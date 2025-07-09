@@ -115,6 +115,28 @@ export default function Home() {
             <div className="space-y-6 text-muted-foreground">
               <div>
                 <Link
+                  href="https://connect-black.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <h3 className="text-foreground font-medium group-hover:text-primary transition-colors">
+                    Connect
+                  </h3>
+                  <p className="text-sm">
+                    In a cafe or a group, you don&rsquo;t know who&rsquo;s in
+                    what mood?
+                    <br />
+                    With <strong>Connect</strong>, everyone sets their own vibe.
+                    You understand who&rsquo;s social, who&rsquo;s solo,
+                    who&rsquo;s not in the mood at all.
+                    <br />
+                    Everything is real &mdash; without being awkward.
+                  </p>
+                </Link>
+              </div>
+              <div>
+                <Link
                   href="https://didamet.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -129,7 +151,6 @@ export default function Home() {
                   </p>
                 </Link>
               </div>
-              <div></div>
               <div>
                 <Link
                   href="https://roommatehub.vercel.app/fa"

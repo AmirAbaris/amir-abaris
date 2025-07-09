@@ -79,8 +79,8 @@ export default function Home() {
         </div>
 
         {/* Right Side - Timeline */}
-        <div className="relative md:w-1/2">
-          <div className="absolute left-4 md:left-0 h-[calc(100%-2rem)] w-px bg-border top-3" />
+        <div className="relative md:w-1/2 md:py-6">
+          <div className="absolute left-4 md:left-0 h-[calc(100%-2rem)] w-px bg-border top-3 md:my-6" />
 
           {/* Experience Section */}
           <div className="relative pl-8 md:pl-8 pb-16">

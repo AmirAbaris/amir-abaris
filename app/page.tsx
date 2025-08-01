@@ -7,6 +7,7 @@ import {
   TwitterIcon,
   DownloadIcon,
 } from "lucide-react";
+import { Link as LinkIcon } from "lucide-react";
 
 export default function Home() {
   return (
@@ -67,7 +68,7 @@ export default function Home() {
               </Link>
             </div>
             <Link
-              href="https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLDWMNqHSSnPKatCdflj2gQrXVmGoOFIw3b140"
+              href="https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLIoxM7d2lAcbgoHdfxD0sEzCyvk2QeX1a67FB"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-1.5 bg-primary hover:bg-primary/90 px-3 py-1.5 rounded-md text-xs font-medium transition-colors text-white"
@@ -91,19 +92,13 @@ export default function Home() {
                 <h3 className="text-foreground font-medium">
                   Frontend Developer
                 </h3>
-                <p className="text-sm">Codinoob • 4 months</p>
+                <p className="text-sm">Codinoob • 6 months</p>
               </div>
               <div>
                 <h3 className="text-foreground font-medium">
                   Frontend Developer
                 </h3>
-                <p className="text-sm">Nilasoft • 3 months</p>
-              </div>
-              <div>
-                <h3 className="text-foreground font-medium">
-                  Frontend Development Intern
-                </h3>
-                <p className="text-sm">Nilasoft • 6 months</p>
+                <p className="text-sm">Nilasoft • 1 year 1 months</p>
               </div>
             </div>
           </div>
@@ -120,15 +115,18 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="group"
                 >
-                  <h3 className="text-foreground font-medium group-hover:text-primary transition-colors">
-                    Connect
-                  </h3>
+                  <div className="flex gap-2 items-center hover:underline hover:text-primary transition-colors">
+                    <h3 className="text-foreground font-medium group-hover:text-primary transition-colors">
+                      Connecty
+                    </h3>
+                    <LinkIcon className="h-4 w-4" />
+                  </div>
                   <p className="text-sm">
                     In a cafe or a group, you don&rsquo;t know who&rsquo;s in
                     what mood?
                     <br />
-                    With <strong>Connect</strong>, everyone sets their own vibe.
-                    You understand who&rsquo;s social, who&rsquo;s solo,
+                    With <strong>Connecty</strong>, everyone sets their own
+                    vibe. You understand who&rsquo;s social, who&rsquo;s solo,
                     who&rsquo;s not in the mood at all.
                     <br />
                     Everything is real &mdash; without being awkward.
@@ -142,28 +140,15 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="group"
                 >
-                  <h3 className="text-foreground font-medium group-hover:text-primary transition-colors">
-                    Didamet
-                  </h3>
+                  <div className="flex gap-2 items-center hover:underline hover:text-primary transition-colors">
+                    <h3 className="text-foreground font-medium group-hover:text-primary transition-colors">
+                      Didamet
+                    </h3>
+                    <LinkIcon className="h-4 w-4" />
+                  </div>
                   <p className="text-sm">
                     No more guessing games. Know instantly when your friends are
                     at the café. Simple, private, and battery-friendly.
-                  </p>
-                </Link>
-              </div>
-              <div>
-                <Link
-                  href="https://roommatehub.vercel.app/fa"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group"
-                >
-                  <h3 className="text-foreground font-medium group-hover:text-primary transition-colors">
-                    RoommateHub
-                  </h3>
-                  <p className="text-sm">
-                    A platform for finding compatible roommates in your desired
-                    city. Built with Next.js, TypeScript, and Tailwind CSS.
                   </p>
                 </Link>
               </div>
@@ -174,9 +159,12 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="group"
                 >
-                  <h3 className="text-foreground font-medium group-hover:text-primary transition-colors">
-                    Chakavak Travel
-                  </h3>
+                  <div className="flex gap-2 items-center hover:underline hover:text-primary transition-colors">
+                    <h3 className="text-foreground font-medium group-hover:text-primary transition-colors">
+                      Chakavak Travel
+                    </h3>
+                    <LinkIcon className="h-4 w-4" />
+                  </div>
                   <p className="text-sm">
                     A comprehensive travel agency website offering tours and
                     hotel bookings. Built with modern web technologies.

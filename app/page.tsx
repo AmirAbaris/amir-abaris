@@ -92,7 +92,9 @@ export default function Home() {
                 <h3 className="text-foreground font-medium">
                   Frontend Developer | Next.js & React Native (Expo)
                 </h3>
-                <p className="text-sm">Freelance | Self-Employed • 1 months</p>
+                <p className="text-sm">
+                  Freelance | Self-Employed • {new Date().getMonth() - 6} months
+                </p>
               </div>
               <div>
                 <h3 className="text-foreground font-medium">

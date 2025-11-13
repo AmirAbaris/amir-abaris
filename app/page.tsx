@@ -122,7 +122,7 @@ export default function Home() {
           </div>
 
           {/* Projects Section */}
-          {/* <div className="relative pl-8 md:pl-8 pb-16">
+          <div className="relative pl-8 md:pl-8 pb-16">
             <div className="absolute left-4 md:left-0 w-3 h-3 -translate-x-1/2 rounded-full bg-primary top-2" />
             <h2 className="text-xl font-semibold mb-4">Projects</h2>
             <div className="space-y-6 text-muted-foreground">
@@ -151,46 +151,8 @@ export default function Home() {
                   </p>
                 </Link>
               </div>
-              <div>
-                <Link
-                  href="https://didamet.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group"
-                >
-                  <div className="flex gap-2 items-center hover:underline hover:text-primary transition-colors">
-                    <h3 className="text-foreground font-medium group-hover:text-primary transition-colors">
-                      Didamet
-                    </h3>
-                    <LinkIcon className="h-4 w-4" />
-                  </div>
-                  <p className="text-sm">
-                    No more guessing games. Know instantly when your friends are
-                    at the café. Simple, private, and battery-friendly.
-                  </p>
-                </Link>
-              </div>
-              <div>
-                <Link
-                  href="https://chakavaktravel.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group"
-                >
-                  <div className="flex gap-2 items-center hover:underline hover:text-primary transition-colors">
-                    <h3 className="text-foreground font-medium group-hover:text-primary transition-colors">
-                      Chakavak Travel
-                    </h3>
-                    <LinkIcon className="h-4 w-4" />
-                  </div>
-                  <p className="text-sm">
-                    A comprehensive travel agency website offering tours and
-                    hotel bookings. Built with modern web technologies.
-                  </p>
-                </Link>
-              </div>
             </div>
-          </div> */}
+          </div>
 
           {/* Skills Section */}
           <div className="relative pl-8 md:pl-8">

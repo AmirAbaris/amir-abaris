@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -8,6 +10,14 @@ import {
   DownloadIcon,
 } from "lucide-react";
 import { Link as LinkIcon } from "lucide-react";
+
+const getFreelanceDuration = () => {
+  const startDate = new Date("2025-05-13"); // Set your actual start date
+  const months = Math.floor(
+    (Date.now() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 30.44)
+  );
+  return months;
+};
 
 export default function Home() {
   return (
@@ -93,7 +103,7 @@ export default function Home() {
                   Frontend Developer | Next.js & React Native (Expo)
                 </h3>
                 <p className="text-sm">
-                  Freelance | Self-Employed • {new Date().getMonth() - 6} months
+                  Freelance | Self-Employed • {getFreelanceDuration()} months
                 </p>
               </div>
               <div>
@@ -112,7 +122,7 @@ export default function Home() {
           </div>
 
           {/* Projects Section */}
-          <div className="relative pl-8 md:pl-8 pb-16">
+          {/* <div className="relative pl-8 md:pl-8 pb-16">
             <div className="absolute left-4 md:left-0 w-3 h-3 -translate-x-1/2 rounded-full bg-primary top-2" />
             <h2 className="text-xl font-semibold mb-4">Projects</h2>
             <div className="space-y-6 text-muted-foreground">
@@ -180,7 +190,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Skills Section */}
           <div className="relative pl-8 md:pl-8">

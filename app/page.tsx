@@ -146,8 +146,6 @@ export default function Home() {
                     With <strong>Connecty</strong>, everyone sets their own
                     vibe. You understand who&rsquo;s social, who&rsquo;s solo,
                     who&rsquo;s not in the mood at all.
-                    <br />
-                    Everything is real &mdash; without being awkward.
                   </p>
                 </Link>
               </div>

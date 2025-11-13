@@ -24,7 +24,7 @@ export function ProfileSection() {
         <h1 className="text-2xl font-bold">Amir Mahdi Zarei nejad</h1>
         <p className="text-lg font-semibold text-primary">Frontend Developer</p>
         <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
-          Specializing in React & Next.js. Shipped 30+ production features with
+          Specializing in React & Next.js. Shipped 50+ production features with
           proven performance gains. Expert in building responsive, user-focused
           interfaces.
         </p>

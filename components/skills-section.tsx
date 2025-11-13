@@ -41,7 +41,7 @@ export function SkillsSection() {
     },
     {
       title: "State & Data",
-      skills: ["Redux", "RTK Query", "React Query", "REST APIs"],
+      skills: ["Redux", "RTK Query", "React Query", "Zustand", "REST APIs"],
     },
     {
       title: "Tools & Workflow",

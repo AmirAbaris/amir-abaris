@@ -69,7 +69,7 @@ export function ProfileSection() {
           </Link>
         </div>
         <Link
-          href="https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLIoxM7d2lAcbgoHdfxD0sEzCyvk2QeX1a67FB"
+          href="https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLMMPOwHdLSKz2ITWBxE658ciOMpGYjhUvrXbZ"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 inline-flex items-center gap-1.5 bg-primary hover:bg-primary/90 px-3 py-1.5 rounded-md text-xs font-medium transition-colors text-white"
@@ -81,4 +81,3 @@ export function ProfileSection() {
     </div>
   );
 }
-

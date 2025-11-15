@@ -1,7 +1,7 @@
 "use client";
 
 const getFreelanceDuration = () => {
-  const startDate = new Date("2025-07-01"); // July 2025 - after Codinoob
+  const startDate = new Date("2025-08-01"); // August 2025 - after Codinoob
   const months = Math.floor(
     (Date.now() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 30.44)
   );
@@ -47,7 +47,7 @@ export function ExperienceSection() {
     {
       title: "Frontend Developer",
       company: "Freelance | Self-Employed",
-      duration: `Jul 2025 - Present (${getFreelanceDuration()}+ months)`,
+      duration: `Aug 2025 - Present (${getFreelanceDuration()}+ months)`,
       techStack:
         "Next.js 15, Expo, TypeScript, TanStack Query, Zustand, shadcn, NativeWind",
       achievements: [
@@ -97,4 +97,3 @@ export function ExperienceSection() {
     </div>
   );
 }
-

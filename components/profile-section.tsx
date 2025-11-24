@@ -69,7 +69,7 @@ export function ProfileSection() {
           </Link>
         </div>
         <Link
-          href="https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLrsIyh2aouAUiv7QbqPEhGZS1BMnf3JsLOF0d"
+          href="https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLbBdDA7pLvyWzlIq51e3PNa0HF4UCGE9Kjwf8"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 inline-flex items-center gap-1.5 bg-primary hover:bg-primary/90 px-3 py-1.5 rounded-md text-xs font-medium transition-colors text-white"

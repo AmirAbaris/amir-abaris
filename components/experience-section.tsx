@@ -53,6 +53,7 @@ export function ExperienceSection() {
       achievements: [
         "Built real estate web platform with Next.js 15 leveraging latest server actions for data mutations",
         "Developed B2B real estate mobile app with Expo, implementing optimistic fetches for instant UX",
+        "Reduced notification delivery latency from ~8s to <1s by integrating real-time updates via WebSockets and Pusher JS for property inquiries, price changes, and new listings; ensured 99.9% uptime in production",
         "Implemented modern state management with TanStack React Query & Zustand across web and mobile",
         "Collaborated with backend team via Scrum sprints to deliver all frontend milestones on time",
         "Built consistent design systems using shadcn (web) and NativeWind (mobile)",

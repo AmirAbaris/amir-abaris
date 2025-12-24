@@ -46,16 +46,15 @@ export function ExperienceSection() {
   const experiences: ExperienceItemProps[] = [
     {
       title: "Frontend Developer",
-      company: "Freelance | Self-Employed",
+      company: "Real State Platform (contract), Remote",
       duration: `Aug 2025 - Present (${getFreelanceDuration()}+ months)`,
       techStack:
         "Next.js 15, Expo, TypeScript, TanStack Query, Zustand, shadcn, NativeWind",
       achievements: [
         "Built real estate web platform with Next.js 15 leveraging latest server actions for data mutations",
         "Developed B2B real estate mobile app with Expo, implementing optimistic fetches for instant UX",
-        "Reduced notification delivery latency from ~8s to <1s by integrating real-time updates via WebSockets and Pusher JS for property inquiries, price changes, and new listings; ensured 99.9% uptime in production",
-        "Implemented modern state management with TanStack React Query & Zustand across web and mobile",
-        "Collaborated with backend team via Scrum sprints to deliver all frontend milestones on time",
+        "Implemented real-time notifications using WebSockets and Pusher JS, reducing update latency from ~8s to under 1s for property inquiries, price changes, and new listings.",
+        "Implemented modern state management with TanStack Query & Zustand across web and mobile",
         "Built consistent design systems using shadcn (web) and NativeWind (mobile)",
       ],
     },

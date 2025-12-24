@@ -28,7 +28,14 @@ export function SkillsSection() {
   const skillCategories: SkillCategoryProps[] = [
     {
       title: "Frontend Frameworks",
-      skills: ["React", "Next.js", "React Native (Expo)", "Angular"],
+      skills: [
+        "React",
+        "Next.js",
+        "App Router",
+        "Server Action",
+        "Cache Component",
+        "React Native (Expo)",
+      ],
       highlight: true,
     },
     {
@@ -37,11 +44,17 @@ export function SkillsSection() {
     },
     {
       title: "Styling & UI",
-      skills: ["TailwindCSS", "SCSS", "Responsive Design"],
+      skills: [
+        "TailwindCSS",
+        "NativeWind",
+        "shadcn",
+        "SCSS",
+        "Responsive Design",
+      ],
     },
     {
       title: "State & Data",
-      skills: ["Redux", "RTK Query", "React Query", "Zustand", "REST APIs"],
+      skills: ["Redux", "RTK Query", "TanStack Query", "Zustand", "REST APIs"],
     },
     {
       title: "Tools & Workflow",
@@ -61,4 +74,3 @@ export function SkillsSection() {
     </div>
   );
 }
-

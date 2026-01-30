@@ -46,7 +46,7 @@ export function ExperienceSection() {
   const experiences: ExperienceItemProps[] = [
     {
       title: "Frontend Developer",
-      company: "Real State Platform (contract), Remote",
+      company: "MelkPro, Remote",
       duration: `Aug 2025 - Present (${getFreelanceDuration()}+ months)`,
       techStack:
         "Next.js 15, Expo, TypeScript, TanStack Query, Zustand, shadcn, NativeWind",

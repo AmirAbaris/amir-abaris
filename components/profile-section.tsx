@@ -23,6 +23,7 @@ export function ProfileSection() {
       <div className="text-center space-y-3">
         <h1 className="text-2xl font-bold">Amir Mahdi Zarei nejad</h1>
         <p className="text-lg font-semibold text-primary">Frontend Developer</p>
+        <p className="text-sm text-muted-foreground">Karaj, Iran</p>
         <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
           Specializing in React & Next.js. Shipped 50+ production features with
           proven performance gains. Expert in building responsive, user-focused
@@ -69,7 +70,7 @@ export function ProfileSection() {
           </Link>
         </div>
         <Link
-          href="https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLybIEIE9xEVqoFsGYIdk5UBDtSairJnf1Hxh3"
+          href="https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLCw31KYXjNvAl2DRyo80sC76rPFXxKikgGaE5"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 inline-flex items-center gap-1.5 bg-primary hover:bg-primary/90 px-3 py-1.5 rounded-md text-xs font-medium transition-colors text-white"

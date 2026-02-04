@@ -1,13 +1,5 @@
 "use client";
 
-const getFreelanceDuration = () => {
-  const startDate = new Date("2025-08-01"); // August 2025 - after Codinoob
-  const months = Math.floor(
-    (Date.now() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 30.44)
-  );
-  return Math.max(months, 0); // Prevent negative numbers
-};
-
 interface ExperienceItemProps {
   title: string;
   company: string;
@@ -47,7 +39,7 @@ export function ExperienceSection() {
     {
       title: "Frontend Developer",
       company: "MelkPro, Remote",
-      duration: `Aug 2025 - Present (${getFreelanceDuration()}+ months)`,
+      duration: `Aug 2025 - Jan 2026`,
       techStack:
         "Next.js 15, Expo, TypeScript, TanStack Query, Zustand, shadcn, NativeWind",
       achievements: [

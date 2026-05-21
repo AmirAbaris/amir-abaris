@@ -6,14 +6,16 @@ interface SkillCategoryProps {
 
 function SkillCategory({ title, skills, highlight }: SkillCategoryProps) {
   return (
-    <div>
-      <h4 className="text-sm font-semibold text-foreground mb-2">{title}</h4>
+    <div className="space-y-3 border-t border-border pt-5">
+      <h3 className="text-sm font-semibold text-foreground">{title}</h3>
       <div className="flex flex-wrap gap-2">
         {skills.map((skill) => (
           <span
             key={skill}
-            className={`px-3 py-1 bg-primary/10 text-primary rounded-full text-sm ${
-              highlight ? "font-medium" : ""
+            className={`rounded-md border px-2.5 py-1 text-sm ${
+              highlight
+                ? "border-foreground bg-foreground text-background"
+                : "border-border text-muted-foreground"
             }`}
           >
             {skill}
@@ -27,50 +29,37 @@ function SkillCategory({ title, skills, highlight }: SkillCategoryProps) {
 export function SkillsSection() {
   const skillCategories: SkillCategoryProps[] = [
     {
-      title: "Frontend Frameworks",
-      skills: [
-        "React",
-        "Next.js",
-        "App Router",
-        "Server Action",
-        "Cache Component",
-        "React Native (Expo)",
-      ],
+      title: "Core",
+      skills: ["React", "Next.js", "TypeScript", "JavaScript"],
       highlight: true,
     },
     {
-      title: "Languages & Core",
-      skills: ["TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3"],
-    },
-    {
-      title: "Styling & UI",
-      skills: [
-        "TailwindCSS",
-        "NativeWind",
-        "shadcn",
-        "SCSS",
-        "Responsive Design",
-      ],
-    },
-    {
       title: "State & Data",
-      skills: ["Redux", "RTK Query", "TanStack Query", "Zustand", "REST APIs"],
+      skills: ["Zustand", "TanStack Query"],
     },
     {
-      title: "Tools & Workflow",
-      skills: ["Git", "GitLab CI/CD", "Jira", "Vercel", "Agile/Scrum"],
+      title: "Mobile & UI",
+      skills: ["React Native", "Expo", "TailwindCSS", "NativeWind", "shadcn/ui"],
+    },
+    {
+      title: "Backend & Tools",
+      skills: ["Node.js", "Express", "Prisma", "Git", "GitLab CI/CD"],
     },
   ];
 
   return (
-    <div className="relative pl-8 md:pl-8">
-      <div className="absolute left-4 md:left-0 w-3 h-3 -translate-x-1/2 rounded-full bg-primary top-2" />
-      <h2 className="text-xl font-semibold mb-4">Skills & Technologies</h2>
-      <div className="space-y-4">
+    <section className="space-y-5">
+      <div>
+        <p className="text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
+          Skills
+        </p>
+        <h2 className="mt-2 text-2xl font-semibold">Tools I Work With</h2>
+      </div>
+      <div className="grid gap-5 sm:grid-cols-2">
         {skillCategories.map((category) => (
           <SkillCategory key={category.title} {...category} />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

@@ -13,19 +13,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Amir Mahdi Zarei Nejad | Frontend Developer",
-  description: "Frontend Developer specializing in React, Next.js, and modern web technologies. View my portfolio, projects, and experience.",
-  keywords: ["Frontend Developer", "React", "Next.js", "TypeScript", "Web Development", "Portfolio"],
+  title: "Amir Mahdi Zarei Nejad | Frontend Engineer",
+  description:
+    "Frontend Engineer specializing in React, Next.js, TypeScript, and scalable web and mobile interfaces.",
+  keywords: [
+    "Frontend Engineer",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "React Native",
+    "Portfolio",
+  ],
   authors: [{ name: "Amir Mahdi Zarei Nejad" }],
   openGraph: {
-    title: "Amir Mahdi Zarei Nejad | Frontend Developer",
-    description: "Frontend Developer specializing in React, Next.js, and modern web technologies.",
+    title: "Amir Mahdi Zarei Nejad | Frontend Engineer",
+    description:
+      "Frontend Engineer specializing in React, Next.js, TypeScript, and scalable web and mobile interfaces.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Amir Mahdi Zarei Nejad | Frontend Developer",
-    description: "Frontend Developer specializing in React, Next.js, and modern web technologies.",
+    title: "Amir Mahdi Zarei Nejad | Frontend Engineer",
+    description:
+      "Frontend Engineer specializing in React, Next.js, TypeScript, and scalable web and mobile interfaces.",
     creator: "@abaris_aa"
   },
 };

@@ -4,12 +4,11 @@ import { SkillsSection } from "@/components/skills-section";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background flex items-center justify-center py-12 md:py-0 p-8">
-      <div className="container max-w-6xl flex justify-center flex-col md:flex-row gap-12 items-center md:items-start">
+    <main className="min-h-screen bg-background px-5 py-10 text-foreground md:px-8 md:py-16">
+      <div className="mx-auto grid w-full max-w-5xl gap-12 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
         <ProfileSection />
 
-        <div className="relative md:w-1/2 md:py-6">
-          <div className="absolute left-4 md:left-0 h-[calc(100%-2rem)] w-px bg-border top-3 md:my-6" />
+        <div className="space-y-12 md:pt-2">
           <ExperienceSection />
           <SkillsSection />
         </div>

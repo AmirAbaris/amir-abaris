@@ -13,6 +13,7 @@ export type Project = {
   stack: string[];
   highlights: string[];
   liveUrl: string;
+  previewImage?: string;
   githubUrl?: string;
 };
 
@@ -71,5 +72,6 @@ export const projects: Project[] = [
       "Users go live in under 5 minutes — sign up, answer questions, share a stable public URL.",
     ],
     liveUrl: "https://shenora.vercel.app",
+    previewImage: "/images/shenora.jpg",
   },
 ];

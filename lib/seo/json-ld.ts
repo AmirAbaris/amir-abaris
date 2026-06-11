@@ -84,6 +84,9 @@ export function buildHomeJsonLd() {
             datePublished: project.year,
             keywords: project.stack.join(", "),
             author: { "@id": personId },
+            ...(project.previewImage
+              ? { screenshot: getAbsoluteUrl(project.previewImage) }
+              : {}),
           },
         })),
       },

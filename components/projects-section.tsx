@@ -1,15 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRightIcon, GithubIcon } from "lucide-react";
+import { projects, type Project } from "@/lib/site-data";
 
-interface ProjectItemProps {
-  title: string;
-  tagline: string;
-  year: string;
-  stack: string[];
-  highlights: string[];
-  liveUrl: string;
-  githubUrl?: string;
-}
+type ProjectItemProps = Project;
 
 function ProjectItem({
   title,
@@ -81,30 +74,8 @@ function ProjectItem({
 }
 
 export function ProjectsSection() {
-  const projects: ProjectItemProps[] = [
-    {
-      title: "Shenora",
-      tagline: "No-code portfolio generator",
-      year: "2026",
-      stack: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Prisma",
-        "PostgreSQL",
-        "shadcn/ui",
-      ],
-      highlights: [
-        "Built end-to-end: auth (JWT + Google OAuth), onboarding form, and public portfolio pages at /[username].",
-        "Server-only DAL with Server Actions, DTOs, and Next.js 16 Cache Components.",
-        "Users go live in under 5 minutes — sign up, answer questions, share a stable public URL.",
-      ],
-      liveUrl: "https://shenora.vercel.app",
-    },
-  ];
-
   return (
-    <section className="space-y-5">
+    <section id="projects" className="space-y-5">
       <div>
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
           Projects

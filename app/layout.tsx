@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     description: seoConfig.description,
     url: "/",
     siteName: seoConfig.name,
+    type: "profile",
     images: [
       {
         url: seoConfig.ogImage,
@@ -42,7 +43,10 @@ export const metadata: Metadata = {
       },
     ],
     locale: seoConfig.locale,
-    type: "website",
+  },
+  other: {
+    "profile:first_name": "Amir Mahdi",
+    "profile:last_name": "Zarei Nejad",
   },
   twitter: {
     card: "summary_large_image",

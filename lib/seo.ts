@@ -45,6 +45,7 @@ export const seoConfig = {
     "Prisma",
     "TanStack Query",
     "Zustand",
+    "Next.js 16",
   ],
 } as const;
 

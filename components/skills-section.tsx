@@ -48,7 +48,7 @@ export function SkillsSection() {
   ];
 
   return (
-    <section className="space-y-5">
+    <section id="skills" className="space-y-5">
       <div>
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
           Skills

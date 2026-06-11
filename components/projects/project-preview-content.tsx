@@ -29,7 +29,7 @@ export function ProjectPreviewContent({
           fill
           sizes="420px"
           className="object-cover object-top"
-          priority={false}
+          loading="eager"
         />
       </AspectRatio>
 

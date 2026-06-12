@@ -15,6 +15,10 @@ export type Project = {
   liveUrl: string;
   previewImage?: string;
   githubUrl?: string;
+  accessAlert?: {
+    title: string;
+    description: string;
+  };
 };
 
 export const experiences: Experience[] = [
@@ -73,5 +77,32 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://shenora.vercel.app",
     previewImage: "/images/shenora.jpg",
+  },
+  {
+    title: "Endpoint Forge",
+    tagline: "Mock API workbench for frontend teams",
+    year: "2026",
+    stack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "TanStack Router",
+      "TanStack Query",
+      "Zustand",
+      "Tailwind CSS",
+    ],
+    highlights: [
+      "UI-managed mock API layer with project → controller → endpoint hierarchy and per-project mock servers.",
+      "Define HTTP methods, paths, status codes, delays, and JSON responses — copy mock URLs into frontend code.",
+      "Tenant-based routing, bilingual landing page, and CodeMirror-powered response editing.",
+    ],
+    liveUrl: "https://endpointforge.ir/",
+    previewImage: "/images/endpoint-forge.jpg",
+    githubUrl: "https://github.com/Bytepute/endpointForge",
+    accessAlert: {
+      title: "Not accessible outside Iran",
+      description:
+        "The live site is only reachable from inside Iran due to server hosting limitations. The project is fully open source — browse the code on GitHub.",
+    },
   },
 ];

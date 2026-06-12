@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ArrowUpRightIcon, GithubIcon } from "lucide-react";
+import { ArrowUpRightIcon, GithubIcon, GlobeLockIcon } from "lucide-react";
 
 import { ProjectHoverHeader } from "@/components/projects/project-hover-header";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import type { Project } from "@/lib/site-data";
 
 type ProjectItemProps = Project;
@@ -15,6 +16,7 @@ export function ProjectItem({
   liveUrl,
   previewImage,
   githubUrl,
+  accessAlert,
 }: ProjectItemProps) {
   return (
     <article className="grid gap-3 border-t border-border pt-5 sm:grid-cols-[9rem_1fr]">
@@ -50,6 +52,14 @@ export function ProjectItem({
             </li>
           ))}
         </ul>
+
+        {accessAlert ? (
+          <Alert>
+            <GlobeLockIcon />
+            <AlertTitle>{accessAlert.title}</AlertTitle>
+            <AlertDescription>{accessAlert.description}</AlertDescription>
+          </Alert>
+        ) : null}
 
         <div className="flex flex-wrap gap-4 text-sm">
           <Link

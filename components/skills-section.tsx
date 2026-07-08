@@ -1,64 +1,46 @@
-interface SkillCategoryProps {
-  title: string;
-  skills: string[];
-  highlight?: boolean;
-}
-
-function SkillCategory({ title, skills, highlight }: SkillCategoryProps) {
-  return (
-    <div className="space-y-3 border-t border-border pt-5">
-      <h3 className="text-sm font-semibold text-foreground">{title}</h3>
-      <div className="flex flex-wrap gap-2">
-        {skills.map((skill) => (
-          <span
-            key={skill}
-            className={`rounded-md border px-2.5 py-1 text-sm ${
-              highlight
-                ? "border-foreground bg-foreground text-background"
-                : "border-border text-muted-foreground"
-            }`}
-          >
-            {skill}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
+import { SkillChip } from "@/components/skill-chip";
+import { primarySkills, skillGroups } from "@/lib/skills-data";
 
 export function SkillsSection() {
-  const skillCategories: SkillCategoryProps[] = [
-    {
-      title: "Core",
-      skills: ["React", "Next.js", "TypeScript", "JavaScript"],
-      highlight: true,
-    },
-    {
-      title: "State & Data",
-      skills: ["Zustand", "TanStack Query"],
-    },
-    {
-      title: "Mobile & UI",
-      skills: ["React Native", "Expo", "TailwindCSS", "NativeWind", "shadcn/ui"],
-    },
-    {
-      title: "Backend & Tools",
-      skills: ["Node.js", "Express", "Prisma", "Git", "GitLab CI/CD"],
-    },
-  ];
-
   return (
     <section id="skills" className="space-y-5">
       <div>
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
           Skills
         </p>
-        <h2 className="mt-2 text-2xl font-semibold">Tools I Work With</h2>
+        <h2 className="mt-2 text-2xl font-semibold">Stack I Ship With</h2>
+        <p className="mt-2 max-w-lg text-sm leading-6 text-muted-foreground">
+          The tools behind 50+ production features, from web and mobile UI to
+          APIs and deployment.
+        </p>
       </div>
-      <div className="grid gap-5 sm:grid-cols-2">
-        {skillCategories.map((category) => (
-          <SkillCategory key={category.title} {...category} />
-        ))}
+
+      <div className="space-y-6 border-t border-border pt-5">
+        <div className="space-y-3">
+          <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+            Primary
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {primarySkills.map((skill) => (
+              <SkillChip key={skill.id} skill={skill} featured />
+            ))}
+          </div>
+        </div>
+
+        <div className="space-y-5">
+          {skillGroups.map((group) => (
+            <div key={group.label} className="space-y-2.5">
+              <p className="text-xs font-medium text-muted-foreground">
+                {group.label}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {group.skills.map((skill) => (
+                  <SkillChip key={skill.id} skill={skill} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

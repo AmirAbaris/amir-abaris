@@ -40,6 +40,7 @@ export const seoConfig = {
     "React Native",
     "Expo",
     "TailwindCSS",
+    "Go",
     "Node.js",
     "Express",
     "Prisma",

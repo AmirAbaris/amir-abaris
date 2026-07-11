@@ -59,6 +59,29 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
+    title: "Weeto",
+    tagline: "Scheduling Platform",
+    year: "2026",
+    stack: [
+      "Go",
+      "PostgreSQL",
+      "Docker",
+      "Nginx",
+      "Google OAuth",
+      "Next.js",
+      "React",
+      "TypeScript",
+    ],
+    highlights: [
+      "Built and deployed a scheduling SaaS using Go, Next.js, PostgreSQL, Docker, and Nginx.",
+      "Designed REST APIs for authentication, availability management, and booking workflows.",
+      "Integrated Google OAuth 2.0 and Google Calendar API for calendar synchronization.",
+      "Implemented secure session-based authentication with HTTP-only cookies across frontend and API services.",
+    ],
+    liveUrl: "https://weeto.ir",
+    previewImage: "/images/weeto.jpg",
+  },
+  {
     title: "Shenora",
     tagline: "No-code portfolio generator",
     year: "2026",

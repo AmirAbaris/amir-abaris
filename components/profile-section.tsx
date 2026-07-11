@@ -86,7 +86,7 @@ export function ProfileSection() {
         </Button>
         <Button asChild>
           <Link
-            href="https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLTr3tkObIaUitTBu9EYFHnkC6gheq8cD7MGoy"
+            href="https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLGYxihGLsZRHo5tL2JiDOfP4FSzcbkGIe0nEN"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -32,7 +32,7 @@ export function ProfileSection() {
             Amir Mahdi Zarei Nejad
           </h1>
           <p className="text-base font-medium text-muted-foreground">
-            React • Next.js • TypeScript • Go
+            React • Next.js • TypeScript
           </p>
         </div>
 

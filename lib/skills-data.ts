@@ -39,7 +39,7 @@ export const skillGroups: SkillGroup[] = [
       { id: "expo", name: "Expo", icon: "/icons/skills/expo.svg" },
       {
         id: "tailwind",
-        name: "TailwindCSS",
+        name: "Tailwind CSS",
         icon: "/icons/skills/tailwindcss.svg",
       },
       {

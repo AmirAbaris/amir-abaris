@@ -26,21 +26,21 @@ export function ProfileSection() {
       <div className="space-y-4">
         <div className="space-y-2">
           <p className="text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
-            Frontend Engineer
+            Software Engineer
           </p>
           <h1 className="max-w-sm text-4xl font-semibold leading-tight md:text-5xl">
             Amir Mahdi Zarei Nejad
           </h1>
           <p className="text-base font-medium text-muted-foreground">
-            React • Next.js • TypeScript
+            React • Next.js • TypeScript • Go
           </p>
         </div>
 
         <p className="max-w-md text-sm leading-7 text-muted-foreground">
-          Frontend Engineer specializing in React and Next.js. Shipped 50+
-          production features across web and mobile applications with focus on
-          performance, scalable architecture, and AI-assisted development
-          workflows.
+          Software Engineer building production-ready web applications and
+          developer tools. Experienced shipping features across web and mobile
+          applications with a focus on scalable architecture, performance, and
+          reliable systems.{" "}
         </p>
       </div>
 

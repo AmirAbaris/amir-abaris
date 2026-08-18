@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRightIcon, GithubIcon, GlobeLockIcon } from "lucide-react";
+import { GithubIcon } from "lucide-react";
 
-import { ProjectHoverHeader } from "@/components/projects/project-hover-header";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { MetricText } from "@/components/metric-text";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import type { Project } from "@/lib/site-data";
 
 type ProjectItemProps = Project;
@@ -11,78 +12,75 @@ export function ProjectItem({
   title,
   tagline,
   year,
+  role,
   stack,
   highlights,
-  liveUrl,
+  repoUrl,
   previewImage,
-  githubUrl,
-  accessAlert,
 }: ProjectItemProps) {
   return (
-    <article className="grid gap-3 border-t border-border pt-5 sm:grid-cols-[9rem_1fr]">
-      <div className="space-y-1 text-sm text-muted-foreground">
-        <p>{year}</p>
-        <p>Personal Project</p>
-      </div>
+    <article className="space-y-4 border-t border-border pt-6">
+      {previewImage ? (
+        <Link
+          href={repoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`View the ${title} source on GitHub`}
+          className="group block overflow-hidden rounded-xl border border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        >
+          <AspectRatio ratio={16 / 10}>
+            <Image
+              src={previewImage}
+              alt={`${title} landing page`}
+              fill
+              sizes="(min-width: 768px) 560px, 100vw"
+              className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+            />
+          </AspectRatio>
+        </Link>
+      ) : null}
 
       <div className="space-y-3">
-        <ProjectHoverHeader
-          title={title}
-          tagline={tagline}
-          liveUrl={liveUrl}
-          previewImage={previewImage}
-        />
-
-        <div className="flex flex-wrap gap-2">
-          {stack.map((tech) => (
-            <span
-              key={tech}
-              className="rounded-md border border-border px-2 py-0.5 text-xs text-muted-foreground"
-            >
-              {tech}
+        <div className="space-y-1">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[0.6875rem] uppercase tracking-[0.1em] text-muted-foreground">
+            <span>{year}</span>
+            <span aria-hidden>/</span>
+            <span>
+              <MetricText>{role}</MetricText>
             </span>
-          ))}
+          </div>
+          <h3 className="font-display text-xl font-semibold tracking-[-0.015em] text-foreground">
+            {title}
+          </h3>
+          <p className="text-sm text-muted-foreground">{tagline}</p>
         </div>
 
-        <ul className="space-y-2 text-sm leading-6 text-muted-foreground">
+        <ul className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted-foreground">
+          {stack.map((tech) => (
+            <li key={tech}>{tech}</li>
+          ))}
+        </ul>
+
+        <ul className="space-y-2 text-[15px] leading-7 text-muted-foreground">
           {highlights.map((highlight, index) => (
-            <li key={index} className="flex gap-2">
-              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground" />
-              <span>{highlight}</span>
+            <li key={index} className="flex gap-2.5">
+              <span className="mt-[0.6875rem] h-1 w-1 shrink-0 rounded-full bg-brand" />
+              <span>
+                <MetricText>{highlight}</MetricText>
+              </span>
             </li>
           ))}
         </ul>
 
-        {accessAlert ? (
-          <Alert>
-            <GlobeLockIcon />
-            <AlertTitle>{accessAlert.title}</AlertTitle>
-            <AlertDescription>{accessAlert.description}</AlertDescription>
-          </Alert>
-        ) : null}
-
-        <div className="flex flex-wrap gap-4 text-sm">
-          <Link
-            href={liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 font-medium text-foreground transition-colors hover:text-muted-foreground"
-          >
-            Live demo
-            <ArrowUpRightIcon className="h-3.5 w-3.5" />
-          </Link>
-          {githubUrl ? (
-            <Link
-              href={githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 font-medium text-foreground transition-colors hover:text-muted-foreground"
-            >
-              <GithubIcon className="h-3.5 w-3.5" />
-              Source
-            </Link>
-          ) : null}
-        </div>
+        <Link
+          href={repoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-brand"
+        >
+          <GithubIcon className="h-3.5 w-3.5" />
+          View source
+        </Link>
       </div>
     </article>
   );

@@ -47,7 +47,6 @@ export function buildHomeJsonLd() {
         url: getAbsoluteUrl("/"),
         image: getAbsoluteUrl(seoConfig.profileImage),
         email: seoConfig.email,
-        telephone: seoConfig.phone,
         address: {
           "@type": "PostalAddress",
           addressLocality: seoConfig.location.city,

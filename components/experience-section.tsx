@@ -45,10 +45,10 @@ export function ExperienceSection() {
   return (
     <section id="experience" className="space-y-5">
       <div>
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+        <p className="font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-muted-foreground">
           Experience
         </p>
-        <h2 className="mt-2 text-2xl font-semibold tracking-tight">
+        <h2 className="mt-2 font-display text-[1.75rem] font-semibold tracking-[-0.02em]">
           Recent Work
         </h2>
       </div>

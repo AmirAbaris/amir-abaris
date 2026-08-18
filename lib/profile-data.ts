@@ -14,17 +14,17 @@ export const profile = {
    * The "who am I" answer.
    *
    * The middle sentence is a workflow claim, which is defensible today. Upgrade
-   * it to a product claim — "and I build features that use AI" — only once a
+   * it to a product claim ("and I build features that use AI") only once a
    * shipped project documents its eval results, cost per request, and p95
    * latency. Claiming it earlier invites an interview question with no answer.
    */
   summary:
-    "I take products from an empty repo to production on my own — frontend, API, database, and deploy. I build with AI tooling daily. I'm not an ML researcher and don't pretend to be.",
+    "I take products from an empty repo to production on my own: frontend, API, database, and deploy. I build with AI tooling daily. I'm not an ML researcher and don't pretend to be.",
 
   location: "Karaj, Iran",
   email: "thisisamirabaris@gmail.com",
 
-  /** Shown as the availability pill in the hero and the closing CTA. */
+  /** Stated once, quietly, in the closing CTA only. */
   availability: {
     open: true,
     label: "Open to full-stack and frontend roles",

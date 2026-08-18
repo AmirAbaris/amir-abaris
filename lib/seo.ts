@@ -3,7 +3,7 @@ export const seoConfig = {
   title: "Amir Mahdi Zarei Nejad | Full-Stack Developer",
   titleTemplate: "%s | Amir Mahdi Zarei Nejad",
   description:
-    "Full-Stack Developer taking products from empty repo to production — frontend, API, database, and deploy. TypeScript, React/Next.js, Node, and PostgreSQL.",
+    "Full-Stack Developer taking products from empty repo to production: frontend, API, database, and deploy. TypeScript, React/Next.js, Node, and PostgreSQL.",
   locale: "en_US",
   category: "technology",
   jobTitle: "Full-Stack Developer",

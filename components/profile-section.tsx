@@ -8,35 +8,23 @@ import { profile } from "@/lib/profile-data";
 export function ProfileSection() {
   return (
     <section className="flex flex-col gap-6 md:sticky md:top-20 md:self-start">
-      <div className="flex items-center gap-4">
-        <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full ring-1 ring-border md:h-28 md:w-28">
-          <Image
-            src="/images/real_aba.jpeg"
-            alt={profile.name}
-            fill
-            sizes="112px"
-            className="object-cover"
-            priority
-          />
-        </div>
-
-        {profile.availability.open ? (
-          <p className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/40 px-3 py-1.5 text-xs font-medium text-muted-foreground">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-60" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand" />
-            </span>
-            Available for work
-          </p>
-        ) : null}
+      <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full ring-1 ring-border md:h-28 md:w-28">
+        <Image
+          src="/images/real_aba.jpeg"
+          alt={profile.name}
+          fill
+          sizes="112px"
+          className="object-cover"
+          priority
+        />
       </div>
 
       <div className="space-y-4">
         <div className="space-y-2">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand">
+          <p className="font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-brand">
             {profile.noun}
           </p>
-          <h1 className="max-w-sm text-[2.125rem] font-semibold leading-[1.1] tracking-tight md:text-5xl">
+          <h1 className="max-w-sm font-display text-[2.5rem] font-semibold leading-[1.05] tracking-[-0.03em] md:text-[3.25rem]">
             {profile.name}
           </h1>
           <p className="text-sm font-medium text-muted-foreground">
@@ -49,19 +37,10 @@ export function ProfileSection() {
         </p>
       </div>
 
-      <div className="space-y-3 text-sm text-muted-foreground">
-        <p className="flex items-center gap-2">
-          <MapPinIcon className="h-4 w-4 shrink-0 text-muted-foreground" />
-          {profile.location}
-        </p>
-        <Link
-          href={`mailto:${profile.email}`}
-          className="flex w-fit items-center gap-2 transition-colors hover:text-brand"
-        >
-          <MailIcon className="h-4 w-4 shrink-0 text-muted-foreground" />
-          {profile.email}
-        </Link>
-      </div>
+      <p className="flex items-center gap-2 text-sm text-muted-foreground">
+        <MapPinIcon className="h-4 w-4 shrink-0" />
+        {profile.location}
+      </p>
 
       <div className="flex flex-wrap items-center gap-2">
         <Button asChild>

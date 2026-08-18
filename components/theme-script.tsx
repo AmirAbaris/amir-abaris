@@ -2,7 +2,7 @@
  * Applies the stored (or system) theme before first paint.
  *
  * This runs blocking in <head>, so the correct class is on <html> before the
- * browser paints — no flash of the wrong theme. Kept dependency-free on
+ * browser paints, so there is no flash of the wrong theme. Kept
  * purpose; the whole contract is one class name and one localStorage key.
  */
 const script = `

@@ -12,28 +12,25 @@ export function ContactSection() {
   return (
     <section id="contact" className="space-y-5">
       <div>
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+        <p className="font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-muted-foreground">
           Contact
         </p>
-        <h2 className="mt-2 text-2xl font-semibold tracking-tight">
+        <h2 className="mt-2 font-display text-[1.75rem] font-semibold tracking-[-0.02em]">
           Let&apos;s build something
         </h2>
       </div>
 
       <div className="space-y-5 rounded-xl border border-border bg-muted/30 p-6">
         {profile.availability.open ? (
-          <p className="inline-flex items-center gap-2 text-sm font-medium text-foreground">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
-            </span>
+          <p className="font-mono text-[0.6875rem] uppercase tracking-[0.12em] text-brand">
             {profile.availability.label}
           </p>
         ) : null}
 
         <p className="max-w-md text-[15px] leading-7 text-muted-foreground">
-          The fastest way to reach me is email — I reply to everything. Happy to
-          talk through a role, a contract, or a problem you&apos;re stuck on.
+          The fastest way to reach me is email, and I reply to everything.
+          Happy to talk through a role, a contract, or a problem you&apos;re stuck
+          on.
         </p>
 
         <div className="flex flex-wrap items-center gap-2">

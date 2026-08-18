@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Sans } from "next/font/google";
 import { ThemeScript } from "@/components/theme-script";
 import { getSiteUrl, seoConfig } from "@/lib/seo";
 import "./globals.css";
@@ -12,6 +12,18 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+/**
+ * Display face for the name and section headings only, never body copy.
+ *
+ * Sturdier than a high-contrast serif at heading sizes, while still reading as
+ * a deliberate choice rather than the Next.js default.
+ */
+const instrumentSans = Instrument_Sans({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -80,7 +92,7 @@ export default function RootLayout({
         <ThemeScript />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${instrumentSans.variable} antialiased`}
       >
         {children}
       </body>

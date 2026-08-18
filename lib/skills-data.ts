@@ -1,81 +1,66 @@
-export type Skill = {
-  id: string;
-  name: string;
-  icon: string;
-  /** Brand SVGs with baked-in color — skip dark-mode invert */
-  colored?: boolean;
-};
-
 export type SkillGroup = {
   label: string;
-  skills: Skill[];
+  skills: string[];
 };
 
-export const primarySkills: Skill[] = [
-  { id: "react", name: "React", icon: "/icons/skills/react.svg" },
-  { id: "nextjs", name: "Next.js", icon: "/icons/skills/nextdotjs.svg" },
-  {
-    id: "typescript",
-    name: "TypeScript",
-    icon: "/icons/skills/typescript.svg",
-  },
-  {
-    id: "javascript",
-    name: "JavaScript",
-    icon: "/icons/skills/javascript.svg",
-  },
-];
+/** Set in display type at the top of the section. */
+export const primarySkills = [
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Node.js",
+] as const;
 
 export const skillGroups: SkillGroup[] = [
   {
     label: "UI & Mobile",
     skills: [
-      {
-        id: "react-native",
-        name: "React Native",
-        icon: "/icons/skills/reactnative.svg",
-        colored: true,
-      },
-      { id: "expo", name: "Expo", icon: "/icons/skills/expo.svg" },
-      {
-        id: "tailwind",
-        name: "Tailwind CSS",
-        icon: "/icons/skills/tailwindcss.svg",
-      },
-      {
-        id: "nativewind",
-        name: "NativeWind",
-        icon: "/icons/skills/nativewind.svg",
-      },
-      { id: "shadcn", name: "shadcn/ui", icon: "/icons/skills/shadcnui.svg" },
+      "React Native",
+      "Expo",
+      "Tailwind CSS",
+      "NativeWind",
+      "shadcn/ui",
     ],
   },
   {
     label: "State & Data",
-    skills: [
-      {
-        id: "zustand",
-        name: "Zustand",
-        icon: "/icons/skills/zustand.svg",
-        colored: true,
-      },
-      {
-        id: "tanstack-query",
-        name: "TanStack Query",
-        icon: "/icons/skills/reactquery.svg",
-      },
-    ],
+    skills: ["Zustand", "TanStack Query", "Redux Toolkit"],
   },
   {
-    label: "Backend & Tooling",
-    skills: [
-      { id: "go", name: "Go", icon: "/icons/skills/go.svg" },
-      { id: "nodejs", name: "Node.js", icon: "/icons/skills/nodedotjs.svg" },
-      { id: "express", name: "Express", icon: "/icons/skills/express.svg" },
-      { id: "prisma", name: "Prisma", icon: "/icons/skills/prisma.svg" },
-      { id: "docker", name: "Docker", icon: "/icons/skills/docker.svg" },
-      { id: "git", name: "Git", icon: "/icons/skills/git.svg" },
-      { id: "gitlab", name: "GitLab CI/CD", icon: "/icons/skills/gitlab.svg" },
-    ],
+    label: "Backend & Data",
+    skills: ["Node.js", "Express", "PostgreSQL", "Prisma", "NestJS", "Go"],
+  },
+  {
+    label: "Tooling",
+    skills: ["Docker", "Git", "GitLab CI/CD", "Nginx"],
   },
 ];
+
+/**
+ * Kept separate from the stack groups on purpose.
+ *
+ * A logo wall of AI tool names is the least credible thing a portfolio can
+ * carry right now, because everyone has one and none of it is checkable. What
+ * makes the claim survive an interview is naming the practice, so this block
+ * says what gets done with the tools rather than just listing them.
+ */
+export const aiWorkflow = {
+  label: "AI Workflow",
+  intro:
+    "Part of how I work day to day, not a side interest. I write my own agent skills, wire up MCP servers so the tooling fits the codebase, and treat prompting and context design as ordinary engineering rather than a trick.",
+  groups: [
+    {
+      label: "Daily drivers",
+      skills: ["Claude Code", "Cursor", "Codex"],
+    },
+    {
+      label: "Practice",
+      skills: [
+        "Agent skills",
+        "MCP servers",
+        "Context engineering",
+        "Spec-first workflows",
+      ],
+    },
+  ] as SkillGroup[],
+};

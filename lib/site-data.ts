@@ -14,13 +14,9 @@ export type Project = {
   role: string;
   stack: string[];
   highlights: string[];
-  liveUrl: string;
+  /** Source is the only outbound link; live hosting is being wound down. */
+  repoUrl: string;
   previewImage?: string;
-  githubUrl?: string;
-  accessAlert?: {
-    title: string;
-    description: string;
-  };
 };
 
 export const experiences: Experience[] = [
@@ -30,7 +26,7 @@ export const experiences: Experience[] = [
     location: "Remote",
     duration: "Aug 2025 – Jan 2026",
     achievements: [
-      "Shipped **2 products** — a B2B real estate platform and its B2C customer-facing site — across web and mobile, built with Next.js 15, React, and Expo.",
+      "Shipped **2 products**, a B2B real estate platform and its B2C customer-facing site, across web and mobile with Next.js 15, React, and Expo.",
       "Delivered instant cross-platform updates by building a real-time notification system on WebSockets and Pusher, removing the need for client polling.",
       "Consolidated server-state handling onto TanStack Query and Zustand, replacing scattered fetch logic with a single caching layer.",
     ],
@@ -62,9 +58,9 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [
   {
     title: "Weeto",
-    tagline: "Scheduling platform — built and deployed solo",
+    tagline: "Scheduling platform, built and deployed solo",
     year: "2026",
-    role: "Solo — full stack",
+    role: "Solo build, full stack",
     stack: [
       "Next.js",
       "TypeScript",
@@ -79,14 +75,14 @@ export const projects: Project[] = [
       "Architected the backend in Go with pgxpool, sqlc (type-safe SQL), and goose migrations; deployed via Docker and Nginx over HTTPS.",
       "Shipped an async email worker with Resend for confirmations, reminders, and cancellations, with retry logic on failure.",
     ],
-    liveUrl: "https://weeto.ir",
+    repoUrl: "https://github.com/AmirAbaris/weeto-backend",
     previewImage: "/images/weeto.jpg",
   },
   {
     title: "Endpoint Forge",
     tagline: "Mock API workbench for frontend teams",
     year: "2026",
-    role: "**3-person team** — full stack",
+    role: "**3-person team**, full stack",
     stack: [
       "Next.js",
       "TypeScript",
@@ -100,13 +96,7 @@ export const projects: Project[] = [
       "Built end to end with Next.js and NestJS, using Drizzle ORM for type-safe database access; containerized and deployed with Docker.",
       "Implemented tenant-based routing for multi-user workspaces plus a bilingual landing page on a reusable component architecture.",
     ],
-    liveUrl: "https://endpointforge.ir/",
+    repoUrl: "https://github.com/Bytepute/endpointForge",
     previewImage: "/images/endpoint-forge.jpg",
-    githubUrl: "https://github.com/Bytepute/endpointForge",
-    accessAlert: {
-      title: "Not reachable outside Iran",
-      description:
-        "The live site is only served from inside Iran due to hosting limitations. The project is fully open source — browse the code on GitHub.",
-    },
   },
 ];

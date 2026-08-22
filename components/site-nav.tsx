@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+import type { PortfolioView } from "@/components/chat/view-toggle";
+import { ViewToggle } from "@/components/chat/view-toggle";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { profile, sections } from "@/lib/profile-data";
 import { cn } from "@/lib/utils";
@@ -13,11 +15,19 @@ import { cn } from "@/lib/utils";
  * cheap, and the observer is bounded to a band near the top of the viewport so
  * only one section reads as active at a time.
  */
-export function SiteNav() {
+export function SiteNav({
+  view,
+  onViewChange,
+}: {
+  view: PortfolioView;
+  onViewChange: (view: PortfolioView) => void;
+}) {
   const [active, setActive] = useState<string>("");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    if (view !== "classic") return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries
@@ -37,7 +47,7 @@ export function SiteNav() {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [view]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -83,25 +93,28 @@ export function SiteNav() {
           {profile.name}
         </a>
 
-        <div className="flex items-center gap-1">
-          <ul className="flex items-center gap-0.5">
-            {sections.map((section) => (
-              <li key={section.id}>
-                <a
-                  href={`#${section.id}`}
-                  aria-current={active === section.id ? "true" : undefined}
-                  className={cn(
-                    "rounded-md px-2.5 py-1.5 text-xs font-medium transition-colors sm:text-sm",
-                    active === section.id
-                      ? "bg-brand-subtle text-brand"
-                      : "text-muted-foreground hover:text-foreground",
-                  )}
-                >
-                  {section.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+        <div className="flex items-center gap-2">
+          {view === "classic" && (
+            <ul className="flex items-center gap-0.5">
+              {sections.map((section) => (
+                <li key={section.id}>
+                  <a
+                    href={`#${section.id}`}
+                    aria-current={active === section.id ? "true" : undefined}
+                    className={cn(
+                      "rounded-md px-2.5 py-1.5 text-xs font-medium transition-colors sm:text-sm",
+                      active === section.id
+                        ? "bg-brand-subtle text-brand"
+                        : "text-muted-foreground hover:text-foreground",
+                    )}
+                  >
+                    {section.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+          <ViewToggle view={view} onChange={onViewChange} />
           <ThemeToggle />
         </div>
       </nav>

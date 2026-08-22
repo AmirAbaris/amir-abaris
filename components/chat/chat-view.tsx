@@ -84,6 +84,8 @@ export function ChatView() {
               <MessageScrollerContent className="px-1 py-4">
                 {messages.map((message) => {
                   const align = message.role === "user" ? "end" : "start";
+                  const text = messageText(message.parts as never[]);
+                  if (message.role === "assistant" && !text) return null;
                   return (
                     <MessageScrollerItem
                       key={message.id}
@@ -107,9 +109,7 @@ export function ChatView() {
                               message.role === "user" ? "default" : "secondary"
                             }
                           >
-                            <BubbleContent>
-                              {messageText(message.parts as never[])}
-                            </BubbleContent>
+                            <BubbleContent>{text}</BubbleContent>
                           </Bubble>
                         </MessageContent>
                       </Message>

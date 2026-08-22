@@ -104,7 +104,7 @@ export function SiteNav({
                     className={cn(
                       "rounded-md px-2.5 py-1.5 text-xs font-medium transition-colors sm:text-sm",
                       active === section.id
-                        ? "bg-brand-subtle text-brand"
+                        ? "bg-accent text-accent-foreground"
                         : "text-muted-foreground hover:text-foreground",
                     )}
                   >

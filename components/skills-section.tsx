@@ -46,7 +46,7 @@ export function SkillsSection() {
             <span key={skill}>
               {skill}
               {index < primarySkills.length - 1 ? (
-                <span className="px-2 text-brand">·</span>
+                <span className="px-2 text-primary">·</span>
               ) : null}
             </span>
           ))}
@@ -60,7 +60,7 @@ export function SkillsSection() {
       </div>
 
       <div className="space-y-3 rounded-xl border border-border bg-muted/25 p-5">
-        <p className="font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-brand">
+        <p className="font-mono">
           {aiWorkflow.label}
         </p>
         <p className="max-w-lg text-[15px] leading-7 text-muted-foreground">

@@ -7,7 +7,7 @@
  */
 export const profile = {
   name: "Amir Mahdi Zarei Nejad",
-  noun: "Full-Stack Developer",
+  noun: "Full Stack Developer",
   stackLine: "TypeScript · React/Next.js · Node · PostgreSQL",
 
   /**

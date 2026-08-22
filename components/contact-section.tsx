@@ -22,7 +22,7 @@ export function ContactSection() {
 
       <div className="space-y-5 rounded-xl border border-border bg-muted/30 p-6">
         {profile.availability.open ? (
-          <p className="font-mono text-[0.6875rem] uppercase tracking-[0.12em] text-brand">
+          <p className="font-mono text-sm">
             {profile.availability.label}
           </p>
         ) : null}
@@ -57,7 +57,7 @@ export function ContactSection() {
             href={profile.links.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-brand"
+            className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-primary"
           >
             <GithubIcon className="h-4 w-4" />
             GitHub
@@ -66,7 +66,7 @@ export function ContactSection() {
             href={profile.links.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-brand"
+            className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-primary"
           >
             <LinkedinIcon className="h-4 w-4" />
             LinkedIn

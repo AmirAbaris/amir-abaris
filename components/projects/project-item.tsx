@@ -26,7 +26,7 @@ export function ProjectItem({
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`View the ${title} source on GitHub`}
-          className="group block overflow-hidden rounded-xl border border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="group block overflow-hidden rounded-xl border border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           <AspectRatio ratio={16 / 10}>
             <Image
@@ -64,7 +64,7 @@ export function ProjectItem({
         <ul className="space-y-2 text-[15px] leading-7 text-muted-foreground">
           {highlights.map((highlight, index) => (
             <li key={index} className="flex gap-2.5">
-              <span className="mt-[0.6875rem] h-1 w-1 shrink-0 rounded-full bg-brand" />
+              <span className="mt-[0.6875rem] h-1.5 w-1.5 shrink-0 rounded-full bg-accent-foreground" />
               <span>
                 <MetricText>{highlight}</MetricText>
               </span>
@@ -76,7 +76,7 @@ export function ProjectItem({
           href={repoUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-brand"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-primary"
         >
           <GithubIcon className="h-3.5 w-3.5" />
           View source

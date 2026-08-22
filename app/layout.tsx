@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Instrument_Sans } from "next/font/google";
+import { Geist_Mono, Instrument_Sans, Inter } from "next/font/google";
 import { ThemeScript } from "@/components/theme-script";
 import { getSiteUrl, seoConfig } from "@/lib/seo";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -87,12 +85,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={cn("font-sans", inter.variable)}>
       <head>
         <ThemeScript />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${instrumentSans.variable} antialiased`}
+        className={`${geistMono.variable} ${instrumentSans.variable} antialiased`}
       >
         {children}
       </body>

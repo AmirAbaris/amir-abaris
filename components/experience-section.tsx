@@ -29,7 +29,7 @@ function ExperienceItem({
         <ul className="space-y-2 text-[15px] leading-7 text-muted-foreground">
           {achievements.map((achievement, index) => (
             <li key={index} className="flex gap-2.5">
-              <span className="mt-[0.6875rem] h-1 w-1 shrink-0 rounded-full bg-brand" />
+              <span className="mt-[0.6875rem] h-1.5 w-1.5 shrink-0 rounded-full bg-accent-foreground" />
               <span>
                 <MetricText>{achievement}</MetricText>
               </span>

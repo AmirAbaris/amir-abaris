@@ -21,7 +21,7 @@ export function ProfileSection() {
 
       <div className="space-y-4">
         <div className="space-y-2">
-          <p className="font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-brand">
+          <p className="font-mono">
             {profile.noun}
           </p>
           <h1 className="max-w-sm font-display text-[2.5rem] font-semibold leading-[1.05] tracking-[-0.03em] md:text-[3.25rem]">

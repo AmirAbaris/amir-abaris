@@ -7,8 +7,17 @@ import { SendIcon } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Bubble, BubbleContent } from "@/components/ui/bubble";
 import { Button } from "@/components/ui/button";
-import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "@/components/ui/input-group";
-import { Message, MessageAvatar, MessageContent } from "@/components/ui/message";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+} from "@/components/ui/input-group";
+import {
+  Message,
+  MessageAvatar,
+  MessageContent,
+} from "@/components/ui/message";
 import {
   MessageScroller,
   MessageScrollerButton,
@@ -37,7 +46,11 @@ function messageText(parts: { type: string; text?: string }[]) {
 function CloneAvatar() {
   return (
     <Avatar size="sm">
-      <AvatarImage src="/images/real_aba.jpeg" alt={profile.name} className="object-cover" />
+      <AvatarImage
+        src="/images/real_aba.jpeg"
+        alt={profile.name}
+        className="object-cover"
+      />
       <AvatarFallback>{profile.name.charAt(0)}</AvatarFallback>
     </Avatar>
   );
@@ -49,7 +62,9 @@ export function ChatView() {
 
   const isEmpty = messages.length === 0;
   const isThinking =
-    status === "submitted" || (status === "streaming" && !messageText((messages.at(-1)?.parts as never[]) ?? []));
+    status === "submitted" ||
+    (status === "streaming" &&
+      !messageText((messages.at(-1)?.parts as never[]) ?? []));
 
   function submit(text: string) {
     const trimmed = text.trim();
@@ -59,7 +74,9 @@ export function ChatView() {
   }
 
   return (
-    <div className={cn("flex min-h-[70vh] flex-col", isEmpty && "justify-center")}>
+    <div
+      className={cn("flex min-h-[70vh] flex-col", isEmpty && "justify-center")}
+    >
       {!isEmpty && (
         <MessageScrollerProvider autoScroll defaultScrollPosition="last-anchor">
           <MessageScroller className="max-h-[65vh] flex-1">
@@ -68,7 +85,11 @@ export function ChatView() {
                 {messages.map((message) => {
                   const align = message.role === "user" ? "end" : "start";
                   return (
-                    <MessageScrollerItem key={message.id} messageId={message.id} scrollAnchor={message.role === "user"}>
+                    <MessageScrollerItem
+                      key={message.id}
+                      messageId={message.id}
+                      scrollAnchor={message.role === "user"}
+                    >
                       <Message align={align}>
                         <MessageAvatar>
                           {message.role === "user" ? (
@@ -80,8 +101,15 @@ export function ChatView() {
                           )}
                         </MessageAvatar>
                         <MessageContent>
-                          <Bubble align={align} variant={message.role === "user" ? "default" : "secondary"}>
-                            <BubbleContent>{messageText(message.parts as never[])}</BubbleContent>
+                          <Bubble
+                            align={align}
+                            variant={
+                              message.role === "user" ? "default" : "secondary"
+                            }
+                          >
+                            <BubbleContent>
+                              {messageText(message.parts as never[])}
+                            </BubbleContent>
                           </Bubble>
                         </MessageContent>
                       </Message>
@@ -94,7 +122,9 @@ export function ChatView() {
                       <CloneAvatar />
                     </MessageAvatar>
                     <MessageContent>
-                      <p className="shimmer px-3 text-sm text-muted-foreground">Thinking…</p>
+                      <p className="shimmer px-3 text-sm text-muted-foreground">
+                        Thinking…
+                      </p>
                     </MessageContent>
                   </Message>
                 )}
@@ -106,7 +136,8 @@ export function ChatView() {
                     <MessageContent>
                       <Bubble align="start" variant="destructive">
                         <BubbleContent>
-                          Something went wrong reaching the model. Try again in a moment.
+                          Something went wrong reaching the model. Try again in
+                          a moment.
                         </BubbleContent>
                       </Bubble>
                     </MessageContent>
@@ -119,14 +150,20 @@ export function ChatView() {
         </MessageScrollerProvider>
       )}
 
-      <div className={cn("mx-auto w-full max-w-xl px-1", isEmpty ? "text-center" : "pt-4")}>
+      <div
+        className={cn(
+          "mx-auto w-full max-w-xl px-1",
+          isEmpty ? "text-center" : "pt-4",
+        )}
+      >
         {isEmpty && (
           <div className="mb-6 space-y-2">
             <p className="text-lg font-semibold text-foreground">
               Chat with {profile.name.split(" ")[0]}&apos;s AI clone
             </p>
             <p className="text-sm text-muted-foreground">
-              Ask about experience, projects, or stack — grounded in what&apos;s actually true.
+              Ask about experience, projects, or stack, grounded in what&apos;s
+              actually true.
             </p>
           </div>
         )}
@@ -154,7 +191,11 @@ export function ChatView() {
               <InputGroupButton
                 type="submit"
                 size="icon-sm"
-                disabled={!input.trim() || status === "streaming" || status === "submitted"}
+                disabled={
+                  !input.trim() ||
+                  status === "streaming" ||
+                  status === "submitted"
+                }
                 aria-label="Send message"
               >
                 <SendIcon />
@@ -166,7 +207,13 @@ export function ChatView() {
         {isEmpty && (
           <div className="mt-4 flex flex-wrap justify-center gap-2">
             {starterPrompts.map((prompt) => (
-              <Button key={prompt} type="button" variant="outline" size="sm" onClick={() => submit(prompt)}>
+              <Button
+                key={prompt}
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={() => submit(prompt)}
+              >
                 {prompt}
               </Button>
             ))}

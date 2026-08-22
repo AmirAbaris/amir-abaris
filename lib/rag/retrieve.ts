@@ -10,10 +10,17 @@ const chunkVectors = knowledgeBase.map((chunk) => ({
 export function retrieveContext(query: string, k = 4) {
   const queryVector = vectorize(query, idf);
 
-  const scored = chunkVectors
+  // Work experience is the most important topic, so always surface every role
+  // rather than leaving it to similarity ranking, which can drop a company.
+  const experienceChunks = chunkVectors.filter(({ chunk }) => chunk.id.startsWith("experience-"));
+  const rest = chunkVectors.filter(({ chunk }) => !chunk.id.startsWith("experience-"));
+
+  const scoredRest = rest
     .map(({ chunk, vector }) => ({ chunk, score: cosineSimilarity(queryVector, vector) }))
     .sort((a, b) => b.score - a.score)
     .slice(0, k);
 
-  return scored.map(({ chunk }) => chunk.text).join("\n\n");
+  const ordered = [...experienceChunks.map(({ chunk }) => chunk), ...scoredRest.map(({ chunk }) => chunk)];
+
+  return ordered.map((chunk) => chunk.text).join("\n\n");
 }

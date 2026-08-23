@@ -19,7 +19,7 @@ const openrouter = createOpenAICompatible({
   },
 });
 
-const MODEL = process.env.OPENROUTER_MODEL ?? "nvidia/nemotron-3-nano-30b-a3b:free";
+const MODEL = process.env.OPENROUTER_MODEL ?? "stealth/ox-alpha";
 
 function lastUserText(messages: UIMessage[]) {
   const lastUser = [...messages].reverse().find((message) => message.role === "user");

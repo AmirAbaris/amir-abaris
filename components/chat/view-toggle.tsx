@@ -4,7 +4,6 @@ import { MessageSquareIcon, FileTextIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-export const VIEW_STORAGE_KEY = "portfolio-view";
 export type PortfolioView = "chat" | "classic";
 
 export function ViewToggle({

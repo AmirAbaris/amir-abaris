@@ -20,6 +20,7 @@ export const skillGroups: SkillGroup[] = [
       "Tailwind CSS",
       "NativeWind",
       "shadcn/ui",
+      "Radix UI",
     ],
   },
   {
@@ -31,8 +32,12 @@ export const skillGroups: SkillGroup[] = [
     skills: ["Node.js", "Express", "PostgreSQL", "Prisma", "NestJS", "Go"],
   },
   {
+    label: "Testing",
+    skills: ["Jest", "Cypress"],
+  },
+  {
     label: "Tooling",
-    skills: ["Docker", "Git", "GitLab CI/CD", "Nginx"],
+    skills: ["Docker", "Git", "Linux", "Nginx", "Chrome DevTools", "Lighthouse"],
   },
 ];
 
@@ -58,6 +63,8 @@ export const aiWorkflow = {
       skills: [
         "Agent skills",
         "MCP servers",
+        "Multi-agent orchestration",
+        "LLM tool-use & agent architecture",
         "Context engineering",
         "Spec-first workflows",
       ],

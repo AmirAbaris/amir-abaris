@@ -12,14 +12,9 @@ export const profile = {
 
   /**
    * The "who am I" answer.
-   *
-   * The middle sentence is a workflow claim, which is defensible today. Upgrade
-   * it to a product claim ("and I build features that use AI") only once a
-   * shipped project documents its eval results, cost per request, and p95
-   * latency. Claiming it earlier invites an interview question with no answer.
    */
   summary:
-    "I take products from an empty repo to production on my own: frontend, API, database, and deploy. I build with AI tooling daily. I'm not an ML researcher and don't pretend to be.",
+    "I build things end to end and ship them: frontend, API, database, deploy, no hand-holding. Melkbot's live on Cafe Bazaar with real users. Right now I'm heads-down on agentic AI, using Claude Code, Cursor, and Codex daily. It's how I actually work, not a buzzword I bolted on.",
 
   location: "Karaj, Iran",
   email: "thisisamirabaris@gmail.com",

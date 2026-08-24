@@ -26,9 +26,10 @@ export const experiences: Experience[] = [
     location: "Remote",
     duration: "Aug 2025 – Jan 2026",
     achievements: [
-      "Shipped **2 products**, a B2B real estate platform and its B2C customer-facing site, across web and mobile with Next.js 15, React, and Expo.",
+      "Built **Melkbot**, a B2B AI-powered real estate assistant (Expo/React Native), live in production on **Cafe Bazaar**, Iran's largest Android app store, alongside the B2C customer-facing site with Next.js 15 and React.",
       "Delivered instant cross-platform updates by building a real-time notification system on WebSockets and Pusher, removing the need for client polling.",
       "Consolidated server-state handling onto TanStack Query and Zustand, replacing scattered fetch logic with a single caching layer.",
+      "Used Cursor and OpenAI Codex daily as part of an agentic coding workflow, reviewing and validating all AI-generated code before merge.",
     ],
   },
   {

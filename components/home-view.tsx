@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { ChatView } from "@/components/chat/chat-view";
-import { VIEW_STORAGE_KEY, type PortfolioView } from "@/components/chat/view-toggle";
+import { type PortfolioView } from "@/components/chat/view-toggle";
 import { ContactSection } from "@/components/contact-section";
 import { ExperienceSection } from "@/components/experience-section";
 import { ProfileSection } from "@/components/profile-section";
@@ -12,23 +12,11 @@ import { SiteNav } from "@/components/site-nav";
 import { SkillsSection } from "@/components/skills-section";
 
 export function HomeView() {
-  const [view, setView] = useState<PortfolioView>("chat");
-
-  useEffect(() => {
-    const stored = localStorage.getItem(VIEW_STORAGE_KEY);
-    if (stored === "chat" || stored === "classic") {
-      setView(stored);
-    }
-  }, []);
-
-  function handleViewChange(next: PortfolioView) {
-    setView(next);
-    localStorage.setItem(VIEW_STORAGE_KEY, next);
-  }
+  const [view, setView] = useState<PortfolioView>("classic");
 
   return (
     <>
-      <SiteNav view={view} onViewChange={handleViewChange} />
+      <SiteNav view={view} onViewChange={setView} />
 
       <main
         id="main"

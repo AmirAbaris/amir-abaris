@@ -81,39 +81,40 @@ export function SiteNav({
     >
       <nav
         aria-label="Sections"
-        className="mx-auto flex h-14 w-full max-w-5xl items-center justify-between gap-4 px-5 md:px-8"
+        className="mx-auto flex h-14 w-full max-w-5xl items-center gap-2 px-5 sm:gap-4 md:px-8"
       >
         <a
           href="#top"
           className={cn(
-            "truncate text-sm font-semibold transition-opacity",
+            "hidden shrink-0 truncate text-sm font-semibold transition-opacity sm:block",
             scrolled ? "opacity-100" : "opacity-0",
           )}
         >
           {profile.name}
         </a>
 
-        <div className="flex items-center gap-2">
-          {view === "classic" && (
-            <ul className="flex items-center gap-0.5">
-              {sections.map((section) => (
-                <li key={section.id}>
-                  <a
-                    href={`#${section.id}`}
-                    aria-current={active === section.id ? "true" : undefined}
-                    className={cn(
-                      "rounded-md px-2.5 py-1.5 text-xs font-medium transition-colors sm:text-sm",
-                      active === section.id
-                        ? "bg-accent text-accent-foreground"
-                        : "text-muted-foreground hover:text-foreground",
-                    )}
-                  >
-                    {section.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )}
+        {view === "classic" && (
+          <ul className="flex min-w-0 flex-1 items-center gap-0.5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {sections.map((section) => (
+              <li key={section.id} className="shrink-0">
+                <a
+                  href={`#${section.id}`}
+                  aria-current={active === section.id ? "true" : undefined}
+                  className={cn(
+                    "block rounded-md px-2.5 py-1.5 text-xs font-medium transition-colors sm:text-sm",
+                    active === section.id
+                      ? "bg-accent text-accent-foreground"
+                      : "text-muted-foreground hover:text-foreground",
+                  )}
+                >
+                  {section.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        <div className="ml-auto flex shrink-0 items-center gap-2">
           <ViewToggle view={view} onChange={onViewChange} />
           <ThemeToggle />
         </div>

@@ -1,10 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { MenuIcon } from "lucide-react";
 
 import type { PortfolioView } from "@/components/chat/view-toggle";
 import { ViewToggle } from "@/components/chat/view-toggle";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { profile, sections } from "@/lib/profile-data";
 import { cn } from "@/lib/utils";
 
@@ -24,6 +33,7 @@ export function SiteNav({
 }) {
   const [active, setActive] = useState<string>("");
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (view !== "classic") return;
@@ -94,7 +104,7 @@ export function SiteNav({
         </a>
 
         {view === "classic" && (
-          <ul className="flex min-w-0 flex-1 items-center gap-0.5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <ul className="hidden min-w-0 flex-1 items-center gap-0.5 sm:flex">
             {sections.map((section) => (
               <li key={section.id} className="shrink-0">
                 <a
@@ -115,6 +125,40 @@ export function SiteNav({
         )}
 
         <div className="ml-auto flex shrink-0 items-center gap-2">
+          {view === "classic" && (
+            <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon-sm" className="sm:hidden">
+                  <MenuIcon />
+                  <span className="sr-only">Open sections menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right">
+                <SheetHeader>
+                  <SheetTitle>Sections</SheetTitle>
+                </SheetHeader>
+                <ul className="flex flex-col gap-1 px-6">
+                  {sections.map((section) => (
+                    <li key={section.id}>
+                      <a
+                        href={`#${section.id}`}
+                        aria-current={active === section.id ? "true" : undefined}
+                        onClick={() => setMenuOpen(false)}
+                        className={cn(
+                          "block rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                          active === section.id
+                            ? "bg-accent text-accent-foreground"
+                            : "text-muted-foreground hover:text-foreground",
+                        )}
+                      >
+                        {section.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </SheetContent>
+            </Sheet>
+          )}
           <ViewToggle view={view} onChange={onViewChange} />
           <ThemeToggle />
         </div>

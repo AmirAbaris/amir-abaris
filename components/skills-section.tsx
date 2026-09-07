@@ -40,17 +40,17 @@ export function SkillsSection() {
         </p>
       </div>
 
-      <div>
-        <p className="font-display text-2xl font-medium leading-snug tracking-[-0.02em] text-foreground">
-          {primarySkills.map((skill, index) => (
-            <span key={skill}>
-              {skill}
-              {index < primarySkills.length - 1 ? (
-                <span className="px-2 text-primary">·</span>
-              ) : null}
-            </span>
-          ))}
-        </p>
+      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-display text-2xl font-medium leading-snug tracking-[-0.02em] text-foreground">
+        {primarySkills.map((skill, index) => (
+          <span key={skill} className="flex items-center gap-x-2">
+            {skill}
+            {index < primarySkills.length - 1 ? (
+              <span className="text-primary" aria-hidden>
+                ·
+              </span>
+            ) : null}
+          </span>
+        ))}
       </div>
 
       <div>

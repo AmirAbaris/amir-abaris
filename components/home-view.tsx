@@ -27,7 +27,7 @@ export function HomeView() {
             <ChatView />
           </div>
         ) : (
-          <div className="mx-auto grid w-full max-w-5xl gap-12 md:grid-cols-[0.85fr_1.15fr] md:gap-16">
+          <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-12 md:grid-cols-[0.85fr_1.15fr] md:gap-16">
             <ProfileSection />
 
             <div className="space-y-14">

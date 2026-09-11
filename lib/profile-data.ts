@@ -29,7 +29,7 @@ export const profile = {
     github: "https://github.com/AmirAbaris",
     linkedin: "https://www.linkedin.com/in/amir-mahdi-zarei-nejad-40005526a",
     resume:
-      "https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLgaWy6l5uEKZ7XsqaDJz6Sc4NY198rl2jtHUe",
+      "https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLtlIWu5MwcRqn2V7OJHKCg1Mpf3yX0jr6Ysib",
   },
 } as const;
 

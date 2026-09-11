@@ -36,7 +36,7 @@ export const experiences: Experience[] = [
     title: "Frontend Developer",
     company: "Codinoob",
     location: "Tehran, Iran",
-    duration: "Feb 2025 – Jul 2025",
+    duration: "Feb 2025 – Apr 2025",
     achievements: [
       "Delivered **2 production client projects** end to end, owning the frontend from first component to release with React, Next.js, and TypeScript.",
       "Made the product installable and app-like by shipping it as a Progressive Web App with Next.js.",
@@ -47,7 +47,7 @@ export const experiences: Experience[] = [
     title: "Frontend Developer",
     company: "Nilasoft",
     location: "Remote",
-    duration: "Jan 2024 – Feb 2025",
+    duration: "Jan 2024 – Nov 2024",
     achievements: [
       "Improved rendering performance and maintainability across Angular applications by migrating them to Angular Signals.",
       "Raised accessibility and mobile responsiveness on high-traffic landing pages.",

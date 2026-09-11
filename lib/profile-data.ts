@@ -7,14 +7,14 @@
  */
 export const profile = {
   name: "Amir Mahdi Zarei Nejad",
-  noun: "Full Stack Developer",
+  noun: "Software Engineer",
   stackLine: "TypeScript · React/Next.js · Node · PostgreSQL",
 
   /**
    * The "who am I" answer.
    */
   summary:
-    "I build things end to end and ship them: frontend, API, database, deploy, no hand-holding. Melkbot's live on Cafe Bazaar with real users. Right now I'm heads-down on agentic AI, using Claude Code, Cursor, and Codex daily. It's how I actually work, not a buzzword I bolted on.",
+    "My experience is frontend-heavy, but I ship full stack when a project needs it, TypeScript, Next.js, and Prisma end to end, plus Go and Node on the side. Melkbot's live on Cafe Bazaar with real users. Right now I'm deliberately pushing into backend, systems design, and CS fundamentals while studying Computer Science, and using Claude Code, Cursor, and Codex daily as part of how I actually build.",
 
   location: "Karaj, Iran",
   email: "thisisamirabaris@gmail.com",
@@ -22,7 +22,7 @@ export const profile = {
   /** Stated once, quietly, in the closing CTA only. */
   availability: {
     open: true,
-    label: "Open to full-stack and frontend roles",
+    label: "Open to software engineering roles",
   },
 
   links: {

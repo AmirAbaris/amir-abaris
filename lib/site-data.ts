@@ -21,7 +21,7 @@ export type Project = {
 
 export const experiences: Experience[] = [
   {
-    title: "Frontend Developer (Contract)",
+    title: "Frontend Engineer (Contract)",
     company: "MelkPro",
     location: "Remote",
     duration: "Aug 2025 – Jan 2026",

@@ -43,15 +43,10 @@ function ExperienceItem({
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="space-y-5">
-      <div>
-        <p className="font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-muted-foreground">
-          Experience
-        </p>
-        <h2 className="mt-2 font-display text-[1.75rem] font-semibold tracking-[-0.02em]">
-          Recent Work
-        </h2>
-      </div>
+    <section id="experience" className="scroll-mt-20 space-y-5">
+      <h2 className="font-display text-[1.75rem] font-semibold tracking-[-0.02em] text-pretty">
+        Experience
+      </h2>
       <div className="space-y-8">
         {experiences.map((exp, index) => (
           <ExperienceItem key={index} {...exp} />

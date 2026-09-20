@@ -42,9 +42,9 @@ export function ProjectItem({
 
       <div className="space-y-3">
         <div className="space-y-1">
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[0.6875rem] uppercase tracking-[0.1em] text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[0.6875rem] tracking-[0.08em] text-muted-foreground">
             <span>{year}</span>
-            <span aria-hidden>/</span>
+            <span aria-hidden>·</span>
             <span>
               <MetricText>{role}</MetricText>
             </span>

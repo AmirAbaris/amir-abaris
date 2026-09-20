@@ -10,15 +10,10 @@ import { profile } from "@/lib/profile-data";
  */
 export function ContactSection() {
   return (
-    <section id="contact" className="space-y-5">
-      <div>
-        <p className="font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-muted-foreground">
-          Contact
-        </p>
-        <h2 className="mt-2 font-display text-[1.75rem] font-semibold tracking-[-0.02em]">
-          Let&apos;s build something
-        </h2>
-      </div>
+    <section id="contact" className="scroll-mt-20 space-y-5">
+      <h2 className="font-display text-[1.75rem] font-semibold tracking-[-0.02em] text-pretty">
+        Get in Touch
+      </h2>
 
       <div className="space-y-5 rounded-xl border border-border bg-muted/30 p-6">
         {profile.availability.open ? (
@@ -28,9 +23,8 @@ export function ContactSection() {
         ) : null}
 
         <p className="max-w-md text-[15px] leading-7 text-muted-foreground">
-          The fastest way to reach me is email, and I reply to everything.
-          Happy to talk through a role, a contract, or a problem you&apos;re stuck
-          on.
+          For roles, contract work, or technical discussions, email is the
+          quickest way to reach me.
         </p>
 
         <div className="flex flex-wrap items-center gap-2">

@@ -1,6 +1,6 @@
 import { profile } from "@/lib/profile-data";
 import { experiences, projects } from "@/lib/site-data";
-import { aiWorkflow, primarySkills, skillGroups } from "@/lib/skills-data";
+import { primarySkills, skillGroups } from "@/lib/skills-data";
 
 export type KnowledgeChunk = {
   id: string;
@@ -50,19 +50,10 @@ const skillsChunk: KnowledgeChunk = {
   ].join(" "),
 };
 
-const aiWorkflowChunk: KnowledgeChunk = {
-  id: "ai-workflow",
-  text: [
-    aiWorkflow.intro,
-    ...aiWorkflow.groups.map((group) => `${group.label}: ${group.skills.join(", ")}.`),
-  ].join(" "),
-};
-
 export const knowledgeBase: KnowledgeChunk[] = [
   profileChunk,
   linksChunk,
   ...experienceChunks,
   ...projectChunks,
   skillsChunk,
-  aiWorkflowChunk,
 ];

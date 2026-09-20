@@ -7,7 +7,10 @@ import { profile } from "@/lib/profile-data";
 
 export function ProfileSection() {
   return (
-    <section className="flex flex-col gap-6 md:sticky md:top-20 md:self-start">
+    <section
+      id="top"
+      className="scroll-mt-20 flex flex-col gap-6 md:sticky md:top-20 md:self-start"
+    >
       <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full ring-1 ring-border md:h-28 md:w-28">
         <Image
           src="/images/real_aba.jpeg"

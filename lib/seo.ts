@@ -3,7 +3,7 @@ export const seoConfig = {
   title: "Amir Mahdi Zarei Nejad | Software Engineer",
   titleTemplate: "%s | Amir Mahdi Zarei Nejad",
   description:
-    "Software Engineer with a frontend-heavy background, now pushing into backend, systems design, and CS fundamentals. TypeScript, React/Next.js, Node, Go, and PostgreSQL.",
+    "Software Engineer with approximately 2 years of professional experience shipping production web and mobile applications. TypeScript, React, Next.js, React Native, Go, Node.js, and PostgreSQL.",
   locale: "en_US",
   category: "technology",
   jobTitle: "Software Engineer",
@@ -18,7 +18,6 @@ export const seoConfig = {
   keywords: [
     "Amir Mahdi Zarei Nejad",
     "Software Engineer",
-    "Full-Stack Developer",
     "مهندس نرم‌افزار",
     "React Developer",
     "Next.js Developer",

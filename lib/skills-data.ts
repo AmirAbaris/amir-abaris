@@ -13,61 +13,26 @@ export const primarySkills = [
 
 export const skillGroups: SkillGroup[] = [
   {
-    label: "UI & Mobile",
+    label: "Backend & Data",
     skills: [
-      "React Native",
-      "Expo",
-      "Tailwind CSS",
-      "NativeWind",
-      "shadcn/ui",
-      "Radix UI",
+      "Go",
+      "PostgreSQL",
+      "Express",
+      "NestJS",
+      "Prisma",
+      "sqlc",
     ],
   },
   {
-    label: "State & Data",
-    skills: ["Zustand", "TanStack Query", "Redux Toolkit"],
+    label: "Mobile",
+    skills: ["React Native", "Expo"],
   },
   {
-    label: "Backend & Data",
-    skills: ["Node.js", "Express", "PostgreSQL", "Prisma", "NestJS", "Go"],
+    label: "Frontend Engineering",
+    skills: ["TanStack Query", "Zustand", "Angular"],
   },
   {
-    label: "Testing",
-    skills: ["Jest", "Cypress"],
-  },
-  {
-    label: "Tooling",
-    skills: ["Docker", "Git", "Linux", "Nginx", "Chrome DevTools", "Lighthouse"],
+    label: "Infrastructure",
+    skills: ["Docker", "Nginx", "Linux", "Git"],
   },
 ];
-
-/**
- * Kept separate from the stack groups on purpose.
- *
- * A logo wall of AI tool names is the least credible thing a portfolio can
- * carry right now, because everyone has one and none of it is checkable. What
- * makes the claim survive an interview is naming the practice, so this block
- * says what gets done with the tools rather than just listing them.
- */
-export const aiWorkflow = {
-  label: "AI Workflow",
-  intro:
-    "Part of how I work day to day, not a side interest. I write my own agent skills, wire up MCP servers so the tooling fits the codebase, and treat prompting and context design as ordinary engineering rather than a trick.",
-  groups: [
-    {
-      label: "Daily drivers",
-      skills: ["Claude Code", "Cursor", "Codex"],
-    },
-    {
-      label: "Practice",
-      skills: [
-        "Agent skills",
-        "MCP servers",
-        "Multi-agent orchestration",
-        "LLM tool-use & agent architecture",
-        "Context engineering",
-        "Spec-first workflows",
-      ],
-    },
-  ] as SkillGroup[],
-};

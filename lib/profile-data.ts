@@ -8,13 +8,13 @@
 export const profile = {
   name: "Amir Mahdi Zarei Nejad",
   noun: "Software Engineer",
-  stackLine: "TypeScript · React/Next.js · Node · PostgreSQL",
+  stackLine: "TypeScript · React · Next.js · Node.js",
 
   /**
    * The "who am I" answer.
    */
   summary:
-    "My experience is frontend-heavy, but I ship full stack when a project needs it, TypeScript, Next.js, and Prisma end to end, plus Go and Node on the side. Melkbot's live on Cafe Bazaar with real users. Right now I'm deliberately pushing into backend, systems design, and CS fundamentals while studying Computer Science, and using Claude Code, Cursor, and Codex daily as part of how I actually build.",
+    "I build and ship production web and mobile products. With approximately 2 years of professional experience, I specialize in TypeScript, React, Next.js, and React Native across frontend architecture, real-time systems, and API-driven applications. Independent projects add hands-on backend work with Go, Node.js, and PostgreSQL.",
 
   location: "Karaj, Iran",
   email: "thisisamirabaris@gmail.com",

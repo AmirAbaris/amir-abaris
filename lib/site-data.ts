@@ -16,6 +16,8 @@ export type Project = {
   highlights: string[];
   /** Source is the only outbound link; live hosting is being wound down. */
   repoUrl: string;
+  /** Show the public repository star count only when it adds useful context. */
+  showGitHubStars?: boolean;
   previewImage?: string;
 };
 
@@ -57,8 +59,23 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
+    title: "Endpoint Forge",
+    tagline: "Mock API workbench for frontend teams",
+    year: "2026",
+    role: "**3-person collaboration** · End-to-end build",
+    stack: ["Next.js", "TypeScript", "NestJS", "PostgreSQL", "Drizzle ORM", "Docker"],
+    highlights: [
+      "Co-built an open-source mock API workbench that lets frontend teams build and test against realistic endpoints.",
+      "Contributed to its end-to-end implementation with Next.js, NestJS, PostgreSQL, Drizzle ORM, and Docker.",
+      "Implemented tenant-based routing for multi-user workspaces and a bilingual landing page with reusable components.",
+    ],
+    repoUrl: "https://github.com/Bytepute/endpointForge",
+    showGitHubStars: true,
+    previewImage: "/images/endpoint-forge.jpg",
+  },
+  {
     title: "Weeto",
-    tagline: "Scheduling platform with a Go backend, built and deployed independently",
+    tagline: "Scheduling platform with conflict-aware booking",
     year: "2026",
     role: "Independent build · Backend & web",
     stack: [
@@ -79,24 +96,29 @@ export const projects: Project[] = [
     previewImage: "/images/weeto.jpg",
   },
   {
-    title: "Endpoint Forge",
-    tagline: "Mock API workbench for frontend teams",
+    title: "Shenora",
+    tagline: "Portfolio builder with a clean editing and publishing flow",
     year: "2026",
-    role: "**3-person collaboration** · End-to-end build",
-    stack: [
-      "Next.js",
-      "TypeScript",
-      "NestJS",
-      "PostgreSQL",
-      "Drizzle ORM",
-      "Docker",
-    ],
+    role: "Independent build · Full-stack product",
+    stack: ["Next.js", "TypeScript", "Prisma", "shadcn/ui"],
     highlights: [
-      "Co-built an open-source mock API workbench that lets frontend teams build and test against realistic endpoints.",
-      "Contributed to its end-to-end implementation with Next.js, NestJS, PostgreSQL, Drizzle ORM, and Docker.",
-      "Implemented tenant-based routing for multi-user workspaces and a bilingual landing page with reusable components.",
+      "Built a portfolio builder with an editing workflow and published public portfolio pages.",
+      "Organized authentication, data queries, and mutations in a server-only data access layer with safe view models.",
+      "Used cache tags and targeted invalidation so published portfolio changes appear after edits.",
     ],
-    repoUrl: "https://github.com/Bytepute/endpointForge",
-    previewImage: "/images/endpoint-forge.jpg",
+    repoUrl: "https://github.com/AmirAbaris/shenora",
+  },
+  {
+    title: "Jobinja Agent",
+    tagline: "Conversational assistant for finding and applying to Jobinja roles",
+    year: "2026",
+    role: "Independent build · Agent workflow",
+    stack: ["TypeScript", "Eve", "OpenRouter"],
+    highlights: [
+      "Built a conversational workflow that searches live Jobinja listings by keyword and location.",
+      "Added a user approval step before the first application in a conversation.",
+      "Implemented a model fallback through OpenRouter to keep the assistant usable.",
+    ],
+    repoUrl: "https://github.com/AmirAbaris/jobinja-agent",
   },
 ];

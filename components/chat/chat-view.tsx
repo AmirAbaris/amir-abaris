@@ -31,9 +31,9 @@ import { profile } from "@/lib/profile-data";
 import { cn } from "@/lib/utils";
 
 const starterPrompts = [
+  "Which work shows your performance focus?",
   "What have you built recently?",
-  "What's your stack?",
-  "Are you open to new roles?",
+  "Are you open to frontend roles?",
 ];
 
 function messageText(parts: { type: string; text?: string }[]) {
@@ -74,14 +74,12 @@ export function ChatView() {
   }
 
   return (
-    <div
-      className={cn("flex min-h-[70vh] flex-col", isEmpty && "justify-center")}
-    >
+    <div className={cn("portfolio-chat flex min-h-[68vh] flex-col", isEmpty ? "portfolio-chat-empty" : "portfolio-chat-active")}>
       {!isEmpty && (
         <MessageScrollerProvider autoScroll defaultScrollPosition="last-anchor">
           <MessageScroller className="max-h-[65vh] flex-1">
             <MessageScrollerViewport>
-              <MessageScrollerContent className="px-1 py-4">
+              <MessageScrollerContent className="gap-6 px-1 py-5">
                 {messages.map((message) => {
                   const align = message.role === "user" ? "end" : "start";
                   const text = messageText(message.parts as never[]);
@@ -106,10 +104,10 @@ export function ChatView() {
                           <Bubble
                             align={align}
                             variant={
-                              message.role === "user" ? "default" : "secondary"
+                              message.role === "user" ? "default" : "outline"
                             }
                           >
-                            <BubbleContent>
+                            <BubbleContent className="rounded-[6px] px-3 py-2.5">
                               {message.role === "assistant" ? (
                                 <MessageMarkdown text={text} />
                               ) : (
@@ -168,19 +166,15 @@ export function ChatView() {
 
       <div
         className={cn(
-          "mx-auto w-full max-w-xl px-1",
-          isEmpty ? "text-center" : "pt-4",
+          "w-full px-1",
+          isEmpty ? "" : "border-t border-border pt-5",
         )}
       >
         {isEmpty && (
-          <div className="mb-6 space-y-2">
-            <p className="text-lg font-semibold text-foreground">
-              Chat with {profile.name.split(" ")[0]}&apos;s AI clone
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Ask about experience, projects, or stack, grounded in what&apos;s
-              actually true.
-            </p>
+          <div className="portfolio-chat-intro">
+            <span className="portfolio-chat-eyebrow">A CONVERSATION WITH MY WORK</span>
+            <p className="portfolio-chat-title">Chat with {profile.name.split(" ")[0]}&apos;s AI clone</p>
+            <p>Ask about my frontend experience, projects, performance work, or the roles I&apos;m looking for.</p>
           </div>
         )}
 
@@ -190,9 +184,12 @@ export function ChatView() {
             submit(input);
           }}
         >
-          <InputGroup>
+          <InputGroup className="h-11 rounded-[6px] border-border bg-background shadow-[0_1px_2px_oklch(0_0_0_/_0.04)]">
             <InputGroupInput
               placeholder="Ask me anything about my work…"
+              aria-label="Ask about Amir's work"
+              name="question"
+              autoComplete="off"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => {
@@ -201,7 +198,6 @@ export function ChatView() {
                   submit(input);
                 }
               }}
-              autoFocus
             />
             <InputGroupAddon align="inline-end">
               <InputGroupButton
@@ -214,20 +210,21 @@ export function ChatView() {
                 }
                 aria-label="Send message"
               >
-                <SendIcon />
+                <SendIcon className="size-4" />
               </InputGroupButton>
             </InputGroupAddon>
           </InputGroup>
         </form>
 
         {isEmpty && (
-          <div className="mt-4 flex flex-wrap justify-center gap-2">
+          <div className="mt-4 flex flex-wrap gap-2">
             {starterPrompts.map((prompt) => (
               <Button
                 key={prompt}
                 type="button"
                 variant="outline"
                 size="sm"
+                className="h-auto min-h-8 rounded-[5px] px-3 py-1.5 text-xs font-normal text-muted-foreground shadow-none hover:text-foreground"
                 onClick={() => submit(prompt)}
               >
                 {prompt}

@@ -13,26 +13,34 @@ export const primarySkills = [
 
 export const skillGroups: SkillGroup[] = [
   {
-    label: "Frontend Engineering",
-    skills: ["TanStack Query", "Zustand", "Angular"],
+    label: "Core",
+    skills: ["TypeScript", "JavaScript", "React", "Next.js", "Angular"],
+  },
+  {
+    label: "UI & state",
+    skills: ["Tailwind CSS", "TanStack Query", "Zustand"],
   },
   {
     label: "Mobile",
     skills: ["React Native", "Expo"],
   },
   {
-    label: "Backend & Data",
-    skills: [
-      "Go",
-      "PostgreSQL",
-      "Express",
-      "NestJS",
-      "Prisma",
-      "sqlc",
-    ],
-  },
-  {
-    label: "Infrastructure",
-    skills: ["Docker", "Nginx", "Linux", "Git"],
+    label: "Tooling",
+    skills: ["Node.js", "Git"],
   },
 ];
+
+export const skillIcons: Record<string, string> = {
+  TypeScript: "typescript",
+  JavaScript: "javascript",
+  React: "react",
+  "Next.js": "nextdotjs",
+  "Tailwind CSS": "tailwindcss",
+  "TanStack Query": "reactquery",
+  Zustand: "zustand",
+  Angular: "angular",
+  "React Native": "reactnative",
+  Expo: "expo",
+  "Node.js": "nodedotjs",
+  Git: "git",
+};

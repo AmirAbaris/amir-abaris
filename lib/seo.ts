@@ -32,6 +32,7 @@ export const seoConfig = {
   links: {
     github: "https://github.com/AmirAbaris",
     linkedin: "https://www.linkedin.com/in/amir-mahdi-zarei-nejad-40005526a",
+    x: "https://x.com/abaris_aa",
     resume:
       "https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLWcZZowyPM2IolCJa5jOYpgUfdxH1TuyRVSiA",
   },

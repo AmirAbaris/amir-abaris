@@ -170,9 +170,6 @@
     gap: 20px;
   }
 
-  .portfolio-brand { display: flex; align-items: center; gap: 8px; min-width: 0; }
-  .portfolio-brand-mark { flex: none; width: 28px; height: 28px; color: var(--foreground); }
-
   .portfolio-icon-link {
     display: inline-flex;
     width: 27px;
@@ -243,32 +240,6 @@
   .portfolio-button-secondary:hover {
     background: var(--muted);
   }
-
-  .portfolio-note {
-    position: absolute;
-    right: calc(100% + 12px);
-    top: -14px;
-    display: flex;
-    width: 132px;
-    align-items: flex-end;
-    gap: 2px;
-    color: oklch(0.63 0 0);
-    font-family: var(--font-note), cursive;
-    font-size: 21px;
-    font-weight: 500;
-    line-height: 1;
-    white-space: nowrap;
-    transform: rotate(-7deg);
-  }
-
-  .portfolio-note svg {
-    width: 42px;
-    height: 19px;
-    flex: none;
-    transform: translateY(9px) rotate(10deg);
-  }
-
-  .portfolio-mobile-availability { display: none; }
 
   .portfolio-section {
     scroll-margin-top: 32px;
@@ -507,7 +478,9 @@
     color: var(--muted-foreground);
   }
 
-  .portfolio-credit { margin-top: 22px; color: var(--muted-foreground); font-size: 11px; }
+  .portfolio-signoff { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 22px; }
+  .portfolio-footer-mark { flex: none; width: 19px; height: 19px; color: var(--muted-foreground); }
+  .portfolio-credit { color: var(--muted-foreground); font-size: 11px; }
   .portfolio-credit a { color: var(--foreground); text-decoration: underline; text-underline-offset: 2px; }
 
   .portfolio-footer {
@@ -548,12 +521,6 @@
   .portfolio-chat [data-slot="bubble"][data-variant="outline"] [data-slot="bubble-content"] { border-color: var(--border); }
 }
 
-@media (max-width: 740px) {
-  .portfolio-note { display: none; }
-  .portfolio-mobile-availability { display: inline-flex; width: 100%; align-items: center; gap: 7px; margin-bottom: 2px; color: var(--muted-foreground); font-size: 12px; }
-  .portfolio-mobile-availability span { width: 6px; height: 6px; border-radius: 50%; background: var(--foreground); }
-}
-
 @media (max-width: 560px) {
   .portfolio-shell { padding: 32px 22px 48px; }
   .portfolio-header { gap: 10px; }
@@ -569,4 +536,9 @@
   .portfolio-chat { padding-top: 46px; }
   .portfolio-chat-header nav { padding-top: 2px; }
   .portfolio-chat-header .portfolio-quiet-link { font-size: 11px; }
+}
+
+@media (max-width: 360px) {
+  .portfolio-header { flex-wrap: wrap; }
+  .portfolio-header nav { width: 100%; }
 }

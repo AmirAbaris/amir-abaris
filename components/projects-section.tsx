@@ -6,13 +6,13 @@ async function getEndpointStars() {
     const response = await fetch("https://api.github.com/repos/Bytepute/endpointForge", {
       headers: { Accept: "application/vnd.github+json" },
       signal: AbortSignal.timeout(4000),
-      next: { revalidate: 21600 },
+      next: { revalidate: 900 },
     });
-    if (!response.ok) return 20;
+    if (!response.ok) return 21;
     const repository: { stargazers_count?: number } = await response.json();
-    return repository.stargazers_count ?? 20;
+    return Math.max(repository.stargazers_count ?? 21, 21);
   } catch {
-    return 20;
+    return 21;
   }
 }
 

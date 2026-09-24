@@ -13,14 +13,11 @@ export function HomeView() {
   return (
     <main id="main" className="portfolio-shell">
       <header id="top" className="portfolio-header">
-        <div className="portfolio-brand">
-          <BrandMark className="portfolio-brand-mark" />
-          <div>
-            <h1 className="text-[15px] font-semibold tracking-[-0.015em] text-foreground">
-              {profile.name}
-            </h1>
-            <p className="mt-1 text-[15px] text-muted-foreground">{profile.noun}</p>
-          </div>
+        <div>
+          <h1 className="text-[15px] font-semibold tracking-[-0.015em] text-foreground">
+            {profile.name}
+          </h1>
+          <p className="mt-1 text-[15px] text-muted-foreground">{profile.noun}</p>
         </div>
 
         <SocialLinks />
@@ -35,18 +32,7 @@ export function HomeView() {
         </p>
       </div>
 
-      <div className="relative mt-6 flex flex-wrap items-center gap-2">
-        {profile.availability.open ? (
-          <>
-            <div className="portfolio-note" aria-label={profile.availability.label}>
-              <span>open to work</span>
-              <svg viewBox="0 0 52 22" fill="none" aria-hidden="true">
-                <path d="M2 2c9 13 21 13 45 12m0 0-8-7m8 7-8 6" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <p className="portfolio-mobile-availability"><span aria-hidden="true" />{profile.availability.label}</p>
-          </>
-        ) : null}
+      <div className="mt-6 flex flex-wrap items-center gap-2">
         <Link href={`mailto:${profile.email}`} className="portfolio-button portfolio-button-primary">
           Get in touch
         </Link>
@@ -75,7 +61,10 @@ export function HomeView() {
           <ArrowUpRightIcon aria-hidden="true" className="size-3.5" />
         </Link>
       </footer>
-      <p className="portfolio-credit">Design inspired by <a href="https://maxkatz.me/" target="_blank" rel="noopener noreferrer">Max Katz</a>.</p>
+      <div className="portfolio-signoff">
+        <p className="portfolio-credit">Design inspired by <a href="https://maxkatz.me/" target="_blank" rel="noopener noreferrer">Max Katz</a>.</p>
+        <BrandMark className="portfolio-footer-mark" />
+      </div>
     </main>
   );
 }

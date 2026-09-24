@@ -25,7 +25,7 @@ const profileChunk: KnowledgeChunk = {
 
 const linksChunk: KnowledgeChunk = {
   id: "links",
-  text: `Contact and links: email ${profile.email}, GitHub ${profile.links.github}, LinkedIn ${profile.links.linkedin}, resume ${profile.links.resume}.`,
+  text: `Contact and links: email ${profile.email}, GitHub ${profile.links.github}, LinkedIn ${profile.links.linkedin}, X ${profile.links.x}, resume ${profile.links.resume}.`,
 };
 
 const experienceChunks: KnowledgeChunk[] = experiences.map((exp, i) => ({

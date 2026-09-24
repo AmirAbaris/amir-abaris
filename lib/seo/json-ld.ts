@@ -10,6 +10,7 @@ export function buildHomeJsonLd() {
   const sameAs = [
     seoConfig.links.github,
     seoConfig.links.linkedin,
+    seoConfig.links.x,
     seoConfig.links.resume,
   ];
 

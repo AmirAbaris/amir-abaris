@@ -74,6 +74,19 @@ export const projects: Project[] = [
     previewImage: "/images/endpoint-forge.jpg",
   },
   {
+    title: "Shenora",
+    tagline: "Portfolio builder with a clean editing and publishing flow",
+    year: "2026",
+    role: "Independent build · Full-stack product",
+    stack: ["Next.js", "TypeScript", "Prisma", "shadcn/ui"],
+    highlights: [
+      "Built a portfolio builder with an editing workflow and published public portfolio pages.",
+      "Organized authentication, data queries, and mutations in a server-only data access layer with safe view models.",
+      "Used cache tags and targeted invalidation so published portfolio changes appear after edits.",
+    ],
+    repoUrl: "https://github.com/AmirAbaris/shenora",
+  },
+  {
     title: "Weeto",
     tagline: "Scheduling platform with conflict-aware booking",
     year: "2026",
@@ -94,19 +107,6 @@ export const projects: Project[] = [
     ],
     repoUrl: "https://github.com/AmirAbaris/weeto-backend",
     previewImage: "/images/weeto.jpg",
-  },
-  {
-    title: "Shenora",
-    tagline: "Portfolio builder with a clean editing and publishing flow",
-    year: "2026",
-    role: "Independent build · Full-stack product",
-    stack: ["Next.js", "TypeScript", "Prisma", "shadcn/ui"],
-    highlights: [
-      "Built a portfolio builder with an editing workflow and published public portfolio pages.",
-      "Organized authentication, data queries, and mutations in a server-only data access layer with safe view models.",
-      "Used cache tags and targeted invalidation so published portfolio changes appear after edits.",
-    ],
-    repoUrl: "https://github.com/AmirAbaris/shenora",
   },
   {
     title: "Jobinja Agent",

@@ -193,6 +193,9 @@ export function ChatView() {
           <InputGroup>
             <InputGroupInput
               placeholder="Ask me anything about my work…"
+              aria-label="Ask about Amir's work"
+              name="question"
+              autoComplete="off"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => {
@@ -201,7 +204,6 @@ export function ChatView() {
                   submit(input);
                 }
               }}
-              autoFocus
             />
             <InputGroupAddon align="inline-end">
               <InputGroupButton

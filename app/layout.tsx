@@ -1,6 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Instrument_Sans, Inter } from "next/font/google";
-import { ThemeScript } from "@/components/theme-script";
 import { getSiteUrl, seoConfig } from "@/lib/seo";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -79,6 +78,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -86,9 +89,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={cn("font-sans", inter.variable)}>
-      <head>
-        <ThemeScript />
-      </head>
       <body
         className={`${geistMono.variable} ${instrumentSans.variable} antialiased`}
       >

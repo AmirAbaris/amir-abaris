@@ -13,8 +13,12 @@ export const primarySkills = [
 
 export const skillGroups: SkillGroup[] = [
   {
-    label: "Frontend Engineering",
-    skills: ["TanStack Query", "Zustand", "Angular"],
+    label: "Language",
+    skills: ["TypeScript", "JavaScript", "Go"],
+  },
+  {
+    label: "Frontend",
+    skills: ["React", "Next.js", "Tailwind CSS", "TanStack Query", "Zustand", "Angular"],
   },
   {
     label: "Mobile",
@@ -23,7 +27,6 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "Backend & Data",
     skills: [
-      "Go",
       "PostgreSQL",
       "Express",
       "NestJS",

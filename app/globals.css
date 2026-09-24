@@ -506,10 +506,11 @@
     transition: color 150ms ease;
   }
 
+  .portfolio-chat-shell { display: flex; height: 100dvh; min-height: 28rem; flex-direction: column; }
+  .portfolio-chat-shell #chat-content { flex: 1; min-height: 0; }
   .portfolio-chat-header { align-items: flex-start; }
   .portfolio-chat-header nav { padding-top: 3px; }
   .portfolio-chat { padding-top: 62px; }
-  .portfolio-chat-empty { justify-content: flex-start; }
   .portfolio-chat-intro { margin-bottom: 26px; }
   .portfolio-chat-eyebrow { color: var(--muted-foreground); font-family: var(--font-geist-mono), monospace; font-size: 10px; letter-spacing: 0.085em; }
   .portfolio-chat-intro .portfolio-chat-title { margin-top: 12px; color: var(--foreground); font-family: var(--font-display), sans-serif; font-size: clamp(25px, 5vw, 32px); font-weight: 600; letter-spacing: -0.035em; line-height: 1.15; }

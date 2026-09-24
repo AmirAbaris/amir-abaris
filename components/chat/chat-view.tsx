@@ -74,10 +74,32 @@ export function ChatView() {
   }
 
   return (
-    <div className={cn("portfolio-chat flex min-h-[68vh] flex-col", isEmpty ? "portfolio-chat-empty" : "portfolio-chat-active")}>
-      {!isEmpty && (
+    <div className="portfolio-chat flex h-full min-h-0 flex-col">
+      {isEmpty ? (
+        <div className="portfolio-chat-welcome flex min-h-0 flex-1 flex-col overflow-y-auto px-1 pb-7">
+          <div className="portfolio-chat-intro mt-auto">
+            <span className="portfolio-chat-eyebrow">A CONVERSATION WITH MY WORK</span>
+            <p className="portfolio-chat-title">Chat with {profile.name.split(" ")[0]}&apos;s AI clone</p>
+            <p>Ask about my frontend experience, projects, performance work, or the roles I&apos;m looking for.</p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {starterPrompts.map((prompt) => (
+              <Button
+                key={prompt}
+                type="button"
+                variant="outline"
+                size="sm"
+                className="h-auto min-h-8 rounded-[5px] px-3 py-1.5 text-xs font-normal text-muted-foreground shadow-none hover:text-foreground"
+                onClick={() => submit(prompt)}
+              >
+                {prompt}
+              </Button>
+            ))}
+          </div>
+        </div>
+      ) : (
         <MessageScrollerProvider autoScroll defaultScrollPosition="last-anchor">
-          <MessageScroller className="max-h-[65vh] flex-1">
+          <MessageScroller className="min-h-0 flex-1">
             <MessageScrollerViewport>
               <MessageScrollerContent className="gap-6 px-1 py-5">
                 {messages.map((message) => {
@@ -126,7 +148,7 @@ export function ChatView() {
                       <CloneAvatar />
                     </MessageAvatar>
                     <MessageContent>
-                      <p className="shimmer px-3 text-sm text-muted-foreground">
+                      <p role="status" className="shimmer px-3 text-sm text-muted-foreground">
                         Thinking…
                       </p>
                     </MessageContent>
@@ -140,7 +162,7 @@ export function ChatView() {
                     <MessageContent>
                       <Bubble align="start" variant="destructive">
                         <BubbleContent>
-                          <span className="block">
+                          <span role="alert" className="block">
                             {error.message || "The chat service is unavailable right now."}
                           </span>
                           <Button
@@ -165,19 +187,8 @@ export function ChatView() {
       )}
 
       <div
-        className={cn(
-          "w-full px-1",
-          isEmpty ? "" : "border-t border-border pt-5",
-        )}
+        className={cn("w-full shrink-0 border-t px-1 pt-5", isEmpty ? "border-transparent" : "border-border")}
       >
-        {isEmpty && (
-          <div className="portfolio-chat-intro">
-            <span className="portfolio-chat-eyebrow">A CONVERSATION WITH MY WORK</span>
-            <p className="portfolio-chat-title">Chat with {profile.name.split(" ")[0]}&apos;s AI clone</p>
-            <p>Ask about my frontend experience, projects, performance work, or the roles I&apos;m looking for.</p>
-          </div>
-        )}
-
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -210,28 +221,11 @@ export function ChatView() {
                 }
                 aria-label="Send message"
               >
-                <SendIcon className="size-4" />
+                <SendIcon aria-hidden="true" className="size-4" />
               </InputGroupButton>
             </InputGroupAddon>
           </InputGroup>
         </form>
-
-        {isEmpty && (
-          <div className="mt-4 flex flex-wrap gap-2">
-            {starterPrompts.map((prompt) => (
-              <Button
-                key={prompt}
-                type="button"
-                variant="outline"
-                size="sm"
-                className="h-auto min-h-8 rounded-[5px] px-3 py-1.5 text-xs font-normal text-muted-foreground shadow-none hover:text-foreground"
-                onClick={() => submit(prompt)}
-              >
-                {prompt}
-              </Button>
-            ))}
-          </div>
-        )}
       </div>
     </div>
   );

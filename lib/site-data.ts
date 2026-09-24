@@ -75,7 +75,7 @@ export const projects: Project[] = [
   },
   {
     title: "Weeto",
-    tagline: "Scheduling platform with a Go backend, built and deployed independently",
+    tagline: "Scheduling platform with conflict-aware booking",
     year: "2026",
     role: "Independent build · Backend & web",
     stack: [

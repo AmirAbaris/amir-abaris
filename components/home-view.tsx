@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRightIcon, MessageCircleIcon } from "lucide-react";
 
 import { ContributionGrid } from "@/components/contribution-grid";
+import { BrandMark } from "@/components/brand-mark";
 import { ExperienceSection } from "@/components/experience-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { SkillsSection } from "@/components/skills-section";
@@ -12,11 +13,14 @@ export function HomeView() {
   return (
     <main id="main" className="portfolio-shell">
       <header id="top" className="portfolio-header">
-        <div>
-          <h1 className="text-[15px] font-semibold tracking-[-0.015em] text-foreground">
-            {profile.name}
-          </h1>
-          <p className="mt-1 text-[15px] text-muted-foreground">{profile.noun}</p>
+        <div className="portfolio-brand">
+          <BrandMark className="portfolio-brand-mark" />
+          <div>
+            <h1 className="text-[15px] font-semibold tracking-[-0.015em] text-foreground">
+              {profile.name}
+            </h1>
+            <p className="mt-1 text-[15px] text-muted-foreground">{profile.noun}</p>
+          </div>
         </div>
 
         <SocialLinks />

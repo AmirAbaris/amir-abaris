@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { BriefcaseBusinessIcon, ChevronDownIcon } from "lucide-react";
 
 import { MetricText } from "@/components/metric-text";
@@ -8,6 +8,29 @@ import { experiences } from "@/lib/site-data";
 
 export function ExperienceSection() {
   const [expanded, setExpanded] = useState(false);
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const detailsRef = useRef<HTMLDivElement>(null);
+  const [heights, setHeights] = useState<{ compact: number; detailed: number } | null>(null);
+
+  useLayoutEffect(() => {
+    const timeline = timelineRef.current;
+    const details = detailsRef.current;
+    if (!timeline || !details) return;
+
+    const measure = () => {
+      const compact = Math.ceil(timeline.getBoundingClientRect().height);
+      const detailed = Math.ceil(details.getBoundingClientRect().height);
+      setHeights((current) => current?.compact === compact && current.detailed === detailed
+        ? current
+        : { compact, detailed });
+    };
+
+    const observer = new ResizeObserver(measure);
+    observer.observe(timeline);
+    observer.observe(details);
+    measure();
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="experience" aria-labelledby="experience-heading" className="portfolio-section">
@@ -19,8 +42,11 @@ export function ExperienceSection() {
         </button>
       </div>
 
-      <div className={`portfolio-experience-panels ${expanded ? "is-expanded" : ""}`}>
-        <div className="portfolio-experience-panel" aria-hidden={expanded} inert={expanded}>
+      <div
+        className={`portfolio-experience-panels ${expanded ? "is-expanded" : ""}`}
+        style={heights ? { height: expanded ? heights.detailed : heights.compact } : undefined}
+      >
+        <div ref={timelineRef} className="portfolio-experience-panel" aria-hidden={expanded} inert={expanded}>
           <ol className="portfolio-timeline">
             {experiences.map((experience, index) => (
               <li key={experience.company} className="portfolio-timeline-item">
@@ -35,7 +61,7 @@ export function ExperienceSection() {
           </ol>
         </div>
 
-        <div id="experience-details" className="portfolio-experience-panel" aria-hidden={!expanded} inert={!expanded}>
+        <div ref={detailsRef} id="experience-details" className="portfolio-experience-panel" aria-hidden={!expanded} inert={!expanded}>
           <div className="portfolio-experience-details">
             {experiences.map((experience) => (
               <article key={experience.company} className="portfolio-experience-entry">

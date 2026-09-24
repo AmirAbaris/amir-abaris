@@ -170,6 +170,9 @@
     gap: 20px;
   }
 
+  .portfolio-brand { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .portfolio-brand-mark { flex: none; width: 28px; height: 28px; color: var(--foreground); }
+
   .portfolio-icon-link {
     display: inline-flex;
     width: 27px;
@@ -402,23 +405,20 @@
   .portfolio-mini-icon { width: 25px; height: 25px; }
 
   .portfolio-experience-panels {
-    display: grid;
-    grid-template-rows: 1fr 0fr;
-    transition: grid-template-rows 420ms cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    overflow: hidden;
+    transition: height 420ms cubic-bezier(0.22, 1, 0.36, 1);
   }
-
-  .portfolio-experience-panels.is-expanded { grid-template-rows: 0fr 1fr; }
 
   .portfolio-experience-panel {
-    min-height: 0;
-    overflow: hidden;
+    width: 100%;
     opacity: 1;
-    transition: opacity 220ms ease, transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 170ms ease, transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .portfolio-experience-panel:last-child { opacity: 0; transform: translateY(10px); }
-  .portfolio-experience-panels.is-expanded .portfolio-experience-panel:first-child { opacity: 0; transform: translateY(-10px); }
-  .portfolio-experience-panels.is-expanded .portfolio-experience-panel:last-child { opacity: 1; transform: translateY(0); transition-delay: 90ms; }
+  .portfolio-experience-panel:last-child { position: absolute; inset: 0 0 auto; opacity: 0; transform: translateY(6px); }
+  .portfolio-experience-panels.is-expanded .portfolio-experience-panel:first-child { opacity: 0; transform: translateY(-6px); }
+  .portfolio-experience-panels.is-expanded .portfolio-experience-panel:last-child { opacity: 1; transform: translateY(0); }
 
   .portfolio-experience-details { padding-top: 3px; }
   .portfolio-experience-entry { padding: 16px 0; border-top: 1px solid var(--border); }

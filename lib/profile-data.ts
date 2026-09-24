@@ -1,20 +1,19 @@
 /**
  * Brand layer.
  *
- * `noun` is permanent and must match the title used on LinkedIn and on any
- * tailored CV. Per-job tailoring happens on the CV via a modifier
- * ("Frontend-focused …", "Backend-focused …") and never touches this string.
+ * Keep the headline aligned with the roles this portfolio targets. Preserve
+ * the actual job titles in the experience timeline.
  */
 export const profile = {
   name: "Amir Mahdi Zarei Nejad",
-  noun: "Software Engineer",
-  stackLine: "TypeScript · React · Next.js · Node.js",
+  noun: "Frontend Engineer",
+  stackLine: "React · Next.js · TypeScript · React Native",
 
   /**
    * The "who am I" answer.
    */
   summary:
-    "I build and ship production web and mobile products. With approximately 2 years of professional experience, I specialize in TypeScript, React, Next.js, and React Native across frontend architecture, real-time systems, and API-driven applications. Independent projects add hands-on backend work with Go, Node.js, and PostgreSQL.",
+    "I build production web and mobile interfaces with React, Next.js, TypeScript, and React Native. Across approximately 2 years of professional frontend work, I've shipped API-driven products, real-time features, and responsive experiences. I also build backend systems independently with Go, Node.js, and PostgreSQL.",
 
   location: "Karaj, Iran",
   email: "thisisamirabaris@gmail.com",
@@ -22,7 +21,7 @@ export const profile = {
   /** Stated once, quietly, in the closing CTA only. */
   availability: {
     open: true,
-    label: "Open to software engineering roles",
+    label: "Open to frontend engineering roles",
   },
 
   links: {

@@ -1,12 +1,12 @@
 export const seoConfig = {
   name: "Amir Mahdi Zarei Nejad",
-  title: "Amir Mahdi Zarei Nejad | Software Engineer",
+  title: "Amir Mahdi Zarei Nejad | Frontend Engineer",
   titleTemplate: "%s | Amir Mahdi Zarei Nejad",
   description:
-    "Software Engineer with approximately 2 years of professional experience shipping production web and mobile applications. TypeScript, React, Next.js, React Native, Go, Node.js, and PostgreSQL.",
+    "Frontend Engineer with approximately 2 years of professional experience shipping production web and mobile applications with React, Next.js, TypeScript, and React Native.",
   locale: "en_US",
   category: "technology",
-  jobTitle: "Software Engineer",
+  jobTitle: "Frontend Engineer",
   location: {
     city: "Karaj",
     country: "Iran",
@@ -17,8 +17,9 @@ export const seoConfig = {
   ogImage: "/opengraph-image",
   keywords: [
     "Amir Mahdi Zarei Nejad",
-    "Software Engineer",
-    "مهندس نرم‌افزار",
+    "Frontend Engineer",
+    "Software Engineer, Frontend",
+    "مهندس فرانت‌اند",
     "React Developer",
     "Next.js Developer",
     "TypeScript Developer",
@@ -26,8 +27,8 @@ export const seoConfig = {
     "React Native Developer",
     "Node.js Developer",
     "PostgreSQL",
-    "Software Engineer Portfolio",
-    "Karaj Software Engineer",
+    "Frontend Engineer Portfolio",
+    "Karaj Frontend Engineer",
   ],
   links: {
     github: "https://github.com/AmirAbaris",

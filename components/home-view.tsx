@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 
-import { ChatView } from "@/components/chat/chat-view";
 import { type PortfolioView } from "@/components/chat/view-toggle";
 import { ContactSection } from "@/components/contact-section";
 import { ExperienceSection } from "@/components/experience-section";
@@ -10,6 +10,10 @@ import { ProfileSection } from "@/components/profile-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { SiteNav } from "@/components/site-nav";
 import { SkillsSection } from "@/components/skills-section";
+
+const ChatView = dynamic(() =>
+  import("@/components/chat/chat-view").then((module) => module.ChatView),
+);
 
 export function HomeView() {
   const [view, setView] = useState<PortfolioView>("classic");

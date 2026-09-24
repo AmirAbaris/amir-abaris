@@ -8,10 +8,18 @@ export const primarySkills = [
   "TypeScript",
   "React",
   "Next.js",
-  "Node.js",
+  "React Native",
 ] as const;
 
 export const skillGroups: SkillGroup[] = [
+  {
+    label: "Frontend Engineering",
+    skills: ["TanStack Query", "Zustand", "Angular"],
+  },
+  {
+    label: "Mobile",
+    skills: ["React Native", "Expo"],
+  },
   {
     label: "Backend & Data",
     skills: [
@@ -22,14 +30,6 @@ export const skillGroups: SkillGroup[] = [
       "Prisma",
       "sqlc",
     ],
-  },
-  {
-    label: "Mobile",
-    skills: ["React Native", "Expo"],
-  },
-  {
-    label: "Frontend Engineering",
-    skills: ["TanStack Query", "Zustand", "Angular"],
   },
   {
     label: "Infrastructure",

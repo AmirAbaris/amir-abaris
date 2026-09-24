@@ -19,7 +19,7 @@ const openrouter = createOpenAICompatible({
   },
 });
 
-const MODEL = process.env.OPENROUTER_MODEL ?? "stealth/ox-alpha";
+const MODEL = process.env.OPENROUTER_MODEL || "openrouter/free";
 
 function lastUserText(messages: UIMessage[]) {
   const lastUser = [...messages].reverse().find((message) => message.role === "user");
@@ -31,6 +31,13 @@ function lastUserText(messages: UIMessage[]) {
 }
 
 export async function POST(req: Request) {
+  if (!process.env.OPENROUTER_API_KEY) {
+    return Response.json(
+      { error: "Chat is unavailable because the model API key is not configured." },
+      { status: 503 },
+    );
+  }
+
   const ip = getClientIp(req);
   const { limited, retryAfterSeconds } = checkRateLimit(ip);
   if (limited) {
@@ -90,5 +97,11 @@ ${context}`;
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse();
+  return result.toUIMessageStreamResponse({
+    sendReasoning: false,
+    onError(error) {
+      console.error("Portfolio chat model error:", error);
+      return "The chat service is unavailable right now. Please try again shortly.";
+    },
+  });
 }

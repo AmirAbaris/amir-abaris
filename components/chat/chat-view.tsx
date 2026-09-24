@@ -7,6 +7,7 @@ import { SendIcon } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Bubble, BubbleContent } from "@/components/ui/bubble";
 import { Button } from "@/components/ui/button";
+import { MessageMarkdown } from "@/components/chat/message-markdown";
 import {
   InputGroup,
   InputGroupAddon,
@@ -39,8 +40,7 @@ function messageText(parts: { type: string; text?: string }[]) {
   return parts
     .filter((part) => part.type === "text")
     .map((part) => part.text)
-    .join("")
-    .replace(/\*\*/g, "");
+    .join("");
 }
 
 function CloneAvatar() {
@@ -57,7 +57,7 @@ function CloneAvatar() {
 }
 
 export function ChatView() {
-  const { messages, sendMessage, status, error } = useChat();
+  const { messages, sendMessage, regenerate, status, error } = useChat();
   const [input, setInput] = useState("");
 
   const isEmpty = messages.length === 0;
@@ -109,7 +109,13 @@ export function ChatView() {
                               message.role === "user" ? "default" : "secondary"
                             }
                           >
-                            <BubbleContent>{text}</BubbleContent>
+                            <BubbleContent>
+                              {message.role === "assistant" ? (
+                                <MessageMarkdown text={text} />
+                              ) : (
+                                text
+                              )}
+                            </BubbleContent>
                           </Bubble>
                         </MessageContent>
                       </Message>
@@ -136,8 +142,18 @@ export function ChatView() {
                     <MessageContent>
                       <Bubble align="start" variant="destructive">
                         <BubbleContent>
-                          Something went wrong reaching the model. Try again in
-                          a moment.
+                          <span className="block">
+                            {error.message || "The chat service is unavailable right now."}
+                          </span>
+                          <Button
+                            type="button"
+                            variant="outline"
+                            size="sm"
+                            className="mt-3"
+                            onClick={() => regenerate()}
+                          >
+                            Retry message
+                          </Button>
                         </BubbleContent>
                       </Bubble>
                     </MessageContent>

@@ -37,12 +37,15 @@ export function HomeView() {
 
       <div className="relative mt-6 flex flex-wrap items-center gap-2">
         {profile.availability.open ? (
-          <div className="portfolio-note" aria-label={profile.availability.label}>
-            <span>open to work</span>
-            <svg viewBox="0 0 52 22" fill="none" aria-hidden="true">
-              <path d="M2 2c9 13 21 13 45 12m0 0-8-7m8 7-8 6" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
+          <>
+            <div className="portfolio-note" aria-label={profile.availability.label}>
+              <span>open to work</span>
+              <svg viewBox="0 0 52 22" fill="none" aria-hidden="true">
+                <path d="M2 2c9 13 21 13 45 12m0 0-8-7m8 7-8 6" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            <p className="portfolio-mobile-availability"><span aria-hidden="true" />{profile.availability.label}</p>
+          </>
         ) : null}
         <Link href={`mailto:${profile.email}`} className="portfolio-button portfolio-button-primary">
           Get in touch

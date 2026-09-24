@@ -32,24 +32,26 @@ export function AnimatedProject({
 
   return (
     <article className={`portfolio-project ${open ? "is-open" : ""}`}>
-      <button
-        type="button"
-        className="portfolio-project-summary"
-        aria-expanded={open}
-        aria-controls={contentId}
-        onClick={() => setOpen((value) => !value)}
-      >
-        <span className="portfolio-project-icon"><Icon aria-hidden="true" className="size-4" strokeWidth={1.6} /></span>
-        <span className="min-w-0 flex-1">
-          <span className="block text-sm font-medium text-foreground">{project.title}</span>
-          <span className="block text-[13px] leading-5 text-muted-foreground">{project.tagline}</span>
-        </span>
-        {stars !== null && stars > 0 ? (
-          <span className="portfolio-project-stars" aria-label={`${stars} GitHub stars`}><StarIcon aria-hidden="true" className="size-3.5" />{stars}</span>
-        ) : null}
-        <span className="text-xs tabular-nums text-muted-foreground">{project.year}</span>
-        <ChevronDownIcon aria-hidden="true" className="portfolio-project-chevron size-4" strokeWidth={1.7} />
-      </button>
+      <h3 aria-label={project.title}>
+        <button
+          type="button"
+          className="portfolio-project-summary"
+          aria-expanded={open}
+          aria-controls={contentId}
+          onClick={() => setOpen((value) => !value)}
+        >
+          <span className="portfolio-project-icon"><Icon aria-hidden="true" className="size-4" strokeWidth={1.6} /></span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-sm font-medium text-foreground">{project.title}</span>
+            <span className="block text-[13px] leading-5 text-muted-foreground">{project.tagline}</span>
+          </span>
+          {stars !== null && stars > 0 ? (
+            <span className="portfolio-project-stars" aria-label={`${stars} GitHub stars`}><StarIcon aria-hidden="true" className="size-3.5" />{stars}</span>
+          ) : null}
+          <span className="text-xs tabular-nums text-muted-foreground">{project.year}</span>
+          <ChevronDownIcon aria-hidden="true" className="portfolio-project-chevron size-4" strokeWidth={1.7} />
+        </button>
+      </h3>
       <div id={contentId} className="portfolio-project-content" aria-hidden={!open} inert={!open}>
         <div className="portfolio-project-content-inner">
           <div className="portfolio-project-details">

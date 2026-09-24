@@ -268,6 +268,8 @@
     transform: translateY(9px) rotate(10deg);
   }
 
+  .portfolio-mobile-availability { display: none; }
+
   .portfolio-section {
     scroll-margin-top: 32px;
   }
@@ -537,7 +539,7 @@
   .portfolio-chat-empty { justify-content: flex-start; }
   .portfolio-chat-intro { margin-bottom: 26px; }
   .portfolio-chat-eyebrow { color: var(--muted-foreground); font-family: var(--font-geist-mono), monospace; font-size: 10px; letter-spacing: 0.085em; }
-  .portfolio-chat-intro h1 { margin-top: 12px; color: var(--foreground); font-family: var(--font-display), sans-serif; font-size: clamp(25px, 5vw, 32px); font-weight: 600; letter-spacing: -0.035em; line-height: 1.15; }
+  .portfolio-chat-intro .portfolio-chat-title { margin-top: 12px; color: var(--foreground); font-family: var(--font-display), sans-serif; font-size: clamp(25px, 5vw, 32px); font-weight: 600; letter-spacing: -0.035em; line-height: 1.15; }
   .portfolio-chat-intro p { max-width: 490px; margin-top: 12px; color: var(--muted-foreground); font-size: 14px; line-height: 1.65; }
   .portfolio-chat [data-slot="input-group-control"] { font-size: 13px; }
   .portfolio-chat [data-slot="input-group-button"] { border-radius: 4px; color: var(--foreground); }
@@ -548,6 +550,8 @@
 
 @media (max-width: 740px) {
   .portfolio-note { display: none; }
+  .portfolio-mobile-availability { display: inline-flex; width: 100%; align-items: center; gap: 7px; margin-bottom: 2px; color: var(--muted-foreground); font-size: 12px; }
+  .portfolio-mobile-availability span { width: 6px; height: 6px; border-radius: 50%; background: var(--foreground); }
 }
 
 @media (max-width: 560px) {

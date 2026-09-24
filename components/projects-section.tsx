@@ -5,6 +5,7 @@ async function getEndpointStars() {
   try {
     const response = await fetch("https://api.github.com/repos/Bytepute/endpointForge", {
       headers: { Accept: "application/vnd.github+json" },
+      signal: AbortSignal.timeout(4000),
       next: { revalidate: 21600 },
     });
     if (!response.ok) return 20;

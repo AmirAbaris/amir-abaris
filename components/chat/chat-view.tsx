@@ -173,7 +173,7 @@ export function ChatView() {
         {isEmpty && (
           <div className="portfolio-chat-intro">
             <span className="portfolio-chat-eyebrow">A CONVERSATION WITH MY WORK</span>
-            <h1>Chat with {profile.name.split(" ")[0]}&apos;s AI clone</h1>
+            <p className="portfolio-chat-title">Chat with {profile.name.split(" ")[0]}&apos;s AI clone</p>
             <p>Ask about my frontend experience, projects, performance work, or the roles I&apos;m looking for.</p>
           </div>
         )}

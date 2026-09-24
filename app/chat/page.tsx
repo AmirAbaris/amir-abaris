@@ -32,6 +32,7 @@ export default function ChatPage() {
             <Link href="/" className="portfolio-quiet-link"><ArrowLeftIcon aria-hidden="true" className="size-3.5" /> Back to portfolio</Link>
           </nav>
         </header>
+        <h1 className="sr-only">Chat with Amir&apos;s AI clone</h1>
         <div id="chat-content"><ChatView /></div>
       </main>
     </>

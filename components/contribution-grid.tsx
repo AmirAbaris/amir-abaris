@@ -10,9 +10,9 @@ export async function ContributionGrid() {
   return (
     <section aria-labelledby="activity-heading" className="portfolio-section">
       <div className="portfolio-section-heading">
-        <h2 id="activity-heading">Performance</h2>
+        <h2 id="activity-heading">GitHub activity</h2>
         <Link href={profile.links.github} target="_blank" rel="noopener noreferrer" className="portfolio-quiet-link">
-          GitHub <ArrowUpRightIcon aria-hidden="true" className="size-3" />
+          Profile <ArrowUpRightIcon aria-hidden="true" className="size-3" />
         </Link>
       </div>
 

@@ -19,11 +19,15 @@ export default function ChatPage() {
         Skip to chat
       </a>
       <main id="main" className="portfolio-shell portfolio-chat-shell">
-        <nav aria-label="Page navigation" className="mb-10 flex items-center justify-between gap-4">
-          <Link href="/" className="portfolio-quiet-link"><ArrowLeftIcon aria-hidden="true" className="size-3.5" /> Portfolio</Link>
-          <span className="text-sm font-medium text-foreground">{profile.name}</span>
-        </nav>
-        <h1 className="sr-only">Chat with Amir&apos;s AI clone</h1>
+        <header className="portfolio-header portfolio-chat-header">
+          <div>
+            <Link href="/" className="text-[15px] font-semibold tracking-[-0.015em] text-foreground hover:underline">{profile.name}</Link>
+            <p className="mt-1 text-[15px] text-muted-foreground">{profile.noun}</p>
+          </div>
+          <nav aria-label="Page navigation">
+            <Link href="/" className="portfolio-quiet-link"><ArrowLeftIcon aria-hidden="true" className="size-3.5" /> Back to portfolio</Link>
+          </nav>
+        </header>
         <div id="chat-content"><ChatView /></div>
       </main>
     </>

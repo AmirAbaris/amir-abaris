@@ -27,11 +27,11 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "Backend & Data",
     skills: [
+      "Node.js",
       "PostgreSQL",
       "Express",
       "NestJS",
       "Prisma",
-      "sqlc",
     ],
   },
   {
@@ -39,3 +39,26 @@ export const skillGroups: SkillGroup[] = [
     skills: ["Docker", "Nginx", "Linux", "Git"],
   },
 ];
+
+export const skillIcons: Record<string, string> = {
+  TypeScript: "typescript",
+  JavaScript: "javascript",
+  Go: "go",
+  React: "react",
+  "Next.js": "nextdotjs",
+  "Tailwind CSS": "tailwindcss",
+  "TanStack Query": "reactquery",
+  Zustand: "zustand",
+  Angular: "angular",
+  "React Native": "reactnative",
+  Expo: "expo",
+  "Node.js": "nodedotjs",
+  PostgreSQL: "postgresql",
+  Express: "express",
+  NestJS: "nestjs",
+  Prisma: "prisma",
+  Docker: "docker",
+  Nginx: "nginx",
+  Linux: "linux",
+  Git: "git",
+};

@@ -1,4 +1,6 @@
-import { skillGroups } from "@/lib/skills-data";
+import Image from "next/image";
+
+import { skillGroups, skillIcons } from "@/lib/skills-data";
 
 export function SkillsSection() {
   return (
@@ -12,7 +14,10 @@ export function SkillsSection() {
             <dt>{group.label}</dt>
             <dd>
               {group.skills.map((skill) => (
-                <span key={skill} className="portfolio-skill-chip">{skill}</span>
+                <span key={skill} className="portfolio-skill-chip">
+                  <Image src={`/icons/skills/${skillIcons[skill]}.svg`} alt="" aria-hidden="true" width={14} height={14} />
+                  {skill}
+                </span>
               ))}
             </dd>
           </div>

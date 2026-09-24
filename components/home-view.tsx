@@ -1,25 +1,12 @@
 import Link from "next/link";
-import {
-  ArrowUpRightIcon,
-  FileTextIcon,
-  GithubIcon,
-  LinkedinIcon,
-  MailIcon,
-  MessageCircleIcon,
-} from "lucide-react";
+import { ArrowUpRightIcon, MessageCircleIcon } from "lucide-react";
 
 import { ContributionGrid } from "@/components/contribution-grid";
 import { ExperienceSection } from "@/components/experience-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { SkillsSection } from "@/components/skills-section";
+import { SocialLinks } from "@/components/social-links";
 import { profile } from "@/lib/profile-data";
-
-const socialLinks = [
-  { label: "GitHub", href: profile.links.github, icon: GithubIcon },
-  { label: "LinkedIn", href: profile.links.linkedin, icon: LinkedinIcon },
-  { label: "Email", href: `mailto:${profile.email}`, icon: MailIcon },
-  { label: "Résumé", href: profile.links.resume, icon: FileTextIcon },
-] as const;
 
 export function HomeView() {
   return (
@@ -32,21 +19,7 @@ export function HomeView() {
           <p className="mt-1 text-[15px] text-muted-foreground">{profile.noun}</p>
         </div>
 
-        <nav aria-label="Social links" className="flex items-center gap-1 sm:gap-2">
-          {socialLinks.map(({ label, href, icon: Icon }) => (
-            <Link
-              key={label}
-              href={href}
-              aria-label={label}
-              title={label}
-              target={href.startsWith("http") ? "_blank" : undefined}
-              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="portfolio-icon-link"
-            >
-              <Icon aria-hidden="true" className="size-[15px]" strokeWidth={1.8} />
-            </Link>
-          ))}
-        </nav>
+        <SocialLinks />
       </header>
 
       <div className="mt-8 flex flex-col gap-3 text-[16px] leading-[1.48] tracking-[-0.012em] text-foreground sm:mt-9">
@@ -54,7 +27,7 @@ export function HomeView() {
           Hey, I&apos;m Amir, a frontend engineer based in <span className="portfolio-inline-emphasis">{profile.location}</span>. I build thoughtful web and mobile interfaces with React, Next.js, TypeScript, and React Native.
         </p>
         <p>
-          Over the past two years, I&apos;ve shipped real-time features, API-driven products, and responsive experiences. I also build backend systems with Go, Node.js, and PostgreSQL.
+          I focus on the engineering behind fast, reliable interfaces: rendering performance, accessible interactions, and predictable client state. I&apos;ve put that work into production web and mobile products over the past two years.
         </p>
       </div>
 
@@ -95,6 +68,7 @@ export function HomeView() {
           <ArrowUpRightIcon aria-hidden="true" className="size-3.5" />
         </Link>
       </footer>
+      <p className="portfolio-credit">Design inspired by <a href="https://maxkatz.me/" target="_blank" rel="noopener noreferrer">Max Katz</a>.</p>
     </main>
   );
 }

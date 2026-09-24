@@ -13,7 +13,7 @@ export const profile = {
    * The "who am I" answer.
    */
   summary:
-    "I build production web and mobile interfaces with React, Next.js, TypeScript, and React Native. Across approximately 2 years of professional frontend work, I've shipped API-driven products, real-time features, and responsive experiences. I also build backend systems independently with Go, Node.js, and PostgreSQL.",
+    "I'm a frontend engineer building production web and mobile interfaces with React, Next.js, TypeScript, and React Native. Across approximately 2 years of professional work, I've focused on rendering performance, accessible interactions, API integration, and maintainable client state for real products.",
 
   location: "Karaj, Iran",
   email: "thisisamirabaris@gmail.com",

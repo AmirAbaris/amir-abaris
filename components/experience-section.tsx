@@ -19,31 +19,39 @@ export function ExperienceSection() {
         </button>
       </div>
 
-      <ol className="portfolio-timeline">
-        {experiences.map((experience, index) => (
-          <li key={experience.company} className="portfolio-timeline-item">
-            <span className={`portfolio-timeline-dot ${index === 0 ? "portfolio-timeline-dot-current" : ""}`} aria-hidden="true" />
-            <div className="portfolio-timeline-title">
-              <span className="portfolio-mini-icon"><BriefcaseBusinessIcon aria-hidden="true" className="size-3.5" strokeWidth={1.6} /></span>
-              <span>{experience.company}</span>
-            </div>
-            <p className="mt-1.5 text-xs text-muted-foreground">{experience.duration}</p>
-          </li>
-        ))}
-      </ol>
+      <div className={`portfolio-experience-panels ${expanded ? "is-expanded" : ""}`}>
+        <div className="portfolio-experience-panel" aria-hidden={expanded} inert={expanded}>
+          <ol className="portfolio-timeline">
+            {experiences.map((experience, index) => (
+              <li key={experience.company} className="portfolio-timeline-item">
+                <span className={`portfolio-timeline-dot ${index === 0 ? "portfolio-timeline-dot-current" : ""}`} aria-hidden="true" />
+                <div className="portfolio-timeline-title">
+                  <span className="portfolio-mini-icon"><BriefcaseBusinessIcon aria-hidden="true" className="size-3.5" strokeWidth={1.6} /></span>
+                  <span>{experience.company}</span>
+                </div>
+                <p className="mt-1.5 text-xs text-muted-foreground">{experience.duration}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
 
-      <div id="experience-details" hidden={!expanded} className="portfolio-experience-details">
-        {experiences.map((experience) => (
-          <article key={experience.company} className="border-t border-border py-4 first:border-t-0 first:pt-0">
-            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-              <h3 className="text-sm font-medium text-foreground">{experience.title} <span className="text-muted-foreground">· {experience.company}</span></h3>
-              <span className="text-xs text-muted-foreground">{experience.location}</span>
-            </div>
-            <ul className="mt-2 flex flex-col gap-1.5 pl-4 text-[13px] leading-[1.55] text-muted-foreground marker:text-foreground list-disc">
-              {experience.achievements.map((achievement) => <li key={achievement}><MetricText>{achievement}</MetricText></li>)}
-            </ul>
-          </article>
-        ))}
+        <div id="experience-details" className="portfolio-experience-panel" aria-hidden={!expanded} inert={!expanded}>
+          <div className="portfolio-experience-details">
+            {experiences.map((experience) => (
+              <article key={experience.company} className="portfolio-experience-entry">
+                <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1">
+                  <div>
+                    <h3 className="text-sm font-medium text-foreground">{experience.title} <span className="text-muted-foreground">· {experience.company}</span></h3>
+                    <p className="mt-1 text-xs text-muted-foreground">{experience.duration} · {experience.location}</p>
+                  </div>
+                </div>
+                <ul className="mt-2 flex flex-col gap-1.5 pl-4 text-[13px] leading-[1.55] text-muted-foreground marker:text-foreground list-disc">
+                  {experience.achievements.map((achievement) => <li key={achievement}><MetricText>{achievement}</MetricText></li>)}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

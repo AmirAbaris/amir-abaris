@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist_Mono, Instrument_Sans, Inter } from "next/font/google";
+import { Caveat, Geist_Mono, Instrument_Sans, Inter } from "next/font/google";
 import { getSiteUrl, seoConfig } from "@/lib/seo";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -21,6 +21,12 @@ const instrumentSans = Instrument_Sans({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["500", "600"],
+});
+
+const caveat = Caveat({
+  variable: "--font-note",
+  subsets: ["latin"],
+  weight: ["500"],
 });
 
 export const metadata: Metadata = {
@@ -90,7 +96,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={cn("font-sans", inter.variable)}>
       <body
-        className={`${geistMono.variable} ${instrumentSans.variable} antialiased`}
+        className={`${geistMono.variable} ${instrumentSans.variable} ${caveat.variable} antialiased`}
       >
         {children}
       </body>

@@ -28,9 +28,10 @@ export const experiences: Experience[] = [
     location: "Remote",
     duration: "Aug 2025 – Jan 2026",
     achievements: [
-      "Built **Melkbot**, a B2B real-estate assistant in Expo/React Native, live in production on **Cafe Bazaar** for real users; also built the B2C customer website with Next.js 15 and React.",
-      "Designed a real-time notification architecture with WebSockets and Pusher for instant updates across web and mobile clients.",
-      "Established TanStack Query and Zustand patterns for API caching, asynchronous data, and maintainable client state.",
+      "Built **Melkbot**, a B2B real-estate assistant for agents with Expo and React Native, released on **Cafe Bazaar**; also built the B2C customer website with Next.js 15 and React.",
+      "Implemented viewport-based property fetching for the map, loading data for the area users are viewing instead of fetching all listings at once.",
+      "Organized the web and Expo apps by feature, grouping APIs, hooks, types, and utilities; established TanStack Query and Zustand patterns for server data and client state.",
+      "Implemented in-app notification and push-tap flows, normalizing payloads, marking opened notifications as read, suppressing message banners in active chats, and routing file, deal, and message notifications to the relevant UI.",
     ],
   },
   {
@@ -60,14 +61,14 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [
   {
     title: "Endpoint Forge",
-    tagline: "Mock API workbench for frontend teams",
+    tagline: "Mock API workbench for building and testing frontend flows",
     year: "2026",
     role: "**3-person collaboration** · End-to-end build",
     stack: ["Next.js", "TypeScript", "NestJS", "PostgreSQL", "Drizzle ORM", "Docker"],
     highlights: [
-      "Co-built an open-source mock API workbench that lets frontend teams build and test against realistic endpoints.",
-      "Contributed to its end-to-end implementation with Next.js, NestJS, PostgreSQL, Drizzle ORM, and Docker.",
-      "Implemented tenant-based routing for multi-user workspaces and a bilingual landing page with reusable components.",
+      "Co-built an open-source mock API workbench in a **3-person team** so frontend teams can build and test against realistic endpoints.",
+      "Implemented tenant-based workspace routing and a bilingual landing page with reusable components.",
+      "Contributed to the end-to-end implementation using Next.js, NestJS, PostgreSQL, Drizzle ORM, and Docker.",
     ],
     repoUrl: "https://github.com/Bytepute/endpointForge",
     showGitHubStars: true,
@@ -110,7 +111,7 @@ export const projects: Project[] = [
   },
   {
     title: "Jobinja Agent",
-    tagline: "Conversational assistant for finding and applying to Jobinja roles",
+    tagline: "Conversational job search with a user-controlled application flow",
     year: "2026",
     role: "Independent build · Agent workflow",
     stack: ["TypeScript", "Eve", "OpenRouter"],

@@ -3,7 +3,7 @@ export const seoConfig = {
   title: "Amir Mahdi Zarei Nejad | Frontend Engineer",
   titleTemplate: "%s | Amir Mahdi Zarei Nejad",
   description:
-    "Frontend engineer building fast, accessible web and mobile interfaces with React, Next.js, TypeScript, and React Native, with a focus on performance and maintainable architecture.",
+    "Frontend engineer building accessible web and mobile interfaces with React, Next.js, TypeScript, and React Native, with a focus on maintainable architecture, API integration, and reliable client state.",
   locale: "en_US",
   category: "technology",
   jobTitle: "Frontend Engineer",
@@ -28,13 +28,16 @@ export const seoConfig = {
     "Web Accessibility",
     "Frontend Engineer Portfolio",
     "Karaj Frontend Engineer",
+    "Frontend Architecture",
+    "React Native Notifications",
+    "Viewport-Based Map Fetching",
   ],
   links: {
     github: "https://github.com/AmirAbaris",
     linkedin: "https://www.linkedin.com/in/amir-mahdi-zarei-nejad-40005526a",
     x: "https://x.com/abaris_aa",
     resume:
-      "https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLWcZZowyPM2IolCJa5jOYpgUfdxH1TuyRVSiA",
+      "https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLXol18qUD1FyBp3HI90J6ZdzxmPWVObtLgcQ8",
   },
   skills: [
     "React",
@@ -48,7 +51,12 @@ export const seoConfig = {
     "Web Accessibility",
     "TanStack Query",
     "Zustand",
-    "Next.js 16",
+    "Redux Toolkit",
+    "RTK Query",
+    "WebSockets",
+    "Pusher",
+    "Leaflet",
+    "Frontend Architecture",
   ],
 } as const;
 

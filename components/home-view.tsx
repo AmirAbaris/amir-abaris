@@ -28,7 +28,7 @@ export function HomeView() {
           Hey, I&apos;m Amir, a frontend engineer based in <span className="portfolio-inline-emphasis">{profile.location}</span>. I build thoughtful web and mobile interfaces with React, Next.js, TypeScript, and React Native.
         </p>
         <p>
-          I focus on the engineering behind fast, reliable interfaces: rendering performance, accessible interactions, and predictable client state. I&apos;ve put that work into production web and mobile products over the past two years.
+          I focus on the engineering behind reliable interfaces: feature-based architecture, accessible interactions, and predictable client state. Recent work includes viewport-based map data fetching and notification flows across web and mobile.
         </p>
       </div>
 

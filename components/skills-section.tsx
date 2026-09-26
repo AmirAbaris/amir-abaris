@@ -15,7 +15,9 @@ export function SkillsSection() {
             <dd>
               {group.skills.map((skill) => (
                 <span key={skill} className="portfolio-skill-chip">
-                  <Image src={`/icons/skills/${skillIcons[skill]}.svg`} alt="" aria-hidden="true" width={14} height={14} />
+                  {skillIcons[skill] ? (
+                    <Image src={`/icons/skills/${skillIcons[skill]}.svg`} alt="" aria-hidden="true" width={14} height={14} />
+                  ) : null}
                   {skill}
                 </span>
               ))}

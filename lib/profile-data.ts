@@ -13,7 +13,7 @@ export const profile = {
    * The "who am I" answer.
    */
   summary:
-    "I'm a frontend engineer with approximately 2 years of professional experience building production web and mobile applications with React, Next.js, Angular, and TypeScript. My work focuses on accessibility, rendering performance, API integration, and maintainable components and state management.",
+    "I build web and mobile apps with React, Next.js, Angular, and TypeScript.",
 
   location: "Karaj, Iran",
   email: "thisisamirabaris@gmail.com",

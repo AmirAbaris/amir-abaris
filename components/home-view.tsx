@@ -25,10 +25,7 @@ export function HomeView() {
 
       <div className="mt-8 flex flex-col gap-3 text-[16px] leading-[1.48] tracking-[-0.012em] text-foreground sm:mt-9">
         <p>
-          Hey, I&apos;m Amir, a frontend engineer based in <span className="portfolio-inline-emphasis">{profile.location}</span>. I build production web and mobile applications with <span className="portfolio-inline-emphasis">React, Next.js, Angular, and TypeScript</span>.
-        </p>
-        <p>
-          I have approximately 2 years of professional experience, with a focus on accessible interfaces, rendering performance, API integration, and maintainable components and state management.
+          Hey, I&apos;m Amir. {profile.summary}
         </p>
       </div>
 

@@ -3,7 +3,7 @@ export type Experience = {
   company: string;
   location: string;
   duration: string;
-  /** Copy may mark real metrics with **double asterisks**; see MetricText. */
+  /** Copy may emphasize metrics and key technologies with **double asterisks**. */
   achievements: string[];
 };
 
@@ -28,10 +28,10 @@ export const experiences: Experience[] = [
     location: "Remote",
     duration: "Aug 2025 – Jan 2026",
     achievements: [
-      "Built **Melkbot**, a B2B real-estate assistant for agents with Expo and React Native, released on **Cafe Bazaar**; also built the B2C customer website with Next.js 15 and React.",
-      "Implemented viewport-based property fetching for the map, loading data for the area users are viewing instead of fetching all listings at once.",
-      "Organized the web and Expo apps by feature, grouping APIs, hooks, types, and utilities; established TanStack Query and Zustand patterns for server data and client state.",
-      "Implemented in-app notification and push-tap flows, normalizing payloads, marking opened notifications as read, suppressing message banners in active chats, and routing file, deal, and message notifications to the relevant UI.",
+      "Built Melkbot, a B2B real-estate assistant with **Expo and React Native**, released on Cafe Bazaar; built the B2C website with **Next.js 15 and React**.",
+      "Implemented **viewport-based property fetching**, loading only listings in the visible map area.",
+      "Organized web and mobile code by feature, using **TanStack Query and Zustand** for server data and client state.",
+      "Implemented **notification handling**: normalized payloads, tracked read status, suppressed active-chat banners, and routed taps to relevant content.",
     ],
   },
   {
@@ -40,9 +40,10 @@ export const experiences: Experience[] = [
     location: "Tehran, Iran",
     duration: "Feb 2025 – Apr 2025",
     achievements: [
-      "Delivered frontend engineering for **2 production client projects**, collaborating with backend developers and designers to ship React, Next.js, and TypeScript features.",
-      "Built an installable Progressive Web App with Next.js.",
-      "Integrated REST APIs with Redux Toolkit and RTK Query, including client-side caching and asynchronous state management.",
+      "Delivered React, Next.js, and TypeScript features for **2 production client projects** with backend developers and designers.",
+      "Built an installable **Progressive Web App** with Next.js.",
+      "Integrated REST APIs with **Redux Toolkit and RTK Query**, including client-side caching and asynchronous state management.",
+      "Used **Sentry** in the frontend development workflow for production client projects.",
     ],
   },
   {
@@ -51,9 +52,10 @@ export const experiences: Experience[] = [
     location: "Remote",
     duration: "Jan 2024 – Nov 2024",
     achievements: [
-      "Modernized Angular applications by migrating them to Angular Signals for better rendering performance and maintainability.",
-      "Improved accessibility and mobile responsiveness across high-traffic landing pages.",
-      "Built interactive Leaflet maps and contributed to team coding standards through code review.",
+      "Modernized Angular applications with **Signals** and built reusable components.",
+      "Implemented forms and validation, integrated REST APIs through Angular services, and managed asynchronous data with **RxJS**.",
+      "Implemented application routing and **Leaflet** maps; improved accessibility and mobile responsiveness across landing pages.",
+      "Wrote **tests for Angular functionality** and contributed to team coding standards through code review.",
     ],
   },
 ];

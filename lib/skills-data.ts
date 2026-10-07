@@ -3,22 +3,34 @@ export type SkillGroup = {
   skills: string[];
 };
 
-/** Set in display type at the top of the section. */
+/** Core technologies used in the portfolio chat's background context. */
 export const primarySkills = [
-  "TypeScript",
   "React",
   "Next.js",
-  "React Native",
+  "Angular",
+  "TypeScript",
 ] as const;
 
 export const skillGroups: SkillGroup[] = [
   {
-    label: "Frontend",
-    skills: ["TypeScript", "JavaScript", "React", "Next.js", "Angular"],
+    label: "Languages",
+    skills: ["TypeScript", "JavaScript"],
   },
   {
-    label: "UI & state",
-    skills: ["Tailwind CSS", "TanStack Query", "Zustand", "Redux Toolkit", "RTK Query"],
+    label: "Frameworks",
+    skills: ["React", "Next.js", "Angular"],
+  },
+  {
+    label: "Styling",
+    skills: ["Tailwind CSS"],
+  },
+  {
+    label: "State & data",
+    skills: ["Angular Signals", "RxJS", "TanStack Query", "Zustand", "Redux Toolkit", "RTK Query"],
+  },
+  {
+    label: "Testing",
+    skills: ["Jest", "Cypress"],
   },
   {
     label: "Mobile",
@@ -29,8 +41,8 @@ export const skillGroups: SkillGroup[] = [
     skills: ["REST APIs", "WebSockets", "Pusher", "Leaflet"],
   },
   {
-    label: "Tooling",
-    skills: ["Node.js", "Git"],
+    label: "Tools & backend",
+    skills: ["Git", "Docker", "Sentry", "Node.js", "Express", "NestJS", "Go", "PostgreSQL", "Prisma"],
   },
 ];
 
@@ -47,4 +59,10 @@ export const skillIcons: Record<string, string> = {
   Expo: "expo",
   "Node.js": "nodedotjs",
   Git: "git",
+  Docker: "docker",
+  Express: "express",
+  NestJS: "nestjs",
+  Go: "go",
+  PostgreSQL: "postgresql",
+  Prisma: "prisma",
 };

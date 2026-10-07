@@ -1,9 +1,12 @@
+import { profile } from "@/lib/profile-data";
+import { skillGroups } from "@/lib/skills-data";
+
 export const seoConfig = {
   name: "Amir Mahdi Zarei Nejad",
   title: "Amir Mahdi Zarei Nejad | Frontend Engineer",
   titleTemplate: "%s | Amir Mahdi Zarei Nejad",
   description:
-    "Frontend engineer building accessible web and mobile interfaces with React, Next.js, TypeScript, and React Native, with a focus on maintainable architecture, API integration, and reliable client state.",
+    "Frontend engineer building production web and mobile applications with React, Next.js, Angular, and TypeScript, focused on accessibility, performance, API integration, and maintainable state management.",
   locale: "en_US",
   category: "technology",
   jobTitle: "Frontend Engineer",
@@ -22,6 +25,7 @@ export const seoConfig = {
     "مهندس فرانت‌اند",
     "React Developer",
     "Next.js Developer",
+    "Angular Developer",
     "TypeScript Developer",
     "React Native Developer",
     "Frontend Performance",
@@ -32,30 +36,10 @@ export const seoConfig = {
     "React Native Notifications",
     "Viewport-Based Map Fetching",
   ],
-  links: {
-    github: "https://github.com/AmirAbaris",
-    linkedin: "https://www.linkedin.com/in/amir-mahdi-zarei-nejad-40005526a",
-    x: "https://x.com/abaris_aa",
-    resume:
-      "https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLXol18qUD1FyBp3HI90J6ZdzxmPWVObtLgcQ8",
-  },
+  links: profile.links,
   skills: [
-    "React",
-    "Next.js",
-    "TypeScript",
-    "JavaScript",
-    "React Native",
-    "Expo",
-    "TailwindCSS",
-    "Angular",
+    ...skillGroups.flatMap((group) => group.skills),
     "Web Accessibility",
-    "TanStack Query",
-    "Zustand",
-    "Redux Toolkit",
-    "RTK Query",
-    "WebSockets",
-    "Pusher",
-    "Leaflet",
     "Frontend Architecture",
   ],
 } as const;

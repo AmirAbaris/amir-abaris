@@ -2,6 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { seoConfig } from "@/lib/seo";
+import { profile } from "@/lib/profile-data";
 
 export const alt = `${seoConfig.name} - ${seoConfig.jobTitle}`;
 export const contentType = "image/png";
@@ -72,7 +73,7 @@ export default function Image() {
                 lineHeight: 1.35,
               }}
             >
-              React, Next.js, TypeScript, and scalable web interfaces.
+              {profile.stackLine}
             </div>
           </div>
         </div>

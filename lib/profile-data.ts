@@ -7,13 +7,13 @@
 export const profile = {
   name: "Amir Mahdi Zarei Nejad",
   noun: "Frontend Engineer",
-  stackLine: "React · Next.js · TypeScript · React Native",
+  stackLine: "React · Next.js · Angular · TypeScript",
 
   /**
    * The "who am I" answer.
    */
   summary:
-    "I'm a frontend engineer building production web and mobile interfaces with React, Next.js, TypeScript, and React Native. My work focuses on maintainable feature-based architecture, accessible interactions, map data fetching for the visible area, real-time notifications, and predictable client state.",
+    "I'm a frontend engineer with approximately 2 years of professional experience building production web and mobile applications with React, Next.js, Angular, and TypeScript. My work focuses on accessibility, rendering performance, API integration, and maintainable components and state management.",
 
   location: "Karaj, Iran",
   email: "thisisamirabaris@gmail.com",
@@ -29,7 +29,7 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/amir-mahdi-zarei-nejad-40005526a",
     x: "https://x.com/abaris_aa",
     resume:
-      "https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLXol18qUD1FyBp3HI90J6ZdzxmPWVObtLgcQ8",
+      "https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLOc3QbuHT2G5WyFpLJDNvwkl7CzdotiXjVfMI",
   },
 } as const;
 

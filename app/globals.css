@@ -186,6 +186,47 @@
     background: var(--muted);
   }
 
+  .portfolio-resume-link {
+    position: relative;
+  }
+
+  .portfolio-resume-note {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 4px);
+    width: 112px;
+    height: 40px;
+    pointer-events: none;
+    color: var(--muted-foreground);
+  }
+
+  .portfolio-resume-note span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "Segoe Print", "Bradley Hand", "Chalkboard SE", cursive;
+    font-size: 14px;
+    line-height: 1;
+    white-space: nowrap;
+    transform: rotate(-7deg);
+  }
+
+  .portfolio-resume-note svg {
+    position: absolute;
+    right: -3px;
+    bottom: 0;
+    width: 76px;
+    height: 40px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .portfolio-resume-mobile-label {
+    display: none;
+  }
+
   .portfolio-icon-link:focus-visible,
   .portfolio-button:focus-visible,
   .portfolio-quiet-link:focus-visible,
@@ -527,6 +568,16 @@
   .portfolio-header { gap: 10px; }
   .portfolio-header h1 { max-width: 185px; line-height: 1.3; }
   .portfolio-icon-link { width: 24px; height: 24px; }
+  .portfolio-resume-note { display: none; }
+  .portfolio-resume-mobile-label {
+    position: absolute;
+    top: 27px;
+    right: 0;
+    display: block;
+    color: var(--muted-foreground);
+    font-size: 10px;
+    line-height: 1.4;
+  }
   .portfolio-skill-row { grid-template-columns: 1fr; gap: 3px; padding: 8px 0; }
   .portfolio-timeline { grid-template-columns: 1fr; gap: 0; }
   .portfolio-timeline::before { top: 6px; bottom: 10px; left: 8px; right: auto; width: 2px; height: auto; background: oklch(0.88 0 0); }

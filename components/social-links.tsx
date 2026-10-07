@@ -28,22 +28,33 @@ export function SocialLinks() {
     <nav aria-label="Social links" className="flex items-center gap-0 sm:gap-2">
       <TooltipProvider delayDuration={200}>
         {links.map(({ label, href, icon: Icon }) => (
-          <Tooltip key={label}>
-            <TooltipTrigger asChild>
-              <Link
-                href={href}
-                aria-label={label}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="portfolio-icon-link"
-              >
-                <Icon aria-hidden="true" className="size-[15px]" strokeWidth={1.8} />
-              </Link>
-            </TooltipTrigger>
-            <TooltipContent side="bottom" sideOffset={8} className="rounded-[5px] px-2 py-1 text-[11px]">
-              {label}
-            </TooltipContent>
-          </Tooltip>
+          <div key={label} className={label === "Résumé" ? "portfolio-resume-link" : undefined}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href={href}
+                  aria-label={label}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="portfolio-icon-link"
+                >
+                  <Icon aria-hidden="true" className="size-[15px]" strokeWidth={1.8} />
+                  {label === "Résumé" ? <span className="portfolio-resume-mobile-label" aria-hidden="true">Resume</span> : null}
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent side="bottom" sideOffset={8} className="rounded-[5px] px-2 py-1 text-[11px]">
+                {label}
+              </TooltipContent>
+            </Tooltip>
+            {label === "Résumé" ? (
+              <span className="portfolio-resume-note" aria-hidden="true">
+                <span>My resume</span>
+                <svg viewBox="0 0 76 40" fill="none">
+                  <path d="M3 19C21 12 44 11 55 18C62 22 63 28 60 35M54 29L60 36L67 29" />
+                </svg>
+              </span>
+            ) : null}
+          </div>
         ))}
       </TooltipProvider>
     </nav>

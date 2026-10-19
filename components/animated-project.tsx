@@ -5,8 +5,8 @@ import Link from "next/link";
 import {
   ArrowUpRightIcon,
   BotIcon,
-  CarFrontIcon,
   CalendarDaysIcon,
+  CarFrontIcon,
   ChevronDownIcon,
   Code2Icon,
   StarIcon,
@@ -29,11 +29,10 @@ export function AnimatedProject({
 }) {
   const [open, setOpen] = useState(false);
   const contentId = useId();
-  const isParked = project.title === "Parked";
-  const Icon = isParked ? CarFrontIcon : projectIcons[index] ?? Code2Icon;
+  const Icon = project.title === "Parked" ? CarFrontIcon : projectIcons[index] ?? Code2Icon;
 
   return (
-    <article className={`portfolio-project ${isParked ? "portfolio-project-parked" : ""} ${open ? "is-open" : ""}`}>
+    <article className={`portfolio-project ${open ? "is-open" : ""}`}>
       <h3 aria-label={project.title}>
         <button
           type="button"
@@ -44,10 +43,9 @@ export function AnimatedProject({
         >
           <span className="portfolio-project-icon"><Icon aria-hidden="true" className="size-[17px]" strokeWidth={1.7} /></span>
           <span className="min-w-0 flex-1">
-            <span className="block text-sm font-medium text-foreground">{project.title}</span>
+            <span className="portfolio-project-title block text-sm font-medium text-foreground">{project.title}</span>
             <span className="block text-[13px] leading-5 text-muted-foreground">{project.tagline}</span>
           </span>
-          {isParked && <span className="portfolio-project-badge">iOS app</span>}
           {stars !== null && stars > 0 ? (
             <span className="portfolio-project-stars" aria-label={`${stars} GitHub stars`}><StarIcon aria-hidden="true" className="size-3.5" />{stars}</span>
           ) : null}
@@ -59,9 +57,7 @@ export function AnimatedProject({
         <div className="portfolio-project-content-inner">
           <div className="portfolio-project-details">
             <p className="portfolio-project-role"><MetricText>{project.role}</MetricText></p>
-            <ul className="portfolio-project-stack" aria-label="Technology stack">
-              {project.stack.map((technology) => <li key={technology}>{technology}</li>)}
-            </ul>
+            <p className="portfolio-project-stack" aria-label="Technology stack">{project.stack.join(" · ")}</p>
             <ul className="mt-2 flex flex-col gap-1.5 pl-4 text-[13px] leading-[1.55] text-muted-foreground marker:text-foreground list-disc">
               {project.highlights.map((highlight) => <li key={highlight}><MetricText>{highlight}</MetricText></li>)}
             </ul>
@@ -70,7 +66,7 @@ export function AnimatedProject({
                 View source <ArrowUpRightIcon aria-hidden="true" className="size-3.5" />
               </Link>
               {project.liveUrl && (
-                <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="portfolio-project-source portfolio-project-source-primary">
+                <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="portfolio-project-source">
                   View on SibApp <ArrowUpRightIcon aria-hidden="true" className="size-3.5" />
                 </Link>
               )}

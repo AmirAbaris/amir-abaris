@@ -14,35 +14,31 @@ export const primarySkills = [
 export const skillGroups: SkillGroup[] = [
   {
     label: "Languages",
-    skills: ["TypeScript", "JavaScript", "Swift"],
+    skills: ["TypeScript", "JavaScript", "Swift", "Go"],
   },
   {
-    label: "Frameworks",
-    skills: ["React", "Next.js", "Angular", "SwiftUI"],
+    label: "Web UI",
+    skills: ["React", "Next.js", "Angular", "Tailwind CSS", "Leaflet"],
   },
   {
-    label: "Styling",
-    skills: ["Tailwind CSS"],
+    label: "Mobile UI",
+    skills: ["React Native", "Expo", "SwiftUI"],
   },
   {
     label: "State & data",
     skills: ["Angular Signals", "RxJS", "TanStack Query", "Zustand", "Redux Toolkit", "RTK Query", "SwiftData"],
   },
   {
+    label: "Backend & APIs",
+    skills: ["Node.js", "Express", "NestJS", "PostgreSQL", "Prisma", "REST APIs", "WebSockets", "Pusher"],
+  },
+  {
     label: "Testing",
     skills: ["Jest", "Cypress"],
   },
   {
-    label: "Mobile",
-    skills: ["React Native", "Expo"],
-  },
-  {
-    label: "APIs & maps",
-    skills: ["REST APIs", "WebSockets", "Pusher", "Leaflet"],
-  },
-  {
-    label: "Tools & backend",
-    skills: ["Git", "Docker", "Sentry", "Node.js", "Express", "NestJS", "Go", "PostgreSQL", "Prisma", "Xcode"],
+    label: "Developer tools",
+    skills: ["Git", "Docker", "Sentry", "Xcode"],
   },
 ];
 

@@ -16,6 +16,8 @@ export type Project = {
   highlights: string[];
   /** Source is the only outbound link; live hosting is being wound down. */
   repoUrl: string;
+  /** Optional link to a live listing / app store page for the project. */
+  liveUrl?: string;
   /** Show the public repository star count only when it adds useful context. */
   showGitHubStars?: boolean;
   previewImage?: string;
@@ -61,6 +63,20 @@ export const experiences: Experience[] = [
 ];
 
 export const projects: Project[] = [
+  {
+    title: "Parked",
+    tagline: "iPhone app that helps you remember where you parked your car",
+    year: "2026",
+    role: "Independent build · iOS app",
+    stack: ["Swift", "SwiftUI", "SwiftData", "Xcode"],
+    highlights: [
+      "Built an iPhone app that saves one active parking memory with an optional photo and details such as floor, section, spot, landmark, or note.",
+      "Shows distance from the car and opens directions in Apple Maps when a location estimate is available; parking memories work offline.",
+      "Built with SwiftUI, SwiftData, Core Location, and MapKit; the interface uses Finglish (Persian written in Latin characters).",
+    ],
+    repoUrl: "https://github.com/AmirAbaris/Parked",
+    liveUrl: "https://sibapp.com/applications/parked",
+  },
   {
     title: "Endpoint Forge",
     tagline: "Mock API workbench for building and testing frontend flows",

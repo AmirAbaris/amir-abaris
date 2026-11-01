@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ArrowLeftIcon } from "lucide-react";
 
 import { ChatView } from "@/components/chat/chat-view";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { profile } from "@/lib/profile-data";
 
 export const metadata: Metadata = {
@@ -17,11 +19,21 @@ export default function ChatPage() {
     <main id="main" className="portfolio-shell portfolio-chat-shell">
       <header className="portfolio-header portfolio-chat-header">
         <div>
-          <Link href="/" className="text-[15px] font-semibold tracking-[-0.015em] text-foreground hover:underline">{profile.name}</Link>
+          <Link
+            href="/"
+            className="text-[15px] font-semibold tracking-[-0.015em] text-foreground font-heading hover:underline"
+          >
+            {profile.name}
+          </Link>
           <p className="mt-1 text-[15px] text-muted-foreground">{profile.noun}</p>
         </div>
-        <nav aria-label="Page navigation">
-          <Link href="/" className="portfolio-quiet-link"><ArrowLeftIcon aria-hidden="true" className="size-3.5" /> Back to portfolio</Link>
+        <nav aria-label="Page navigation" className="flex items-center gap-2">
+          <TooltipProvider delayDuration={200}>
+            <ThemeToggle />
+          </TooltipProvider>
+          <Link href="/" className="portfolio-quiet-link">
+            <ArrowLeftIcon aria-hidden="true" className="size-3.5" /> Back to portfolio
+          </Link>
         </nav>
       </header>
       <h1 className="sr-only">Chat with Amir&apos;s AI clone</h1>

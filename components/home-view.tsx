@@ -3,6 +3,7 @@ import { ArrowUpRightIcon, MessageCircleIcon } from "lucide-react";
 
 import { ContributionGrid } from "@/components/contribution-grid";
 import { BrandMark } from "@/components/brand-mark";
+import { CopyEmailButton } from "@/components/copy-email-button";
 import { ExperienceSection } from "@/components/experience-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { SkillsSection } from "@/components/skills-section";
@@ -14,7 +15,7 @@ export function HomeView() {
     <main id="main" className="portfolio-shell">
       <header id="top" className="portfolio-header">
         <div>
-          <h1 className="text-[15px] font-semibold tracking-[-0.015em] text-foreground">
+          <h1 className="text-[16px] font-semibold tracking-[-0.02em] text-foreground font-heading">
             {profile.name}
           </h1>
           <p className="mt-1 text-[15px] text-muted-foreground">{profile.noun}</p>
@@ -23,16 +24,17 @@ export function HomeView() {
         <SocialLinks />
       </header>
 
-      <div className="mt-8 flex flex-col gap-3 text-[16px] leading-[1.48] tracking-[-0.012em] text-foreground sm:mt-9">
+      <div className="mt-8 flex flex-col gap-3 text-[16px] leading-[1.52] tracking-[-0.012em] text-foreground sm:mt-9">
         <p>
           Hey, I&apos;m Amir. {profile.summary}
         </p>
       </div>
 
-      <div className="mt-6 flex flex-wrap items-center gap-2">
+      <div className="mt-6 flex flex-wrap items-center gap-2.5">
         <Link href={`mailto:${profile.email}`} className="portfolio-button portfolio-button-primary">
           Get in touch
         </Link>
+        <CopyEmailButton variant="button" className="portfolio-button portfolio-button-secondary cursor-pointer" />
         <Link href="/chat" className="portfolio-button portfolio-button-secondary">
           <MessageCircleIcon aria-hidden="true" className="size-3.5" />
           Chat with my AI clone
@@ -48,18 +50,29 @@ export function HomeView() {
 
       <footer id="contact" className="portfolio-footer">
         <div>
-          <h2 className="text-[15px] font-semibold text-foreground">Let&apos;s talk</h2>
+          <h2 className="text-[15px] font-semibold tracking-[-0.015em] text-foreground font-heading">
+            Let&apos;s talk
+          </h2>
           <p className="mt-1 text-sm text-muted-foreground">
             Have a role, project, or interesting problem in mind?
           </p>
         </div>
-        <Link href={`mailto:${profile.email}`} className="portfolio-footer-link">
-          {profile.email}
-          <ArrowUpRightIcon aria-hidden="true" className="size-3.5" />
-        </Link>
+        <div className="flex items-center gap-2">
+          <Link href={`mailto:${profile.email}`} className="portfolio-footer-link">
+            {profile.email}
+            <ArrowUpRightIcon aria-hidden="true" className="size-3.5" />
+          </Link>
+          <CopyEmailButton variant="icon" />
+        </div>
       </footer>
       <div className="portfolio-signoff">
-        <p className="portfolio-credit">Design inspired by <a href="https://maxkatz.me/" target="_blank" rel="noopener noreferrer">Max Katz</a>.</p>
+        <p className="portfolio-credit">
+          Design inspired by{" "}
+          <a href="https://maxkatz.me/" target="_blank" rel="noopener noreferrer">
+            Max Katz
+          </a>
+          .
+        </p>
         <BrandMark className="portfolio-footer-mark" />
       </div>
     </main>

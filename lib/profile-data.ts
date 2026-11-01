@@ -12,8 +12,7 @@ export const profile = {
   /**
    * The "who am I" answer.
    */
-  summary:
-    "I build web and mobile apps with React, Next.js, Angular, and TypeScript.",
+  summary: "I build web and mobile apps.",
 
   location: "Karaj, Iran",
   email: "thisisamirabaris@gmail.com",

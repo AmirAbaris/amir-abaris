@@ -8,9 +8,19 @@ import { experiences } from "@/lib/site-data";
 
 export function ExperienceSection() {
   const [expanded, setExpanded] = useState(false);
+  const [highlightedCompany, setHighlightedCompany] = useState<string | null>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
   const detailsRef = useRef<HTMLDivElement>(null);
   const [heights, setHeights] = useState<{ compact: number; detailed: number } | null>(null);
+
+  const handleTimelineClick = (company: string) => {
+    setExpanded(true);
+    setHighlightedCompany(company);
+    setTimeout(() => {
+      const el = document.getElementById(`exp-${company}`);
+      el?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }, 150);
+  };
 
   useLayoutEffect(() => {
     const timeline = timelineRef.current;
@@ -43,7 +53,10 @@ export function ExperienceSection() {
           className="portfolio-quiet-link portfolio-clickable"
           aria-expanded={expanded}
           aria-controls="experience-details"
-          onClick={() => setExpanded((value) => !value)}
+          onClick={() => {
+            setExpanded((value) => !value);
+            if (expanded) setHighlightedCompany(null);
+          }}
         >
           {expanded ? "See less" : "See more"}
           <ChevronDownIcon
@@ -68,23 +81,34 @@ export function ExperienceSection() {
           <ol className="portfolio-timeline">
             {experiences.map((experience, index) => (
               <li key={experience.company} className="portfolio-timeline-item">
-                <span
-                  className={`portfolio-timeline-dot ${
-                    index === 0 ? "portfolio-timeline-dot-current" : ""
-                  }`}
-                  aria-hidden="true"
-                />
-                <div className="portfolio-timeline-title">
-                  <span className="portfolio-mini-icon">
-                    <BriefcaseBusinessIcon
-                      aria-hidden="true"
-                      className="size-3.5"
-                      strokeWidth={1.6}
-                    />
-                  </span>
-                  <span>{experience.company}</span>
-                </div>
-                <p className="mt-1.5 text-xs text-muted-foreground">{experience.duration}</p>
+                <button
+                  type="button"
+                  onClick={() => handleTimelineClick(experience.company)}
+                  className="group portfolio-timeline-btn text-left w-full cursor-pointer focus-visible:outline-none"
+                  aria-label={`View details for ${experience.title} at ${experience.company}`}
+                >
+                  <span
+                    className={`portfolio-timeline-dot ${
+                      index === 0 ? "portfolio-timeline-dot-current" : ""
+                    } group-hover:scale-125 transition-transform duration-200`}
+                    aria-hidden="true"
+                  />
+                  <div className="portfolio-timeline-title">
+                    <span className="portfolio-mini-icon group-hover:border-foreground/40 group-hover:scale-105 transition-all duration-200">
+                      <BriefcaseBusinessIcon
+                        aria-hidden="true"
+                        className="size-3.5"
+                        strokeWidth={1.6}
+                      />
+                    </span>
+                    <span className="group-hover:underline group-hover:underline-offset-2">
+                      {experience.company}
+                    </span>
+                  </div>
+                  <p className="mt-1.5 text-xs text-muted-foreground tabular-nums">
+                    {experience.duration}
+                  </p>
+                </button>
               </li>
             ))}
           </ol>
@@ -99,14 +123,22 @@ export function ExperienceSection() {
         >
           <div className="portfolio-experience-details">
             {experiences.map((experience) => (
-              <article key={experience.company} className="portfolio-experience-entry">
+              <article
+                key={experience.company}
+                id={`exp-${experience.company}`}
+                className={`portfolio-experience-entry transition-colors duration-500 rounded-md ${
+                  highlightedCompany === experience.company
+                    ? "bg-muted/40 -mx-3 px-3"
+                    : ""
+                }`}
+              >
                 <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1">
                   <div>
                     <h3 className="text-sm font-medium text-foreground">
                       {experience.title}{" "}
                       <span className="text-muted-foreground">· {experience.company}</span>
                     </h3>
-                    <p className="mt-1 text-xs text-muted-foreground">
+                    <p className="mt-1 text-xs text-muted-foreground tabular-nums">
                       {experience.duration} · {experience.location}
                     </p>
                   </div>

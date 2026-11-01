@@ -22,6 +22,7 @@ export function ContributionGridInteractive({
 }) {
   const [activeDate, setActiveDate] = useState<string | null>(null);
   const [hoveredLevel, setHoveredLevel] = useState<number | null>(null);
+  const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(null);
   const gridId = useId();
 
   const daysMap = useMemo(() => {
@@ -39,25 +40,72 @@ export function ContributionGridInteractive({
     return new Date(`${activity.days[0].date}T00:00:00Z`).getUTCDay();
   }, [activity.days]);
 
-  const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
-    let nextIndex = index;
-    if (event.key === "ArrowRight") {
-      nextIndex = Math.min(index + 1, activity.days.length - 1);
-    } else if (event.key === "ArrowLeft") {
-      nextIndex = Math.max(index - 1, 0);
-    } else if (event.key === "ArrowDown") {
-      nextIndex = Math.min(index + 1, activity.days.length - 1);
-    } else if (event.key === "ArrowUp") {
-      nextIndex = Math.max(index - 1, 0);
-    } else {
-      return;
-    }
-    event.preventDefault();
-    const targetDay = activity.days[nextIndex];
+  const updateCellFocus = (targetIndex: number) => {
+    const clampedIndex = Math.max(0, Math.min(targetIndex, activity.days.length - 1));
+    const targetDay = activity.days[clampedIndex];
     if (targetDay) {
       setActiveDate(targetDay.date);
       const nextButton = document.getElementById(`${gridId}-cell-${targetDay.date}`);
-      nextButton?.focus();
+      if (nextButton) {
+        nextButton.focus();
+        const rect = nextButton.getBoundingClientRect();
+        const wrapper = nextButton.closest(".portfolio-contribution-wrapper");
+        if (wrapper) {
+          const wrapperRect = wrapper.getBoundingClientRect();
+          setTooltipPos({
+            x: rect.left - wrapperRect.left + rect.width / 2,
+            y: rect.top - wrapperRect.top - 8,
+          });
+        }
+      }
+    }
+  };
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      updateCellFocus(index + 7);
+    } else if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      updateCellFocus(index - 7);
+    } else if (event.key === "ArrowDown") {
+      event.preventDefault();
+      updateCellFocus(index + 1);
+    } else if (event.key === "ArrowUp") {
+      event.preventDefault();
+      updateCellFocus(index - 1);
+    } else if (event.key === "Home") {
+      event.preventDefault();
+      updateCellFocus(0);
+    } else if (event.key === "End") {
+      event.preventDefault();
+      updateCellFocus(activity.days.length - 1);
+    }
+  };
+
+  const handleCellHover = (e: React.MouseEvent<HTMLButtonElement>, date: string) => {
+    setActiveDate(date);
+    const rect = e.currentTarget.getBoundingClientRect();
+    const wrapper = e.currentTarget.closest(".portfolio-contribution-wrapper");
+    if (wrapper) {
+      const wrapperRect = wrapper.getBoundingClientRect();
+      setTooltipPos({
+        x: rect.left - wrapperRect.left + rect.width / 2,
+        y: rect.top - wrapperRect.top - 8,
+      });
+    }
+  };
+
+  const handleCellFocus = (e: React.FocusEvent<HTMLButtonElement>, date: string) => {
+    setActiveDate(date);
+    const rect = e.currentTarget.getBoundingClientRect();
+    const wrapper = e.currentTarget.closest(".portfolio-contribution-wrapper");
+    if (wrapper) {
+      const wrapperRect = wrapper.getBoundingClientRect();
+      setTooltipPos({
+        x: rect.left - wrapperRect.left + rect.width / 2,
+        y: rect.top - wrapperRect.top - 8,
+      });
     }
   };
 
@@ -121,16 +169,38 @@ export function ContributionGridInteractive({
                 } ${isHighlighted ? "is-highlighted" : ""} ${isActive ? "is-active" : ""}`}
                 aria-label={day.label}
                 aria-pressed={isActive}
-                onMouseEnter={() => setActiveDate(day.date)}
-                onMouseLeave={() => setActiveDate((curr) => (curr === day.date ? null : curr))}
-                onFocus={() => setActiveDate(day.date)}
-                onBlur={() => setActiveDate((curr) => (curr === day.date ? null : curr))}
+                onMouseEnter={(e) => handleCellHover(e, day.date)}
+                onMouseLeave={() => {
+                  setActiveDate((curr) => (curr === day.date ? null : curr));
+                  setTooltipPos(null);
+                }}
+                onFocus={(e) => handleCellFocus(e, day.date)}
+                onBlur={() => {
+                  setActiveDate((curr) => (curr === day.date ? null : curr));
+                  setTooltipPos(null);
+                }}
                 onKeyDown={(e) => handleKeyDown(e, index)}
               />
             );
           })}
         </div>
       </div>
+
+      {activeDay && tooltipPos ? (
+        <div
+          className="portfolio-graph-cell-tooltip"
+          style={{
+            transform: `translate3d(calc(${tooltipPos.x}px - 50%), calc(${tooltipPos.y}px - 100%), 0)`,
+          }}
+          role="tooltip"
+          aria-hidden="true"
+        >
+          <span className="font-semibold text-foreground">
+            {activeDay.count === 0 ? "No" : activeDay.count}
+          </span>{" "}
+          {activeDay.count === 1 ? "contribution" : "contributions"} on {formatDate(activeDay.date)}
+        </div>
+      ) : null}
 
       <div className="portfolio-graph-footer">
         <div className="portfolio-graph-status" aria-live="polite">

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FileTextIcon, GithubIcon, LinkedinIcon, MailIcon } from "lucide-react";
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { profile } from "@/lib/profile-data";
 
 function XLogo(props: SVGProps<SVGSVGElement>) {
@@ -56,6 +57,9 @@ export function SocialLinks() {
             ) : null}
           </div>
         ))}
+        <div className="ml-0.5 sm:ml-1 pl-1 sm:pl-1.5 border-l border-border/70 flex items-center">
+          <ThemeToggle />
+        </div>
       </TooltipProvider>
     </nav>
   );

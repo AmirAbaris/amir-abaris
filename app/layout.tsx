@@ -1,10 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Geist_Mono, Instrument_Sans, Inter } from "next/font/google";
+import { Caveat, Geist, Geist_Mono, Instrument_Sans } from "next/font/google";
 import { getSiteUrl, seoConfig } from "@/lib/seo";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -12,13 +15,22 @@ const geistMono = Geist_Mono({
 });
 
 /**
- * Display face for the name and section headings only, never body copy.
- *
- * Sturdier than a high-contrast serif at heading sizes, while still reading as
- * a deliberate choice rather than the Next.js default.
+ * Display face for the name and section headings.
+ * Sturdier than a high-contrast serif at heading sizes, with intentional
+ * grotesque geometry and tight tracking.
  */
 const instrumentSans = Instrument_Sans({
   variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["500", "600"],
+});
+
+/**
+ * Handwritten accent face for the authentic hand-drawn resume note.
+ * Loads across all platforms consistently.
+ */
+const caveat = Caveat({
+  variable: "--font-handwriting",
   subsets: ["latin"],
   weight: ["500", "600"],
 });
@@ -79,7 +91,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#141414" },
+  ],
 };
 
 export default function RootLayout({
@@ -88,10 +103,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={cn("font-sans", inter.variable)}>
-      <body
-        className={`${geistMono.variable} ${instrumentSans.variable} antialiased`}
-      >
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn(
+        "font-sans",
+        geistSans.variable,
+        geistMono.variable,
+        instrumentSans.variable,
+        caveat.variable
+      )}
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var s=localStorage.getItem('theme');var d=s==='dark'||(!s&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(d){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}}catch(e){}`,
+          }}
+        />
+      </head>
+      <body className="antialiased selection:bg-foreground selection:text-background">
         {children}
       </body>
     </html>

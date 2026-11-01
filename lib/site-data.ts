@@ -104,6 +104,7 @@ export const projects: Project[] = [
       "Used cache tags and targeted invalidation so published portfolio changes appear after edits.",
     ],
     repoUrl: "https://github.com/AmirAbaris/shenora",
+    previewImage: "/images/shenora.jpg",
   },
   {
     title: "Weeto",

@@ -1,11 +1,21 @@
 import Image from "next/image";
-import { BracesIcon, CircleHelpIcon, RadioIcon } from "lucide-react";
+import {
+  BotIcon,
+  BracesIcon,
+  CircleHelpIcon,
+  DatabaseIcon,
+  LayersIcon,
+  RadioIcon,
+} from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 import { skillGroups, skillIcons } from "@/lib/skills-data";
 
 export function SkillsSection() {
   const fallbackIcons: Record<string, LucideIcon> = {
+    "Design Systems": LayersIcon,
+    "Agentic Workflows": BotIcon,
+    SQLModel: DatabaseIcon,
     RxJS: RadioIcon,
     "Redux Toolkit": BracesIcon,
     "RTK Query": RadioIcon,

@@ -29,7 +29,15 @@ export function AnimatedProject({
 }) {
   const [open, setOpen] = useState(false);
   const contentId = useId();
-  const Icon = project.title === "Parked" ? CarFrontIcon : projectIcons[index] ?? Code2Icon;
+  const getProjectIcon = (title: string, i: number) => {
+    const t = title.toLowerCase();
+    if (t.includes("parked")) return CarFrontIcon;
+    if (t.includes("agent")) return BotIcon;
+    if (t.includes("weeto")) return CalendarDaysIcon;
+    if (t.includes("shenora")) return WandSparklesIcon;
+    return projectIcons[i % projectIcons.length] ?? Code2Icon;
+  };
+  const Icon = getProjectIcon(project.title, index);
 
   return (
     <article className={`portfolio-project ${open ? "is-open" : ""}`}>
@@ -67,7 +75,7 @@ export function AnimatedProject({
               </Link>
               {project.liveUrl && (
                 <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="portfolio-project-source">
-                  View on SibApp <ArrowUpRightIcon aria-hidden="true" className="size-3.5" />
+                  {project.liveUrl.includes("sibapp") ? "View on SibApp" : "Live site"} <ArrowUpRightIcon aria-hidden="true" className="size-3.5" />
                 </Link>
               )}
             </div>

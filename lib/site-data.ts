@@ -23,6 +23,20 @@ export type Project = {
   previewImage?: string;
 };
 
+export type Education = {
+  degree: string;
+  institution: string;
+  location: string;
+  duration: string;
+};
+
+export const education: Education = {
+  degree: "Bachelor of Science in Computer Science",
+  institution: "Azad University",
+  location: "Karaj, Iran",
+  duration: "2023 – Present",
+};
+
 export const experiences: Experience[] = [
   {
     title: "Frontend Engineer (Contract)",
@@ -30,10 +44,9 @@ export const experiences: Experience[] = [
     location: "Remote",
     duration: "Aug 2025 – Jan 2026",
     achievements: [
-      "Built Melkbot, a B2B real-estate assistant with **Expo and React Native**, released on Cafe Bazaar; built the B2C website with **Next.js 15 and React**.",
-      "Implemented **viewport-based property fetching**, loading only listings in the visible map area.",
-      "Organized web and mobile code by feature, using **TanStack Query and Zustand** for server data and client state.",
-      "Implemented **notification handling**: normalized payloads, tracked read status, suppressed active-chat banners, and routed taps to relevant content.",
+      "Built Melkbot (B2B real-estate app in **Expo & React Native** on Cafe Bazaar) and the B2C web platform in **Next.js 15 & React** using a shared, token-driven design system.",
+      "Engineered **viewport-based spatial property fetching** and a feature-sliced state layer with **TanStack Query and Zustand**.",
+      "Implemented end-to-end **notification handling** with payload normalization, read-state syncing, active-chat suppression, and deep routing.",
     ],
   },
   {
@@ -42,10 +55,8 @@ export const experiences: Experience[] = [
     location: "Tehran, Iran",
     duration: "Feb 2025 – Apr 2025",
     achievements: [
-      "Delivered React, Next.js, and TypeScript features for **2 production client projects** with backend developers and designers.",
-      "Built an installable **Progressive Web App** with Next.js.",
-      "Integrated REST APIs with **Redux Toolkit and RTK Query**, including client-side caching and asynchronous state management.",
-      "Used **Sentry** in the frontend development workflow for production client projects.",
+      "Built reusable UI components and an installable **Progressive Web App (PWA)** across 2 production client projects using **React, Next.js, and TypeScript**.",
+      "Integrated REST APIs with **Redux Toolkit and RTK Query** for client caching, and configured **Sentry** for production error monitoring.",
     ],
   },
   {
@@ -54,28 +65,38 @@ export const experiences: Experience[] = [
     location: "Remote",
     duration: "Jan 2024 – Nov 2024",
     achievements: [
-      "Modernized Angular applications with **Signals** and built reusable components.",
-      "Implemented forms and validation, integrated REST APIs through Angular services, and managed asynchronous data with **RxJS**.",
-      "Implemented application routing and **Leaflet** maps; improved accessibility and mobile responsiveness across landing pages.",
-      "Wrote **tests for Angular functionality** and contributed to team coding standards through code review.",
+      "Modernized Angular applications with **Angular Signals**, built accessible design-system components, and managed reactive streams with **RxJS**.",
+      "Implemented reactive forms, **Leaflet** interactive maps, automated unit/E2E tests, and responsive layouts across production pages.",
     ],
   },
 ];
 
 export const projects: Project[] = [
   {
-    title: "Parked",
-    tagline: "iPhone app that helps you remember where you parked your car",
+    title: "webhook-kit",
+    tagline: "Zero-dependency, edge-compatible webhook verification toolkit on crypto.subtle",
     year: "2026",
-    role: "Independent build · iOS app",
-    stack: ["Swift", "SwiftUI", "SwiftData", "Xcode"],
+    role: "Open-source build · Developer toolkit",
+    stack: ["TypeScript", "Web Crypto API", "Next.js", "Hono", "Redis", "Cloudflare KV"],
     highlights: [
-      "Built an iPhone app that saves one active parking memory with an optional photo and details such as floor, section, spot, landmark, or note.",
-      "Shows distance from the car and opens directions in Apple Maps when a location estimate is available; parking memories work offline.",
-      "Built with SwiftUI, SwiftData, Core Location, and MapKit; the interface uses Finglish (Persian written in Latin characters).",
+      "Built a zero-dependency, edge-compatible webhook verification toolkit on **crypto.subtle** for Node.js, Bun, Deno, and Cloudflare Workers.",
+      "Solved JSON re-serialization HMAC failures via **stream cloning (req.clone())**, constant-time comparison, and replay-protection stores.",
+      "Designed with **Agent-First DX**, shipping AI rules and CLI tools so coding agents (Cursor, Claude) generate safe webhook handlers.",
     ],
-    repoUrl: "https://github.com/AmirAbaris/Parked",
-    liveUrl: "https://sibapp.com/applications/parked",
+    repoUrl: "https://github.com/AmirAbaris/webhook-kit",
+    liveUrl: "https://webhook-kit.vercel.app",
+  },
+  {
+    title: "jobinja-agent",
+    tagline: "Autonomous job-hunting AI agent with human-in-the-loop approvals",
+    year: "2026",
+    role: "Independent build · Agent workflow",
+    stack: ["TypeScript", "Vercel Eve", "OpenRouter", "AI Agents"],
+    highlights: [
+      "Built an autonomous job-hunting AI agent on **Vercel Eve** that searches live Jobinja listings and applies via authenticated tool calls.",
+      "Engineered **human-in-the-loop approval flows** for initial applications, automated batch execution, and LLM rate-limit fallback via **OpenRouter**.",
+    ],
+    repoUrl: "https://github.com/AmirAbaris/jobinja-agent",
   },
   {
     title: "Endpoint Forge",
@@ -84,13 +105,25 @@ export const projects: Project[] = [
     role: "**3-person collaboration** · End-to-end build",
     stack: ["Next.js", "TypeScript", "NestJS", "PostgreSQL", "Drizzle ORM", "Docker"],
     highlights: [
-      "Co-built an open-source mock API workbench in a **3-person team** so frontend teams can build and test against realistic endpoints.",
-      "Implemented tenant-based workspace routing and a bilingual landing page with reusable components.",
-      "Contributed to the end-to-end implementation using Next.js, NestJS, PostgreSQL, Drizzle ORM, and Docker.",
+      "Co-built an open-source mock API workbench in a **3-person team** with tenant-based workspace routing, reusable design-system components, and a bilingual landing page for frontend development and testing.",
+      "Contributed to the end-to-end architecture and implementation using **Next.js, NestJS, PostgreSQL, Drizzle ORM, and Docker**.",
     ],
     repoUrl: "https://github.com/Bytepute/endpointForge",
     showGitHubStars: true,
     previewImage: "/images/endpoint-forge.jpg",
+  },
+  {
+    title: "Parked (SibApp)",
+    tagline: "Offline-first native iOS app for saving rich parking memories",
+    year: "2026",
+    role: "Independent build · iOS app",
+    stack: ["Swift", "SwiftUI", "SwiftData", "CoreLocation", "MapKit"],
+    highlights: [
+      "Shipped an offline-first native iOS app on **SibApp** for saving rich parking memories (photos, floor/spot details, GPS distance, and Apple Maps routing) using spec-driven agentic workflows.",
+      "Engineered with **SwiftUI, SwiftData, CoreLocation, and MapKit**; memories work offline and directions open in Apple Maps.",
+    ],
+    repoUrl: "https://github.com/AmirAbaris/Parked",
+    liveUrl: "https://sibapp.com/applications/parked",
   },
   {
     title: "Shenora",
@@ -126,18 +159,5 @@ export const projects: Project[] = [
     ],
     repoUrl: "https://github.com/AmirAbaris/weeto-backend",
     previewImage: "/images/weeto.jpg",
-  },
-  {
-    title: "Jobinja Agent",
-    tagline: "Conversational job search with a user-controlled application flow",
-    year: "2026",
-    role: "Independent build · Agent workflow",
-    stack: ["TypeScript", "Eve", "OpenRouter"],
-    highlights: [
-      "Built a conversational workflow that searches live Jobinja listings by keyword and location.",
-      "Added a user approval step before the first application in a conversation.",
-      "Implemented a model fallback through OpenRouter to keep the assistant usable.",
-    ],
-    repoUrl: "https://github.com/AmirAbaris/jobinja-agent",
   },
 ];

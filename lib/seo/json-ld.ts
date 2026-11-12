@@ -1,4 +1,4 @@
-import { projects, experiences } from "@/lib/site-data";
+import { projects, experiences, education } from "@/lib/site-data";
 import { getAbsoluteUrl, seoConfig } from "@/lib/seo";
 
 export function buildHomeJsonLd() {
@@ -48,10 +48,19 @@ export function buildHomeJsonLd() {
         url: getAbsoluteUrl("/"),
         image: getAbsoluteUrl(seoConfig.profileImage),
         email: seoConfig.email,
+        telephone: seoConfig.phone,
         address: {
           "@type": "PostalAddress",
           addressLocality: seoConfig.location.city,
           addressCountry: seoConfig.location.country,
+        },
+        alumniOf: {
+          "@type": "EducationalOrganization",
+          name: education.institution,
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: education.location,
+          },
         },
         sameAs,
         knowsAbout: [...seoConfig.skills],

@@ -3,6 +3,7 @@ import { ArrowUpRightIcon, MessageCircleIcon } from "lucide-react";
 
 import { ContributionGrid } from "@/components/contribution-grid";
 import { BrandMark } from "@/components/brand-mark";
+import { EducationSection } from "@/components/education-section";
 import { ExperienceSection } from "@/components/experience-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { SkillsSection } from "@/components/skills-section";
@@ -44,6 +45,7 @@ export function HomeView() {
         <ExperienceSection />
         <SkillsSection />
         <ProjectsSection />
+        <EducationSection />
       </div>
 
       <footer id="contact" className="portfolio-footer">

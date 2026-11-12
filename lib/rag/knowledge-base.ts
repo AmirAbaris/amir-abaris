@@ -1,5 +1,5 @@
 import { profile } from "@/lib/profile-data";
-import { experiences, projects } from "@/lib/site-data";
+import { education, experiences, projects } from "@/lib/site-data";
 import { primarySkills, skillGroups } from "@/lib/skills-data";
 
 export type KnowledgeChunk = {
@@ -15,6 +15,7 @@ const profileChunk: KnowledgeChunk = {
   id: "profile",
   text: [
     `${profile.name} is a ${profile.noun} based in ${profile.location}.`,
+    `Phone: ${profile.phone}.`,
     `Stack: ${profile.stackLine}.`,
     profile.summary,
     profile.availability.open ? profile.availability.label + "." : "",
@@ -25,7 +26,7 @@ const profileChunk: KnowledgeChunk = {
 
 const linksChunk: KnowledgeChunk = {
   id: "links",
-  text: `Contact and links: email ${profile.email}, GitHub ${profile.links.github}, LinkedIn ${profile.links.linkedin}, X ${profile.links.x}, resume ${profile.links.resume}.`,
+  text: `Contact and links: email ${profile.email}, phone ${profile.phone}, GitHub ${profile.links.github}, LinkedIn ${profile.links.linkedin}, X ${profile.links.x}, resume ${profile.links.resume}.`,
 };
 
 const experienceChunks: KnowledgeChunk[] = experiences.map((exp, i) => ({
@@ -42,6 +43,11 @@ const projectChunks: KnowledgeChunk[] = projects.map((project, i) => ({
   ),
 }));
 
+const educationChunk: KnowledgeChunk = {
+  id: "education",
+  text: `Education: ${education.degree} at ${education.institution} in ${education.location} (${education.duration}).`,
+};
+
 const skillsChunk: KnowledgeChunk = {
   id: "skills",
   text: [
@@ -55,5 +61,6 @@ export const knowledgeBase: KnowledgeChunk[] = [
   linksChunk,
   ...experienceChunks,
   ...projectChunks,
+  educationChunk,
   skillsChunk,
 ];

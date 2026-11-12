@@ -6,14 +6,14 @@
  */
 export const profile = {
   name: "Amir Mahdi Zarei Nejad",
-  noun: "Frontend & Product Engineer",
+  noun: "Full Stack Developer",
   stackLine: "React · Next.js · Angular · React Native · Swift · TypeScript",
 
   /**
    * The "who am I" answer.
    */
   summary:
-    "Product-minded Frontend Engineer specializing in scalable design systems, full-stack architecture, and AI-native agentic workflows. Experienced in shipping web and mobile applications with React, Next.js, Angular, React Native, and Swift/SwiftUI, backed by backend and tooling expertise in TypeScript, Python, Go, and Node.js.",
+    "Full-stack developer specializing in scalable design systems, full-stack architecture, and AI-native agentic workflows. Experienced in shipping web and mobile applications with React, Next.js, Angular, React Native, and Swift/SwiftUI, backed by backend and tooling expertise in TypeScript, Python, Go, and Node.js.",
 
   location: "Karaj, Iran",
   phone: "+98 990 809 7789",
@@ -22,7 +22,7 @@ export const profile = {
   /** Stated once, quietly, in the closing CTA only. */
   availability: {
     open: true,
-    label: "Open to frontend & product engineering roles",
+    label: "Open to full-stack developer roles",
   },
 
   links: {

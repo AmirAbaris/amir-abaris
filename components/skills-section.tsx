@@ -4,8 +4,13 @@ import {
   BracesIcon,
   CircleHelpIcon,
   DatabaseIcon,
+  FlaskConicalIcon,
   LayersIcon,
   RadioIcon,
+  SearchCodeIcon,
+  ShieldCheckIcon,
+  SparklesIcon,
+  ZapIcon,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -14,8 +19,15 @@ import { skillGroups, skillIcons } from "@/lib/skills-data";
 export function SkillsSection() {
   const fallbackIcons: Record<string, LucideIcon> = {
     "Design Systems": LayersIcon,
-    "Agentic Workflows": BotIcon,
+    FastAPI: ZapIcon,
     SQLModel: DatabaseIcon,
+    Pydantic: ShieldCheckIcon,
+    pgvector: DatabaseIcon,
+    Gemini: SparklesIcon,
+    "AI Agents": BotIcon,
+    "RAG & Vector Search": SearchCodeIcon,
+    "LLM Integrations": SparklesIcon,
+    pytest: FlaskConicalIcon,
     RxJS: RadioIcon,
     "Redux Toolkit": BracesIcon,
     "RTK Query": RadioIcon,

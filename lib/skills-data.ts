@@ -5,18 +5,38 @@ export type SkillGroup = {
 
 /** Core technologies used in the portfolio chat's background context. */
 export const primarySkills = [
-  "React",
-  "Next.js",
-  "Angular",
   "TypeScript",
+  "Node.js",
+  "Next.js",
+  "PostgreSQL",
+  "Python",
+  "FastAPI",
+  "Go",
+  "React",
   "React Native",
-  "Swift",
 ] as const;
 
 export const skillGroups: SkillGroup[] = [
   {
     label: "Languages",
     skills: ["TypeScript", "JavaScript", "Python", "Go", "Swift"],
+  },
+  {
+    label: "Backend & Data",
+    skills: [
+      "Node.js",
+      "NestJS",
+      "Express",
+      "FastAPI",
+      "SQLModel",
+      "Pydantic",
+      "PostgreSQL",
+      "Prisma",
+      "Drizzle ORM",
+      "pgvector",
+      "REST APIs",
+      "WebSockets",
+    ],
   },
   {
     label: "Frontend & Design Systems",
@@ -45,25 +65,19 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    label: "Backend & Data",
+    label: "AI & Applied LLMs",
     skills: [
-      "Node.js",
-      "NestJS",
-      "Express",
-      "PostgreSQL",
-      "Prisma",
-      "SQLModel",
-      "REST APIs",
-      "WebSockets",
+      "Vercel Eve",
+      "OpenRouter",
+      "Gemini",
+      "AI Agents",
+      "RAG & Vector Search",
+      "LLM Integrations",
     ],
   },
   {
-    label: "AI & Agentic Workflows",
-    skills: ["Vercel Eve", "OpenRouter", "Agentic Workflows"],
-  },
-  {
     label: "Testing & DevOps",
-    skills: ["Jest", "Cypress", "Git", "Docker", "Sentry", "Xcode"],
+    skills: ["pytest", "Jest", "Cypress", "Docker", "Nginx", "Git", "Sentry", "Xcode"],
   },
 ];
 
@@ -106,6 +120,7 @@ export const skillIcons: Record<string, string> = {
   Cypress: "cypress",
   Git: "git",
   Docker: "docker",
+  Nginx: "nginx",
   Sentry: "sentry",
   Xcode: "xcode",
 };

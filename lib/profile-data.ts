@@ -13,7 +13,7 @@ export const profile = {
    * The "who am I" answer.
    */
   summary:
-    "A full-stack developer with 2+ years of production experience building web, mobile, and applied-AI systems. After starting in frontend (React, Next.js, Angular, React Native), I now build end-to-end products and open-source developer tools across TypeScript, Node.js, Python/FastAPI, Go, PostgreSQL, and LLM/RAG workflows.",
+    "A Full-Stack Developer with 2+ years of production experience who treats agentic velocity as a verification discipline: strict proof gates, deterministic checks, and system design built to scale. After starting in frontend (React, Next.js, Angular, React Native), I ship high-cadence PRs end to end across TypeScript, Node.js, Python/FastAPI, Go, and PostgreSQL into live web platforms, APIs, and npm packages.",
 
   location: "Karaj, Iran",
   phone: "+98 990 809 7789",
@@ -30,7 +30,7 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/amir-mahdi-zarei-nejad-40005526a",
     x: "https://x.com/abaris_aa",
     resume:
-      "https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsL0dEG6nwtGXPHDROiZmQeF3254VCsUarb1hoW",
+      "https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLDoBa3gSSnPKatCdflj2gQrXVmGoOFIw3b140",
   },
 } as const;
 

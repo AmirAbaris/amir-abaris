@@ -20,7 +20,6 @@ export function SkillsSection() {
     FastAPI: ZapIcon,
     SQLModel: DatabaseIcon,
     Pydantic: ShieldCheckIcon,
-    pgvector: DatabaseIcon,
     "RAG & Vector Search": SearchCodeIcon,
     pytest: FlaskConicalIcon,
     RxJS: RadioIcon,

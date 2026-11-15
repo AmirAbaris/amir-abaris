@@ -33,7 +33,6 @@ export const skillGroups: SkillGroup[] = [
       "PostgreSQL",
       "Prisma",
       "Drizzle ORM",
-      "pgvector",
       "REST APIs",
       "WebSockets",
     ],

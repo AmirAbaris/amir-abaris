@@ -6,7 +6,7 @@ export const seoConfig = {
   title: "Amir Mahdi Zarei Nejad | Full-Stack Developer",
   titleTemplate: "%s | Amir Mahdi Zarei Nejad",
   description:
-    "Full-Stack Developer with 2+ years of production experience building web, mobile, and applied-AI systems with TypeScript, Node.js, Next.js, Python/FastAPI, Go, PostgreSQL, and LLM/RAG workflows.",
+    "Full-Stack Developer with 2+ years of production experience shipping end-to-end web platforms, APIs, and developer tools across TypeScript, Next.js, Node.js, Python/FastAPI, Go, PostgreSQL, and verification-first agentic workflows.",
   locale: "en_US",
   category: "technology",
   jobTitle: "Full-Stack Developer",
@@ -36,7 +36,6 @@ export const seoConfig = {
     "Go Developer",
     "NestJS",
     "Drizzle ORM",
-    "pgvector",
     "RAG",
     "AI Agents",
     "React Developer",

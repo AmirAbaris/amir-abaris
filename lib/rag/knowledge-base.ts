@@ -39,7 +39,7 @@ const experienceChunks: KnowledgeChunk[] = experiences.map((exp, i) => ({
 const projectChunks: KnowledgeChunk[] = projects.map((project, i) => ({
   id: `project-${i}`,
   text: stripMarkers(
-    `Project "${project.title}" (${project.year}): ${project.tagline}. Role: ${project.role}. Stack: ${project.stack.join(", ")}. ${project.highlights.join(" ")} Source: ${project.repoUrl}.`,
+    `Project "${project.title}" (${project.year}): ${project.tagline}. Role: ${project.role}. Stack: ${project.stack.join(", ")}. ${project.highlights.join(" ")} Source: ${project.repoUrl}.${project.liveUrl ? ` Live: ${project.liveUrl}.` : ""}`,
   ),
 }));
 

@@ -9,8 +9,11 @@ import {
   CarFrontIcon,
   ChevronDownIcon,
   Code2Icon,
+  GitPullRequestIcon,
+  SearchCodeIcon,
   StarIcon,
   WandSparklesIcon,
+  WebhookIcon,
 } from "lucide-react";
 
 import { MetricText } from "@/components/metric-text";
@@ -31,6 +34,9 @@ export function AnimatedProject({
   const contentId = useId();
   const getProjectIcon = (title: string, i: number) => {
     const t = title.toLowerCase();
+    if (t.includes("diffly")) return GitPullRequestIcon;
+    if (t.includes("webhook")) return WebhookIcon;
+    if (t.includes("rag")) return SearchCodeIcon;
     if (t.includes("parked")) return CarFrontIcon;
     if (t.includes("agent")) return BotIcon;
     if (t.includes("weeto")) return CalendarDaysIcon;

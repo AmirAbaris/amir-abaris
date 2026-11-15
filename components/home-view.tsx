@@ -52,7 +52,9 @@ export function HomeView() {
         <div>
           <h2 className="text-[15px] font-semibold text-foreground">Let&apos;s talk</h2>
           <p className="mt-1 text-sm text-muted-foreground">
-            Have a role, project, or interesting problem in mind?
+            {profile.availability.open
+              ? profile.availability.label
+              : "Have a role, project, or interesting problem in mind?"}
           </p>
         </div>
         <Link href={`mailto:${profile.email}`} className="portfolio-footer-link">

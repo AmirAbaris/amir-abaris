@@ -7,7 +7,7 @@ const chunkVectors = knowledgeBase.map((chunk) => ({
   vector: vectorize(chunk.text, idf),
 }));
 
-export function retrieveContext(query: string, k = 4) {
+export function retrieveContext(query: string, k = 6) {
   const queryVector = vectorize(query, idf);
 
   // Work experience is the most important topic, so always surface every role

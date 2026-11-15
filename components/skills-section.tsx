@@ -1,11 +1,14 @@
 import Image from "next/image";
 import {
-  BotIcon,
   BracesIcon,
   CircleHelpIcon,
   DatabaseIcon,
+  FlaskConicalIcon,
   LayersIcon,
   RadioIcon,
+  SearchCodeIcon,
+  ShieldCheckIcon,
+  ZapIcon,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -14,8 +17,12 @@ import { skillGroups, skillIcons } from "@/lib/skills-data";
 export function SkillsSection() {
   const fallbackIcons: Record<string, LucideIcon> = {
     "Design Systems": LayersIcon,
-    "Agentic Workflows": BotIcon,
+    FastAPI: ZapIcon,
     SQLModel: DatabaseIcon,
+    Pydantic: ShieldCheckIcon,
+    pgvector: DatabaseIcon,
+    "RAG & Vector Search": SearchCodeIcon,
+    pytest: FlaskConicalIcon,
     RxJS: RadioIcon,
     "Redux Toolkit": BracesIcon,
     "RTK Query": RadioIcon,

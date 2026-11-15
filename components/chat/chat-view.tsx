@@ -31,9 +31,9 @@ import { profile } from "@/lib/profile-data";
 import { cn } from "@/lib/utils";
 
 const starterPrompts = [
-  "Which work shows your performance focus?",
-  "What have you built recently?",
-  "Are you open to frontend roles?",
+  "Tell me about Diffly and your recent builds",
+  "How do you work with AI agents and RAG?",
+  "What full-stack or AI roles are you open to?",
 ];
 
 function messageText(parts: { type: string; text?: string }[]) {
@@ -80,7 +80,7 @@ export function ChatView() {
           <div className="portfolio-chat-intro mt-auto">
             <span className="portfolio-chat-eyebrow">A CONVERSATION WITH MY WORK</span>
             <p className="portfolio-chat-title">Chat with {profile.name.split(" ")[0]}&apos;s AI clone</p>
-            <p>Ask about my frontend experience, projects, performance work, or the roles I&apos;m looking for.</p>
+            <p>Ask about my full-stack experience, open-source tools, AI/RAG builds, or the roles I&apos;m looking for.</p>
           </div>
           <div className="flex flex-wrap gap-2">
             {starterPrompts.map((prompt) => (

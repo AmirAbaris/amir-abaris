@@ -45,11 +45,11 @@ export const experiences: Experience[] = [
     duration: "Apr 2026 – Present",
     achievements: [
       "Designed, built, and shipped **Diffly**, a live platform for practicing code review of AI-generated code (**Next.js, FastAPI, SQLModel, Pydantic, PostgreSQL on Neon, JWT auth**) with a deterministic evaluation engine, **25 challenges**, and a Gemini-powered generator.",
+      "Published **webhook-kit**, a zero-dependency, edge-compatible webhook signature verification toolkit in **TypeScript**, on **npm**.",
       "Co-developed **EndpointForge**, an open-source mock API workbench, in a **3-person team** with a **NestJS** backend, **PostgreSQL with Drizzle**, tenant-based routing, and **Docker**.",
       "Built **Weeto**, a full-stack interview scheduling app end to end with a **Go** backend, **PostgreSQL, sqlc, and migrations**, a timezone-aware conflict engine, an async email worker, and a web frontend.",
       "Built **jobinja-agent**, an AI agent that searches Jobinja listings and applies while pausing for **human-in-the-loop approval** before submitting, using **Vercel Eve and OpenRouter** with a fallback model.",
       "Built **Personal Codebase RAG** from scratch without LangChain, implementing overlapping chunking, embeddings, **Postgres with pgvector**, cosine search, and answers with file:line citations.",
-      "Published **webhook-kit**, a zero-dependency, edge-compatible webhook signature verification toolkit in **TypeScript**, on **npm**.",
       "Shipped **Parked**, an offline-first iPhone app for remembering where you parked, built with **SwiftUI, SwiftData, and CoreLocation**; live on **SibApp**.",
     ],
   },

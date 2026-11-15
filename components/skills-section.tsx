@@ -1,6 +1,5 @@
 import Image from "next/image";
 import {
-  BotIcon,
   BracesIcon,
   CircleHelpIcon,
   DatabaseIcon,
@@ -9,7 +8,6 @@ import {
   RadioIcon,
   SearchCodeIcon,
   ShieldCheckIcon,
-  SparklesIcon,
   ZapIcon,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -23,10 +21,7 @@ export function SkillsSection() {
     SQLModel: DatabaseIcon,
     Pydantic: ShieldCheckIcon,
     pgvector: DatabaseIcon,
-    Gemini: SparklesIcon,
-    "AI Agents": BotIcon,
     "RAG & Vector Search": SearchCodeIcon,
-    "LLM Integrations": SparklesIcon,
     pytest: FlaskConicalIcon,
     RxJS: RadioIcon,
     "Redux Toolkit": BracesIcon,

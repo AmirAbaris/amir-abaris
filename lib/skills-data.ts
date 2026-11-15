@@ -66,14 +66,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     label: "AI & Applied LLMs",
-    skills: [
-      "Vercel Eve",
-      "OpenRouter",
-      "Gemini",
-      "AI Agents",
-      "RAG & Vector Search",
-      "LLM Integrations",
-    ],
+    skills: ["Vercel Eve", "RAG & Vector Search"],
   },
   {
     label: "Testing & DevOps",

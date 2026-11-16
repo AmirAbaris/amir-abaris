@@ -30,7 +30,7 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/amir-mahdi-zarei-nejad-40005526a",
     x: "https://x.com/abaris_aa",
     resume:
-      "https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLDoBa3gSSnPKatCdflj2gQrXVmGoOFIw3b140",
+      "https://7lg03ct7vc.ufs.sh/f/PyyzXFE2HKsLeukmxFfz3uvjGkPSI9OpnRLAoZmrJKwQTiXb",
   },
 } as const;
 
